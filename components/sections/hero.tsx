@@ -2,11 +2,11 @@
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { buttonVariants } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useAudience } from "@/components/audience-context";
 import { event, audienceCopy } from "@/lib/data";
 import type { Audience } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { Burst, GearStar, FourPointStar } from "@/components/shapes";
 
 export function HeroSection() {
   const { audience, setAudience } = useAudience();
@@ -21,44 +21,26 @@ export function HeroSection() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center bg-ink text-cream overflow-hidden"
     >
-      {/* Decorative faceted polygon shapes */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 w-full h-full"
-        preserveAspectRatio="xMidYMid slice"
-      >
-        {/* Top-left angular shape */}
-        <polygon
-          points="0,0 380,0 220,180 0,260"
-          fill={isMentee ? "#f81919" : "#004aad"}
-          opacity="0.08"
-        />
-        {/* Bottom-right angular shape */}
-        <polygon
-          points="100%,100% 60%,100% 75%,65% 100%,72%"
-          fill={isMentee ? "#f81919" : "#004aad"}
-          opacity="0.06"
-        />
-        {/* Top-right small accent */}
-        <polygon
-          points="100%,0 100%,220 78%,120 90%,0"
-          fill="#f6f5ec"
-          opacity="0.04"
-        />
-      </svg>
+      {/* Decorative brand shape accents */}
+      <GearStar
+        className={cn(
+          "pointer-events-none absolute -right-16 -top-16 w-80 h-80 opacity-[0.07] transition-colors duration-300",
+          accentText
+        )}
+      />
+      <Burst
+        className="pointer-events-none absolute -left-20 bottom-0 w-72 h-72 opacity-[0.05] text-cream"
+      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-32 pt-36">
         <div className="max-w-3xl">
           {/* Org badge */}
-          <Badge
-            variant="outline"
-            className="mb-6 border-cream/30 text-cream/80 rounded-full text-xs tracking-wide"
-          >
+          <span className="inline-block mb-6 px-4 py-1.5 rounded-xl bg-cream text-ink border-2 border-ink shadow-hard-sm text-xs font-bold tracking-wide">
             {event.org}
-          </Badge>
+          </span>
 
           {/* Main heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tighter mb-4">
             Graduate{" "}
             <span
               className={cn("transition-colors duration-300", accentText)}
@@ -71,7 +53,7 @@ export function HeroSection() {
 
           {/* Tagline */}
           <p className="text-lg sm:text-xl text-cream/70 mb-6 font-medium italic">
-            "{event.tagline}"
+            &ldquo;{event.tagline}&rdquo;
           </p>
 
           {/* Audience description — swaps by toggle */}
@@ -80,7 +62,10 @@ export function HeroSection() {
           </p>
 
           {/* Price note */}
-          <p className="text-sm text-cream/50 mb-8">✦ {event.price}</p>
+          <p className="flex items-center gap-2 text-sm text-cream/50 mb-8">
+            <FourPointStar className="w-3 h-3 text-cream/50 shrink-0" />
+            {event.price}
+          </p>
 
           {/* Audience toggle */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
@@ -89,13 +74,13 @@ export function HeroSection() {
               value={audience}
               onValueChange={(v) => setAudience(v as Audience)}
             >
-              <TabsList className="h-10 rounded-full bg-cream/10 p-1">
+              <TabsList className="h-10 rounded-xl bg-ink border-2 border-cream p-1">
                 <TabsTrigger
                   value="mentee"
                   className={cn(
-                    "rounded-full px-5 h-8 text-sm font-medium transition-all duration-300",
+                    "rounded-lg px-5 h-8 text-sm font-semibold transition-all duration-300",
                     audience === "mentee"
-                      ? "bg-brand-red text-white shadow data-[state=active]:bg-brand-red data-[state=active]:text-white"
+                      ? "bg-brand-red text-white data-[state=active]:bg-brand-red data-[state=active]:text-white"
                       : "text-cream/70"
                   )}
                 >
@@ -104,9 +89,9 @@ export function HeroSection() {
                 <TabsTrigger
                   value="mentor"
                   className={cn(
-                    "rounded-full px-5 h-8 text-sm font-medium transition-all duration-300",
+                    "rounded-lg px-5 h-8 text-sm font-semibold transition-all duration-300",
                     audience === "mentor"
-                      ? "bg-brand-blue text-white shadow data-[state=active]:bg-brand-blue data-[state=active]:text-white"
+                      ? "bg-brand-blue text-white data-[state=active]:bg-brand-blue data-[state=active]:text-white"
                       : "text-cream/70"
                   )}
                 >
@@ -117,14 +102,14 @@ export function HeroSection() {
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={event.registerLinks[audience]}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "rounded-full text-white font-semibold px-8 transition-colors duration-300",
+                "rounded-xl border-2 border-ink text-white font-bold px-8 shadow-hard-cream transition-colors duration-300",
                 accentBg
               )}
             >
@@ -134,7 +119,7 @@ export function HeroSection() {
               href="#tentang"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "rounded-full border-cream/30 text-cream bg-transparent hover:bg-cream/10 font-semibold px-8"
+                "rounded-xl border-2 border-cream text-cream bg-transparent hover:bg-cream/10 font-bold px-8"
               )}
             >
               Pelajari Program

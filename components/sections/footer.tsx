@@ -60,7 +60,7 @@ export function FooterSection() {
           </div>
         </div>
 
-        <div className="border-t border-cream/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="border-t border-cream/20 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-cream/30 text-xs">
             © 2026 {event.org}. All rights reserved.
           </p>

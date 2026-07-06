@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useAudience } from "@/components/audience-context";
 import { timeline } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,6 @@ export function TimelineSection() {
 
   const accentText = isMentee ? "text-brand-red" : "text-brand-blue";
   const accentBg = isMentee ? "bg-brand-red" : "bg-brand-blue";
-  const accentBorder = isMentee ? "border-brand-red" : "border-brand-blue";
 
   return (
     <section
@@ -27,34 +26,27 @@ export function TimelineSection() {
         >
           Timeline
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-ink leading-tight mb-12">
+        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-ink leading-tight mb-12">
           Jadwal Program
         </h2>
 
         {/* Desktop: horizontal stepper */}
-        <div className="hidden md:block">
-          <div className="relative">
-            {/* Connecting line */}
-            <div
-              className={cn(
-                "absolute top-5 left-0 right-0 h-0.5 transition-colors duration-300",
-                accentBg,
-                "opacity-30"
-              )}
-            />
-            <div className="grid grid-cols-7 gap-2">
-              {timeline.map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center">
+        <div className="hidden md:block overflow-x-auto pb-2">
+          <div className="flex items-start min-w-max px-1">
+            {timeline.map((item, i) => (
+              <div key={i} className="flex items-start">
+                {/* Connector segment (skip before first item) */}
+                {i !== 0 && (
+                  <div className="h-[3px] w-8 lg:w-12 mt-[18px] shrink-0 bg-ink" />
+                )}
+                <div className="flex flex-col items-center text-center w-32 lg:w-36">
                   {/* Dot */}
                   <div
                     className={cn(
-                      "relative z-10 w-10 h-10 rounded-full flex items-center justify-center mb-3 border-2 transition-colors duration-300",
-                      accentBg,
-                      accentBorder
+                      "w-9 h-9 rounded-full mb-3 border-2 border-ink shrink-0 transition-colors duration-300",
+                      accentBg
                     )}
-                  >
-                    <Calendar className="text-white" size={16} />
-                  </div>
+                  />
                   {/* Phase label */}
                   <p className="text-ink font-semibold text-xs leading-snug mb-1">
                     {item.phase}
@@ -78,8 +70,8 @@ export function TimelineSection() {
                     </div>
                   )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -87,26 +79,18 @@ export function TimelineSection() {
         <div className="md:hidden">
           <div className="relative pl-8">
             {/* Left rail */}
-            <div
-              className={cn(
-                "absolute left-3.5 top-0 bottom-0 w-0.5 transition-colors duration-300",
-                accentBg,
-                "opacity-30"
-              )}
-            />
+            <div className="absolute left-[13px] top-0 bottom-0 w-[3px] bg-ink" />
             <ul className="space-y-6">
               {timeline.map((item, i) => (
                 <li key={i} className="relative">
                   {/* Dot */}
                   <div
                     className={cn(
-                      "absolute -left-[25px] w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-300",
+                      "absolute -left-[27px] w-6 h-6 rounded-full border-2 border-ink transition-colors duration-300",
                       accentBg
                     )}
-                  >
-                    <Calendar className="text-white" size={12} />
-                  </div>
-                  <div className="bg-white rounded-xl p-4 border border-ink/8 shadow-sm">
+                  />
+                  <div className="bg-cream rounded-xl p-4 border-2 border-ink shadow-hard-sm">
                     <p className="font-bold text-ink text-sm mb-0.5">{item.phase}</p>
                     <p
                       className={cn(

@@ -10,8 +10,6 @@ export function PairingSection() {
   const isMentee = audience === "mentee";
 
   const accentText = isMentee ? "text-brand-red" : "text-brand-blue";
-  const accentBg = isMentee ? "bg-brand-red/8" : "bg-brand-blue/8";
-  const accentBorder = isMentee ? "border-brand-red/20" : "border-brand-blue/20";
 
   return (
     <section className="bg-ink py-20 sm:py-28">
@@ -25,17 +23,11 @@ export function PairingSection() {
           >
             Skema Program
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-cream leading-tight mb-8">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-cream leading-tight mb-8">
             Bagaimana Pengelompokan Bekerja?
           </h2>
 
-          <div
-            className={cn(
-              "rounded-2xl border p-6 sm:p-8 transition-colors duration-300",
-              accentBg,
-              accentBorder
-            )}
-          >
+          <div className="rounded-2xl border-2 border-cream bg-ink p-6 sm:p-8 shadow-hard-cream-sm transition-colors duration-300">
             <div className="flex items-center gap-3 mb-5">
               <Users
                 className={cn("transition-colors duration-300", accentText)}

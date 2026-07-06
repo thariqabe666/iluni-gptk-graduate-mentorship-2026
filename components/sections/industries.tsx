@@ -11,8 +11,7 @@ export function IndustriesSection() {
   const isMentee = audience === "mentee";
 
   const accentText = isMentee ? "text-brand-red" : "text-brand-blue";
-  const accentIconBg = isMentee ? "bg-brand-red/10" : "bg-brand-blue/10";
-  const accentBorder = isMentee ? "border-brand-red/15" : "border-brand-blue/15";
+  const accentBg = isMentee ? "bg-brand-red" : "bg-brand-blue";
 
   return (
     <section className="bg-cream py-20 sm:py-28 scroll-mt-16">
@@ -25,7 +24,7 @@ export function IndustriesSection() {
         >
           Kategori Industri Mentor
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-ink leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-ink leading-tight mb-4">
           5 Bidang Industri
         </h2>
         <p className="text-ink/60 text-base mb-12 max-w-xl">
@@ -36,23 +35,16 @@ export function IndustriesSection() {
           {industries.map((industry, i) => (
             <Card
               key={i}
-              className={cn(
-                "border rounded-2xl hover:shadow-md transition-all duration-200",
-                accentBorder
-              )}
+              className="border-2 border-ink rounded-2xl shadow-hard-sm hover:-translate-y-0.5 transition-transform duration-200"
             >
               <CardContent className="p-5 flex items-center gap-4">
                 <div
                   className={cn(
                     "w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300",
-                    accentIconBg
+                    accentBg
                   )}
                 >
-                  <Icon
-                    name={industry.icon}
-                    className={cn("transition-colors duration-300", accentText)}
-                    size={22}
-                  />
+                  <Icon name={industry.icon} className="text-white" size={22} />
                 </div>
                 <span className="font-medium text-ink text-sm leading-snug">
                   {industry.label}

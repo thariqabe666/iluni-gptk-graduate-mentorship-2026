@@ -37,8 +37,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-shadow duration-300",
-        scrolled ? "shadow-md bg-cream/95 backdrop-blur-sm" : "bg-cream"
+        "fixed top-0 inset-x-0 z-50 border-b-2 border-ink transition-shadow duration-300",
+        scrolled ? "bg-cream/95 backdrop-blur-sm" : "bg-cream"
       )}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
@@ -75,13 +75,13 @@ export function Navbar() {
             value={audience}
             onValueChange={(v) => setAudience(v as Audience)}
           >
-            <TabsList className="h-8 rounded-full bg-ink/8 p-0.5">
+            <TabsList className="h-8 rounded-xl bg-cream border-2 border-ink p-0.5">
               <TabsTrigger
                 value="mentee"
                 className={cn(
-                  "rounded-full text-xs px-3 h-7 transition-all duration-300",
+                  "rounded-lg text-xs px-3 h-7 font-semibold transition-all duration-300",
                   audience === "mentee"
-                    ? "bg-brand-red text-white shadow-sm data-[state=active]:bg-brand-red data-[state=active]:text-white"
+                    ? "bg-brand-red text-white data-[state=active]:bg-brand-red data-[state=active]:text-white"
                     : "text-ink/70"
                 )}
               >
@@ -90,9 +90,9 @@ export function Navbar() {
               <TabsTrigger
                 value="mentor"
                 className={cn(
-                  "rounded-full text-xs px-3 h-7 transition-all duration-300",
+                  "rounded-lg text-xs px-3 h-7 font-semibold transition-all duration-300",
                   audience === "mentor"
-                    ? "bg-brand-blue text-white shadow-sm data-[state=active]:bg-brand-blue data-[state=active]:text-white"
+                    ? "bg-brand-blue text-white data-[state=active]:bg-brand-blue data-[state=active]:text-white"
                     : "text-ink/70"
                 )}
               >
@@ -107,7 +107,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "rounded-full text-white text-xs font-semibold transition-colors duration-300 hidden sm:inline-flex",
+              "rounded-xl border-2 border-ink text-white text-xs font-bold shadow-hard-sm transition-colors duration-300 hidden sm:inline-flex",
               accentBg
             )}
           >
@@ -127,7 +127,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-cream border-t border-ink/10 px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden bg-cream border-t-2 border-ink px-4 py-4 flex flex-col gap-3">
           {navLinks.map((l) => (
             <Link
               key={l.href}
@@ -144,7 +144,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "rounded-full text-white text-xs font-semibold mt-2 transition-colors duration-300",
+              "rounded-xl border-2 border-ink text-white text-xs font-bold shadow-hard-sm mt-2 transition-colors duration-300",
               accentBg
             )}
           >

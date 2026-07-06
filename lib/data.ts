@@ -63,13 +63,14 @@ export const pairingScheme = {
 };
 
 export const timeline = [
-  { phase: "Persiapan & Promosi", date: "29 Jun – 14 Jul 2026", note: "" },
-  { phase: "Pendaftaran Mentor & Mentee", date: "15 Jul – 7 Agu 2026", note: "Dibuka paralel" },
-  { phase: "Matching & Kurasi Grup", date: "8 – 15 Agu 2026", note: "" },
-  { phase: "Pengumuman Terpilih", date: "16 Agu 2026", note: "" },
-  { phase: "Onboarding Session", date: "17 Agu 2026", note: "Offline / onsite" },
-  { phase: "Periode Mentoring", date: "20 Agu – 20 Okt 2026", note: "~2 bulan, fleksibel" },
-  { phase: "Closing Ceremony", date: "25 Okt 2026", note: "Offline / onsite" },
+  { phase: "Pre-event: Alumni Gathering", date: "9 Jul 2026", note: "" },
+  { phase: "Pendaftaran Mentor", date: "7 Jul – 7 Agu 2026", note: "" },
+  { phase: "Pendaftaran Mentee", date: "12 Jul – 12 Agu 2026", note: "" },
+  { phase: "Matching & Kurasi Grup", date: "13 – 17 Agu 2026", note: "" },
+  { phase: "Pengumuman Terpilih", date: "18 Agu 2026", note: "" },
+  { phase: "Onboarding Session", date: "19 Agu 2026", note: "Offline / onsite" },
+  { phase: "Periode Mentoring", date: "20 Agu – 20 Nov 2026", note: "~3 bulan, fleksibel" },
+  { phase: "Closing Ceremony", date: "22 Nov 2026", note: "Offline / onsite" },
 ];
 
 export type Audience = "mentee" | "mentor";

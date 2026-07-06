@@ -11,8 +11,7 @@ export function AboutSection() {
   const isMentee = audience === "mentee";
 
   const accentText = isMentee ? "text-brand-red" : "text-brand-blue";
-  const accentBg = isMentee ? "bg-brand-red/10" : "bg-brand-blue/10";
-  const accentBorder = isMentee ? "border-brand-red/30" : "border-brand-blue/30";
+  const accentBg = isMentee ? "bg-brand-red" : "bg-brand-blue";
 
   return (
     <section id="tentang" className="bg-cream py-20 sm:py-28 scroll-mt-16">
@@ -28,15 +27,15 @@ export function AboutSection() {
             >
               Tentang Program
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-ink leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-ink leading-tight mb-6">
               {isMentee
                 ? "Your Journey,\nEngineered."
                 : "Share Your Legacy,\nShape the Future."}
             </h2>
             <p className="text-ink/70 text-base leading-relaxed">
               {isMentee
-                ? "ILUNI GPTK Graduate Mentorship 2026 adalah program mentorship resmi yang menghubungkan alumni DTK UI Batch 2020–2022 dengan para profesional berpengalaman di industri. Selama 2 bulan, kamu akan mendapat bimbingan personal, wawasan karier, dan jejaring yang relevan — semuanya gratis."
-                : "ILUNI GPTK Graduate Mentorship 2026 mengundang profesional alumni DTK UI untuk berbagi pengalaman dan membimbing generasi penerus. Dalam 2 bulan yang fleksibel, Anda berkontribusi nyata pada masa depan komunitas sekaligus mengasah kemampuan kepemimpinan Anda."}
+                ? "ILUNI GPTK Graduate Mentorship 2026 adalah program mentorship resmi yang menghubungkan alumni DTK UI Batch 2020–2022 dengan para profesional berpengalaman di industri. Selama 3 bulan, kamu akan mendapat bimbingan personal, wawasan karier, dan jejaring yang relevan — semuanya gratis."
+                : "ILUNI GPTK Graduate Mentorship 2026 mengundang profesional alumni DTK UI untuk berbagi pengalaman dan membimbing generasi penerus. Dalam 3 bulan yang fleksibel, Anda berkontribusi nyata pada masa depan komunitas sekaligus mengasah kemampuan kepemimpinan Anda."}
             </p>
           </div>
 
@@ -54,19 +53,16 @@ export function AboutSection() {
               {copy.objectives.map((obj, i) => (
                 <li
                   key={i}
-                  className={cn(
-                    "flex gap-3 p-4 rounded-xl border transition-colors duration-300",
-                    accentBg,
-                    accentBorder
-                  )}
+                  className="flex gap-3 p-4 rounded-xl border-2 border-ink bg-cream shadow-hard-sm"
                 >
-                  <CheckCircle2
+                  <span
                     className={cn(
-                      "mt-0.5 flex-shrink-0 transition-colors duration-300",
-                      accentText
+                      "flex items-center justify-center w-6 h-6 rounded-full shrink-0 transition-colors duration-300",
+                      accentBg
                     )}
-                    size={18}
-                  />
+                  >
+                    <CheckCircle2 className="text-white" size={14} />
+                  </span>
                   <span className="text-ink/80 text-sm leading-relaxed">{obj}</span>
                 </li>
               ))}
