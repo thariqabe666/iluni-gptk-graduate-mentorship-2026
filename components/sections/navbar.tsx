@@ -14,7 +14,10 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "#tentang", label: "Tentang" },
   { href: "#manfaat", label: "Manfaat" },
+  { href: "#peran", label: "Kriteria" },
+  { href: "#mekanisme", label: "Mekanisme" },
   { href: "#timeline", label: "Timeline" },
+  { href: "#faq", label: "FAQ" },
   { href: "#daftar", label: "Daftar" },
 ];
 
@@ -56,7 +59,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav links */}
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden lg:flex items-center gap-5">
           {navLinks.map((l) => (
             <li key={l.href}>
               <Link
@@ -116,7 +119,7 @@ export function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-1 text-ink"
+            className="lg:hidden p-1 text-ink"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle menu"
           >
@@ -127,7 +130,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-cream border-t-2 border-ink px-4 py-4 flex flex-col gap-3">
+        <div className="lg:hidden bg-cream border-t-2 border-ink px-4 py-4 flex flex-col gap-3">
           {navLinks.map((l) => (
             <Link
               key={l.href}
