@@ -45,13 +45,13 @@ export function FaqSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <p
           className={cn(
-            "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+            "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
             accentText
           )}
         >
           FAQ
         </p>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-cream leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-cream leading-tight mb-4">
           Pertanyaan yang Sering Diajukan
         </h2>
         <p className="text-cream/60 text-base mb-10 max-w-2xl">
@@ -71,9 +71,9 @@ export function FaqSection() {
                 onClick={() => selectFilter(cat.value)}
                 aria-pressed={active}
                 className={cn(
-                  "rounded-xl border-2 px-4 py-1.5 text-xs font-bold transition-colors duration-200",
+                  "rounded-xl border-[1.5px] px-4 py-1.5 font-heading text-xs font-bold uppercase tracking-[0.05em] transition-colors duration-200",
                   active
-                    ? cn("border-ink text-white shadow-hard-cream-sm", accentBg)
+                    ? cn("border-ink text-white", accentBg)
                     : "border-cream/40 text-cream/70 hover:text-cream hover:border-cream"
                 )}
               >
@@ -94,7 +94,7 @@ export function FaqSection() {
               <li
                 key={i}
                 className={cn(
-                  "rounded-xl border-2 border-cream/30 border-l-8 bg-ink overflow-hidden",
+                  "rounded-xl border-[1.5px] border-cream/30 border-l-[3px] bg-ink overflow-hidden",
                   categoryBorder[faq.category]
                 )}
               >

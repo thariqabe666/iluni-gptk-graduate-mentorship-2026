@@ -26,10 +26,10 @@ export function CTASection() {
       <FourPointStar className="pointer-events-none absolute left-0 top-0 w-40 h-40 opacity-10 text-black" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
-        <p className="text-white/70 text-xs font-semibold tracking-widest uppercase mb-4">
+        <p className="font-heading text-white/70 text-xs font-semibold uppercase tracking-[0.14em] mb-4">
           {isMentee ? "Mulai Sekarang" : "Bergabung Sebagai Mentor"}
         </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight mb-6 max-w-2xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6 max-w-2xl mx-auto">
           {isMentee
             ? "Siap Memulai Perjalanan Kariermu?"
             : "Siap Membentuk Generasi Berikutnya?"}
@@ -47,7 +47,7 @@ export function CTASection() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "rounded-xl border-2 border-ink bg-white text-ink font-bold px-10 shadow-hard hover:bg-white/90"
+              "rounded-xl border-[1.5px] border-ink bg-white font-heading text-ink font-bold px-10 hover:bg-white/90"
             )}
           >
             Daftar sebagai {isMentee ? "Mentee" : "Mentor"} →
@@ -58,7 +58,7 @@ export function CTASection() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "rounded-xl border-2 border-white text-white bg-transparent hover:bg-white/10 font-bold px-8"
+              "rounded-xl border-[1.5px] border-white font-heading text-white bg-transparent hover:bg-white/10 font-bold px-8"
             )}
           >
             Daftar sebagai {isMentee ? "Mentor" : "Mentee"}

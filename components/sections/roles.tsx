@@ -31,13 +31,13 @@ export function RolesSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <p
           className={cn(
-            "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+            "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
             accentText
           )}
         >
           Kriteria & Peran
         </p>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-ink leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-ink leading-tight mb-4">
           {isMentee ? "Siapa yang Bisa Ikut?" : "Siapa yang Bisa Membimbing?"}
         </h2>
         <p className="text-ink/60 text-base mb-12 max-w-2xl">
@@ -48,7 +48,7 @@ export function RolesSection() {
           {columns.map((col) => (
             <div
               key={col.heading}
-              className="rounded-2xl border-2 border-ink bg-cream p-6 sm:p-8 shadow-hard-sm"
+              className="rounded-2xl border-[1.5px] border-ink bg-cream p-6 sm:p-8"
             >
               <div className="flex items-center gap-3 mb-6">
                 <span
@@ -59,7 +59,7 @@ export function RolesSection() {
                 >
                   <col.icon className="text-white" size={20} />
                 </span>
-                <h3 className="font-bold text-ink text-lg">{col.heading}</h3>
+                <h3 className="font-bold uppercase text-ink text-lg">{col.heading}</h3>
               </div>
               <ul className="space-y-3">
                 {col.items.map((item, i) => (

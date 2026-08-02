@@ -16,13 +16,13 @@ export function MechanismSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <p
           className={cn(
-            "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+            "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
             accentText
           )}
         >
           Mekanisme Pelaksanaan
         </p>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-cream leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-cream leading-tight mb-4">
           Bagaimana Sesi Mentoring Berjalan?
         </h2>
         <p className="text-cream/60 text-base mb-12 max-w-2xl">{mechanism.note}</p>
@@ -32,11 +32,11 @@ export function MechanismSection() {
           {mechanism.stats.map((stat) => (
             <div
               key={stat.value}
-              className="rounded-2xl border-2 border-cream bg-ink p-5 shadow-hard-cream-sm"
+              className="rounded-2xl border-[1.5px] border-cream bg-ink p-5"
             >
               <p
                 className={cn(
-                  "text-xl sm:text-2xl font-black leading-tight mb-1 transition-colors duration-300",
+                  "font-heading text-xl sm:text-2xl font-bold uppercase leading-tight mb-1 transition-colors duration-300",
                   accentText
                 )}
               >
@@ -50,7 +50,7 @@ export function MechanismSection() {
         </div>
 
         {/* Topics covered */}
-        <h3 className="text-xl sm:text-2xl font-black tracking-tight text-cream mb-6">
+        <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-cream mb-6">
           Materi & Topik Mentoring
         </h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -58,11 +58,11 @@ export function MechanismSection() {
             <div
               key={topic.title}
               className={cn(
-                "rounded-xl border-2 border-cream/30 border-l-8 bg-ink p-5 transition-colors duration-300",
+                "rounded-xl border-[1.5px] border-cream/30 border-l-[3px] bg-ink p-5 transition-colors duration-300",
                 accentBorder
               )}
             >
-              <h4 className="font-bold text-cream text-sm uppercase tracking-wide mb-1.5">
+              <h4 className="font-heading font-bold text-cream text-sm uppercase tracking-wide mb-1.5">
                 {topic.title}
               </h4>
               <p className="text-cream/60 text-sm leading-relaxed">{topic.desc}</p>

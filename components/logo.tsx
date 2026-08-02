@@ -1,4 +1,3 @@
-import { Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -16,11 +15,16 @@ export function Logo({ className, iconClassName, size = 36 }: LogoProps) {
       )}
       style={{ width: size, height: size }}
     >
-      <Send
-        className={cn("", iconClassName)}
+      {/* Solid cursor/arrowhead mark — same path as the booklet's logo mark. */}
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+        className={iconClassName}
         style={{ width: size * 0.44, height: size * 0.44 }}
-        strokeWidth={2}
-      />
+      >
+        <path d="M3 11L20 4L13 21L11 13L3 11Z" fill="currentColor" />
+      </svg>
     </div>
   );
 }

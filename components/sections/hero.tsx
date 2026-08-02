@@ -35,12 +35,12 @@ export function HeroSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-32 pt-36">
         <div className="max-w-3xl">
           {/* Org badge */}
-          <span className="inline-block mb-6 px-4 py-1.5 rounded-xl bg-cream text-ink border-2 border-ink shadow-hard-sm text-xs font-bold tracking-wide">
+          <span className="inline-block mb-6 px-4 py-1.5 rounded-xl bg-cream text-ink border-[1.5px] border-ink font-heading text-xs font-bold uppercase tracking-[0.08em]">
             {event.org}
           </span>
 
           {/* Main heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tighter mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold uppercase leading-[0.98] tracking-tight mb-5">
             Graduate{" "}
             <span
               className={cn("transition-colors duration-300", accentText)}
@@ -78,9 +78,9 @@ export function HeroSection() {
                 <TabsTrigger
                   value="mentee"
                   className={cn(
-                    "rounded-lg px-5 h-8 text-sm font-semibold transition-all duration-300",
+                    "rounded-lg px-5 h-8 font-heading text-sm font-bold uppercase tracking-[0.05em] transition-all duration-300",
                     audience === "mentee"
-                      ? "bg-brand-red text-white data-[state=active]:bg-brand-red data-[state=active]:text-white"
+                      ? "bg-brand-red text-white data-active:bg-brand-red data-active:text-white"
                       : "text-cream/70"
                   )}
                 >
@@ -89,9 +89,9 @@ export function HeroSection() {
                 <TabsTrigger
                   value="mentor"
                   className={cn(
-                    "rounded-lg px-5 h-8 text-sm font-semibold transition-all duration-300",
+                    "rounded-lg px-5 h-8 font-heading text-sm font-bold uppercase tracking-[0.05em] transition-all duration-300",
                     audience === "mentor"
-                      ? "bg-brand-blue text-white data-[state=active]:bg-brand-blue data-[state=active]:text-white"
+                      ? "bg-brand-blue text-white data-active:bg-brand-blue data-active:text-white"
                       : "text-cream/70"
                   )}
                 >
@@ -109,7 +109,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "rounded-xl border-2 border-ink text-white font-bold px-8 shadow-hard-cream transition-colors duration-300",
+                "rounded-xl border-[1.5px] border-ink font-heading text-white font-bold px-8 transition-colors duration-300",
                 accentBg
               )}
             >
@@ -119,7 +119,7 @@ export function HeroSection() {
               href="#tentang"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "rounded-xl border-2 border-cream text-cream bg-transparent hover:bg-cream/10 font-bold px-8"
+                "rounded-xl border-[1.5px] border-cream font-heading text-cream bg-transparent hover:bg-cream/10 font-bold px-8"
               )}
             >
               Pelajari Program

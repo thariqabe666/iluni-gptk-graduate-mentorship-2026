@@ -40,7 +40,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 border-b-2 border-ink transition-shadow duration-300",
+        "fixed top-0 inset-x-0 z-50 border-b border-ink transition-shadow duration-300",
         scrolled ? "bg-cream/95 backdrop-blur-sm" : "bg-cream"
       )}
     >
@@ -52,9 +52,11 @@ export function Navbar() {
             iconClassName={cn("transition-colors duration-300", accentText)}
             size={36}
           />
-          <span className="font-bold text-ink leading-tight hidden sm:block text-sm">
-            <span className="block">{event.org}</span>
-            <span className="block font-normal text-xs text-ink/60">{event.name}</span>
+          <span className="font-heading font-bold text-ink leading-tight hidden sm:block text-sm">
+            <span className="block uppercase tracking-[0.08em] text-xs">{event.org}</span>
+            <span className="block font-sans font-normal text-xs text-ink/60">
+              {event.name}
+            </span>
           </span>
         </Link>
 
@@ -82,9 +84,9 @@ export function Navbar() {
               <TabsTrigger
                 value="mentee"
                 className={cn(
-                  "rounded-lg text-xs px-3 h-7 font-semibold transition-all duration-300",
+                  "rounded-lg font-heading text-xs px-3 h-7 font-bold uppercase tracking-[0.05em] transition-all duration-300",
                   audience === "mentee"
-                    ? "bg-brand-red text-white data-[state=active]:bg-brand-red data-[state=active]:text-white"
+                    ? "bg-brand-red text-white data-active:bg-brand-red data-active:text-white"
                     : "text-ink/70"
                 )}
               >
@@ -93,9 +95,9 @@ export function Navbar() {
               <TabsTrigger
                 value="mentor"
                 className={cn(
-                  "rounded-lg text-xs px-3 h-7 font-semibold transition-all duration-300",
+                  "rounded-lg font-heading text-xs px-3 h-7 font-bold uppercase tracking-[0.05em] transition-all duration-300",
                   audience === "mentor"
-                    ? "bg-brand-blue text-white data-[state=active]:bg-brand-blue data-[state=active]:text-white"
+                    ? "bg-brand-blue text-white data-active:bg-brand-blue data-active:text-white"
                     : "text-ink/70"
                 )}
               >
@@ -110,7 +112,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "rounded-xl border-2 border-ink text-white text-xs font-bold shadow-hard-sm transition-colors duration-300 hidden sm:inline-flex",
+              "rounded-xl border-[1.5px] border-ink font-heading text-white text-xs font-bold transition-colors duration-300 hidden sm:inline-flex",
               accentBg
             )}
           >
@@ -130,7 +132,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-cream border-t-2 border-ink px-4 py-4 flex flex-col gap-3">
+        <div className="lg:hidden bg-cream border-t border-ink px-4 py-4 flex flex-col gap-3">
           {navLinks.map((l) => (
             <Link
               key={l.href}
@@ -147,7 +149,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "rounded-xl border-2 border-ink text-white text-xs font-bold shadow-hard-sm mt-2 transition-colors duration-300",
+              "rounded-xl border-[1.5px] border-ink font-heading text-white text-xs font-bold mt-2 transition-colors duration-300",
               accentBg
             )}
           >
