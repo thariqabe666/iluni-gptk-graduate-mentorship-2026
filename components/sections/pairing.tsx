@@ -17,17 +17,17 @@ export function PairingSection() {
         <div className="max-w-3xl">
           <p
             className={cn(
-              "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+              "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
               accentText
             )}
           >
             Skema Program
           </p>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-cream leading-tight mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight text-cream leading-[1.02] mb-8">
             Bagaimana Pengelompokan Bekerja?
           </h2>
 
-          <div className="rounded-2xl border-2 border-cream bg-ink p-6 sm:p-8 shadow-hard-cream-sm transition-colors duration-300">
+          <div className="rounded-2xl border-[1.5px] border-cream bg-ink p-6 sm:p-8 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-5">
               <Users
                 className={cn("transition-colors duration-300", accentText)}
@@ -35,7 +35,7 @@ export function PairingSection() {
               />
               <span
                 className={cn(
-                  "text-2xl font-bold transition-colors duration-300",
+                  "font-heading text-2xl font-bold uppercase transition-colors duration-300",
                   accentText
                 )}
               >

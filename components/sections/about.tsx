@@ -21,13 +21,13 @@ export function AboutSection() {
           <div>
             <p
               className={cn(
-                "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+                "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
                 accentText
               )}
             >
               Tentang Program
             </p>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-ink leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight text-ink leading-[1.02] mb-6">
               {isMentee
                 ? "Your Journey,\nEngineered."
                 : "Share Your Legacy,\nShape the Future."}
@@ -43,7 +43,7 @@ export function AboutSection() {
           <div>
             <p
               className={cn(
-                "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+                "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
                 accentText
               )}
             >
@@ -53,7 +53,7 @@ export function AboutSection() {
               {copy.objectives.map((obj, i) => (
                 <li
                   key={i}
-                  className="flex gap-3 p-4 rounded-xl border-2 border-ink bg-cream shadow-hard-sm"
+                  className="flex gap-3 p-4 rounded-xl border-[1.5px] border-ink bg-cream"
                 >
                   <span
                     className={cn(

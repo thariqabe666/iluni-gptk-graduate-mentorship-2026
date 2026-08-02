@@ -20,13 +20,13 @@ export function TimelineSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <p
           className={cn(
-            "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+            "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
             accentText
           )}
         >
           Timeline
         </p>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-ink leading-tight mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight text-ink leading-[1.02] mb-12">
           Jadwal Program
         </h2>
 
@@ -37,7 +37,7 @@ export function TimelineSection() {
               <div key={i} className="flex items-start">
                 {/* Connector segment (skip before first item) */}
                 {i !== 0 && (
-                  <div className="h-[3px] w-8 lg:w-12 mt-[18px] shrink-0 bg-ink" />
+                  <div className="h-[2px] w-8 lg:w-12 mt-[17px] shrink-0 bg-ink" />
                 )}
                 <div className="flex flex-col items-center text-center w-32 lg:w-36">
                   {/* Dot */}
@@ -48,13 +48,13 @@ export function TimelineSection() {
                     )}
                   />
                   {/* Phase label */}
-                  <p className="text-ink font-semibold text-xs leading-snug mb-1">
+                  <p className="font-heading text-ink font-bold uppercase text-xs leading-snug mb-1">
                     {item.phase}
                   </p>
                   {/* Date */}
                   <p
                     className={cn(
-                      "text-[10px] font-medium mb-1 transition-colors duration-300",
+                      "font-heading text-[10px] font-bold uppercase tracking-[0.04em] mb-1 transition-colors duration-300",
                       accentText
                     )}
                   >
@@ -79,7 +79,7 @@ export function TimelineSection() {
         <div className="md:hidden">
           <div className="relative pl-8">
             {/* Left rail */}
-            <div className="absolute left-[13px] top-0 bottom-0 w-[3px] bg-ink" />
+            <div className="absolute left-[16px] top-0 bottom-0 w-[2px] bg-ink" />
             <ul className="space-y-6">
               {timeline.map((item, i) => (
                 <li key={i} className="relative">
@@ -90,11 +90,13 @@ export function TimelineSection() {
                       accentBg
                     )}
                   />
-                  <div className="bg-cream rounded-xl p-4 border-2 border-ink shadow-hard-sm">
-                    <p className="font-bold text-ink text-sm mb-0.5">{item.phase}</p>
+                  <div className="bg-cream rounded-xl p-4 border-[1.5px] border-ink">
+                    <p className="font-heading font-bold uppercase text-ink text-sm mb-0.5">
+                      {item.phase}
+                    </p>
                     <p
                       className={cn(
-                        "text-xs font-medium mb-1 transition-colors duration-300",
+                        "font-heading text-xs font-bold uppercase tracking-[0.04em] mb-1 transition-colors duration-300",
                         accentText
                       )}
                     >

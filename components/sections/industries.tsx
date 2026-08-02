@@ -18,13 +18,13 @@ export function IndustriesSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <p
           className={cn(
-            "text-xs font-semibold tracking-widest uppercase mb-4 transition-colors duration-300",
+            "font-heading text-xs font-semibold uppercase tracking-[0.14em] mb-4 transition-colors duration-300",
             accentText
           )}
         >
           Kategori Industri Mentor
         </p>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-ink leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight text-ink leading-[1.02] mb-4">
           5 Bidang Industri
         </h2>
         <p className="text-ink/60 text-base mb-12 max-w-xl">
@@ -35,7 +35,7 @@ export function IndustriesSection() {
           {industries.map((industry, i) => (
             <Card
               key={i}
-              className="border-2 border-ink rounded-2xl shadow-hard-sm hover:-translate-y-0.5 transition-transform duration-200"
+              className="border-[1.5px] border-ink rounded-2xl hover:-translate-y-1 transition-transform duration-200"
             >
               <CardContent className="p-5 flex items-center gap-4">
                 <div
@@ -46,7 +46,7 @@ export function IndustriesSection() {
                 >
                   <Icon name={industry.icon} className="text-white" size={22} />
                 </div>
-                <span className="font-medium text-ink text-sm leading-snug">
+                <span className="font-heading font-bold uppercase text-ink text-sm leading-tight">
                   {industry.label}
                 </span>
               </CardContent>

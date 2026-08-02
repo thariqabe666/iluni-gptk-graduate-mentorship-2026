@@ -29,14 +29,16 @@ export function FooterSection() {
               size={40}
             />
             <div>
-              <p className="text-cream font-bold text-sm">{event.org}</p>
+              <p className="font-heading text-cream font-bold uppercase tracking-[0.08em] text-xs">
+                {event.org}
+              </p>
               <p className="text-cream/50 text-xs">{event.name}</p>
             </div>
           </div>
 
           {/* Contact persons */}
           <div>
-            <p className="text-cream/50 text-xs uppercase tracking-wide font-semibold mb-3">
+            <p className="font-heading text-cream/50 text-xs uppercase tracking-[0.14em] font-semibold mb-3">
               Narahubung
             </p>
             <ul className="space-y-2">

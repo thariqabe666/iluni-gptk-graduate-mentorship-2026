@@ -42,14 +42,14 @@ export function BenefitsSection() {
           <CircleCheck className={cn("transition-colors duration-300", accentText)} size={20} />
           <p
             className={cn(
-              "text-xs font-semibold tracking-widest uppercase transition-colors duration-300",
+              "font-heading text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-300",
               accentText
             )}
           >
             Manfaat
           </p>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-cream leading-tight mb-12 transition-all duration-300">
+        <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight text-cream leading-[1.02] mb-12 transition-all duration-300">
           {copy.benefitsHeading}
         </h2>
 
@@ -60,7 +60,7 @@ export function BenefitsSection() {
             return (
               <Card
                 key={i}
-                className="bg-ink border-2 border-cream transition-colors duration-300 rounded-2xl shadow-hard-cream-sm"
+                className="bg-ink border-[1.5px] border-cream transition-colors duration-300 rounded-2xl"
               >
                 <CardContent className="p-6">
                   <div
@@ -75,7 +75,9 @@ export function BenefitsSection() {
                       <Icon name={benefit.icon} className="text-white" size={20} />
                     )}
                   </div>
-                  <h3 className="font-bold text-cream text-base mb-1">{benefit.title}</h3>
+                  <h3 className="font-heading font-bold uppercase text-cream text-base leading-snug mb-1">
+                    {benefit.title}
+                  </h3>
                   {benefit.desc && (
                     <p className="text-cream/60 text-sm">{benefit.desc}</p>
                   )}
@@ -87,12 +89,12 @@ export function BenefitsSection() {
           {/* "Free for all" card */}
           <Card
             className={cn(
-              "sm:col-span-2 lg:col-span-1 border-2 border-ink text-cream rounded-2xl shadow-hard-cream-sm transition-colors duration-300",
+              "sm:col-span-2 lg:col-span-1 border-[1.5px] border-ink text-cream rounded-2xl transition-colors duration-300",
               accentBg
             )}
           >
             <CardContent className="p-6 flex flex-col justify-between h-full">
-              <p className="text-2xl font-black leading-snug mb-4">
+              <p className="font-heading text-2xl font-bold uppercase leading-snug mb-4">
                 100%{" "}
                 <span className="font-normal text-white/80">Gratis</span>
               </p>
