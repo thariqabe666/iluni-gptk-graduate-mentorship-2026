@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { AudienceContext } from "@/components/audience-context";
 import { Navbar } from "@/components/sections/navbar";
 import { HeroSection } from "@/components/sections/hero";
+import { CompaniesSection } from "@/components/sections/companies";
 import { AboutSection } from "@/components/sections/about";
 import { BenefitsSection } from "@/components/sections/benefits";
 import { RolesSection } from "@/components/sections/roles";
@@ -27,13 +28,14 @@ export function LandingPage() {
   return (
     <AudienceContext.Provider value={{ audience, setAudience }}>
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         <HeroSection />
+        <CompaniesSection />
         <AboutSection />
         <BenefitsSection />
         <RolesSection />
-        <PairingSection />
         <IndustriesSection />
+        <PairingSection />
         <MechanismSection />
         <TimelineSection />
         <FaqSection />
