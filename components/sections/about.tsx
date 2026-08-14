@@ -34,7 +34,7 @@ export function AboutSection() {
             </h2>
             <p className="text-ink/70 text-base leading-relaxed">
               {isMentee
-                ? "ILUNI GPTK Graduate Mentorship 2026 adalah program mentorship resmi yang menghubungkan alumni DTK UI Batch 2020–2022 dengan para profesional berpengalaman di industri. Selama 3 bulan, kamu akan mendapat bimbingan personal, wawasan karier, dan jejaring yang relevan — semuanya gratis."
+                ? "ILUNI GPTK Graduate Mentorship 2026 adalah program mentorship resmi yang menghubungkan alumni DTK UI Batch 2020–2022 dengan para profesional berpengalaman di industri. Selama 3 bulan, kamu akan mendapat bimbingan personal, wawasan karier, dan jejaring yang relevan — semuanya gratis!"
                 : "ILUNI GPTK Graduate Mentorship 2026 mengundang profesional alumni DTK UI untuk berbagi pengalaman dan membimbing generasi penerus. Dalam 3 bulan yang fleksibel, Anda berkontribusi nyata pada masa depan komunitas sekaligus mengasah kemampuan kepemimpinan Anda."}
             </p>
           </div>

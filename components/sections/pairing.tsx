@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Users } from "lucide-react";
 import { useAudience } from "@/components/audience-context";
 import { pairingScheme } from "@/lib/data";
@@ -45,6 +46,12 @@ export function PairingSection() {
             <p className="text-cream/70 text-sm leading-relaxed">
               {pairingScheme.note}
             </p>
+            <Link
+              href="/booklet#kelompok"
+              className="inline-block mt-5 text-sm font-semibold text-cream underline underline-offset-4 hover:text-cream/70"
+            >
+              Lihat peta 20 kelompok di Booklet →
+            </Link>
           </div>
         </div>
       </div>

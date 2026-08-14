@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { useAudience } from "@/components/audience-context";
-import { timeline } from "@/lib/data";
+import { timeline, timelineNote } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 export function TimelineSection() {
@@ -116,6 +117,13 @@ export function TimelineSection() {
             </ul>
           </div>
         </div>
+
+        <p className="text-ink/50 text-xs italic mt-8 max-w-xl">
+          {timelineNote}{" "}
+          <Link href="/booklet#linimasa" className="font-semibold not-italic underline underline-offset-4">
+            Lihat linimasa lengkap →
+          </Link>
+        </p>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Icon } from "@/components/icon";
 import { useAudience } from "@/components/audience-context";
@@ -22,16 +23,17 @@ export function IndustriesSection() {
             accentText
           )}
         >
-          Kategori Industri Mentor
+          Struktur Program
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight text-ink leading-[1.02] mb-4">
-          5 Bidang Industri
+          Dua Jalur Mentee
         </h2>
         <p className="text-ink/60 text-base mb-12 max-w-xl">
-          Para mentor berasal dari lima bidang industri utama yang relevan bagi lulusan teknik kimia DTK UI.
+          Mentee dibagi ke dua jalur sesuai tahap kariernya supaya
+          pertanyaan yang dibahas di kelompok lebih relevan.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {industries.map((industry, i) => (
             <Card
               key={i}
@@ -46,13 +48,22 @@ export function IndustriesSection() {
                 >
                   <Icon name={industry.icon} className="text-white" size={22} />
                 </div>
-                <span className="font-heading font-bold uppercase text-ink text-sm leading-tight">
-                  {industry.label}
-                </span>
+                <div>
+                  <span className="font-heading font-bold uppercase text-ink text-sm leading-tight block">
+                    {industry.label}
+                  </span>
+                  <span className="text-ink/50 text-xs">{industry.desc}</span>
+                </div>
               </CardContent>
             </Card>
           ))}
         </div>
+        <Link
+          href="/booklet#dua-jalur"
+          className="inline-block mt-6 text-sm font-semibold text-ink underline underline-offset-4 hover:text-ink/70"
+        >
+          Lihat aturan pembagian jalur di Booklet →
+        </Link>
       </div>
     </section>
   );

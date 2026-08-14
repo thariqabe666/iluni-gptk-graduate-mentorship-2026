@@ -17,7 +17,7 @@ export const event = {
 export const audienceCopy = {
   mentee: {
     heroDescription:
-      "Program mentorship gratis untuk alumni DTK UI Batch 2020–2022. Dapatkan bimbingan karier langsung dari profesional industri.",
+      "Program mentorship gratis untuk alumni DTK UI Batch 2020–2022. Dapatkan bimbingan karier langsung dari profesional industri!",
     objectives: [
       "Mendapatkan akses langsung ke insider industri dan membangun jejaring yang relevan dengan jalur karier.",
       "Menyusun blueprint karier yang lebih konkret dengan bimbingan personal.",
@@ -45,7 +45,7 @@ export const audienceCopy = {
   },
   mentor: {
     heroDescription:
-      "Undangan khusus untuk profesional DTK UI: bimbing generasi penerus lewat program mentorship fleksibel selama 3 bulan.",
+      "Undangan khusus untuk profesional DTK UI: mari bimbing dan kembangkan generasi penerus lewat program mentorship!",
     objectives: [
       "Mengasah kemampuan coaching dan kepemimpinan.",
       "Memperluas personal branding & jejaring profesional.",
@@ -76,27 +76,27 @@ export const audienceCopy = {
 } as const;
 
 export const industries = [
-  { icon: "Droplet", label: "Oil & Gas Operations" },
-  { icon: "Leaf", label: "ESG, Climate Change, & Decarbonization" },
-  { icon: "Package", label: "FMCG Process & Supply Chain" },
-  { icon: "Cog", label: "Energy & Engineering Consultancy" },
-  { icon: "Banknote", label: "Finance & Business" },
+  { icon: "Send", label: "Entering the Industry", desc: "54 mentee · belum bekerja penuh atau sedang magang" },
+  { icon: "Cog", label: "Growing in the Industry", desc: "49 mentee · sudah bekerja tetap" },
 ] as const;
 
 export const pairingScheme = {
-  ratio: "1 mentor : 2–4 mentee",
-  note: "Rasio aktual menyesuaikan jumlah & minat pendaftar. Pengelompokan berdasarkan kecocokan minat industri yang diisi saat pendaftaran — bukan diundi acak. Target perencanaan: 5 kategori × 2 mentor × rata-rata 3 mentee (~30 mentee), bukan kuota keras.",
+  ratio: "20 kelompok · 1 Anchor Mentor + 1 Co-Mentor",
+  note: "103 mentee dan 41 mentor terbagi ke 20 kelompok kecil per jalur & minat industri. Tiap kelompok punya 1 Anchor Mentor yang mendampingi penuh dan 1 Co-Mentor sebagai partner pendamping untuk memperdalam silaturahmi, memperkuat bimbingan, serta pendalaman teknis. Detail lengkap tiap kelompok — nama mentor, perusahaan, dan jabatan — ada di halaman Booklet.",
 };
 
 export const timeline = [
   { phase: "Pendaftaran Mentor", date: "7 Jul – 7 Agu 2026", note: "" },
   { phase: "Pendaftaran Mentee", date: "12 Jul – 12 Agu 2026", note: "" },
-  { phase: "Matching & Kurasi Grup", date: "13 – 15 Agu 2026", note: "" },
-  { phase: "Pengumuman Terpilih", date: "16 Agu 2026", note: "" },
-  { phase: "Onboarding Session", date: "17 Agu 2026", note: "Offline / onsite" },
+  { phase: "Pengumuman & Pembagian Kelompok", date: "18 Agu 2026", note: "" },
+  { phase: "Grand Launch & Onboarding", date: "22 Agu 2026", note: "Hybrid — Jakarta + Zoom" },
   { phase: "Periode Mentoring", date: "20 Agu – 20 Nov 2026", note: "~3 bulan, fleksibel" },
   { phase: "Closing Ceremony", date: "22 Nov 2026", note: "Offline / onsite" },
 ];
+
+/** Onboarding moved 17→22 Agustus because 14–17 Agustus is a long holiday + HUT RI. See /booklet for the full timeline. */
+export const timelineNote =
+  "Onboarding bergeser dari 17 ke 22 Agustus karena 14–17 Agustus adalah libur panjang & HUT RI. Linimasa lengkap ada di Booklet.";
 
 /** Headline numbers for how the mentoring actually runs. */
 export const mechanism = {
@@ -181,12 +181,12 @@ export const faqs: Faq[] = [
   {
     category: "general",
     q: "Industri atau bidang apa saja yang tercakup dalam program ini?",
-    a: "Ada 5 track industri: Oil & Gas Operations; ESG, Climate Change & Decarbonization; FMCG Process & Supply Chain; Energy & Engineering Consultancy; serta Finance & Business.",
+    a: "Mentee dibagi ke 2 jalur (Entering the Industry & Growing in the Industry), lalu ke 20 kelompok kecil yang mencakup Oil & Gas, Process Safety, Transisi Energi, ESG, FMCG, Engineering Consultancy, Business & Finance, hingga Wirausaha. Peta lengkap 20 kelompok ada di halaman Booklet.",
   },
   {
     category: "general",
     q: "Kapan timeline lengkap program ini?",
-    a: "Registrasi Mentor 7 Juli – 7 Agustus 2026; Registrasi Mentee 12 Juli – 12 Agustus 2026; Matching & Kurasi Grup 13–15 Agustus 2026; Pengumuman Terpilih 16 Agustus 2026; Onboarding Session 17 Agustus 2026; Pelaksanaan Mentoring 20 Agustus – 20 November 2026; Closing Ceremony 22 November 2026.",
+    a: "Registrasi Mentor 7 Juli – 7 Agustus 2026; Registrasi Mentee 12 Juli – 12 Agustus 2026; Pengumuman & Pembagian Kelompok 18 Agustus 2026; Grand Launch & Onboarding 22 Agustus 2026; Pelaksanaan Mentoring 20 Agustus – 20 November 2026; Closing Ceremony 22 November 2026. Linimasa lengkap ada di halaman Booklet.",
   },
   // ---- Mentor ----
   {
@@ -202,7 +202,7 @@ export const faqs: Faq[] = [
   {
     category: "mentor",
     q: "Satu mentor akan membimbing berapa mentee?",
-    a: "Umumnya 1 mentor mendampingi 2–4 mentee dalam satu kelompok. Bila diperlukan, bisa juga diatur 2–3 mentor untuk satu kelompok, supaya bisa saling belajar lintas angkatan/industri dan saling back-up bila salah satu mentor berhalangan.",
+    a: "Tiap kelompok didampingi 1 Anchor Mentor (memegang kelompok penuh dari awal sampai akhir) dan 1 Co-Mentor (partner pendamping Anchor Mentor untuk memperdalam silaturahmi, memperkuat bimbingan, serta sesi pendalaman teknis), mendampingi rata-rata 5 mentee. Bukan beberapa mentor setara — supaya ada satu penanggung jawab utama yang benar-benar mengenal tiap mentee.",
   },
   {
     category: "mentor",
@@ -217,13 +217,7 @@ export const faqs: Faq[] = [
   {
     category: "mentor",
     q: "Bagaimana cara daftar menjadi mentor?",
-    a: "Daftar melalui tautan registrasi mentor sebelum 7 Agustus 2026.",
-    links: [
-      {
-        label: "bit.ly/RegistrationMentorILUNIGPTKUI",
-        href: "https://bit.ly/RegistrationMentorILUNIGPTKUI",
-      },
-    ],
+    a: "Registrasi mentor sudah ditutup sejak 7 Agustus 2026. Mentor terpilih diumumkan 18 Agustus — lihat linimasa dan peta kelompok lengkap di halaman Booklet.",
   },
   // ---- Mentee ----
   {
@@ -244,13 +238,7 @@ export const faqs: Faq[] = [
   {
     category: "mentee",
     q: "Bagaimana cara daftar menjadi mentee?",
-    a: "Daftar melalui tautan registrasi mentee sebelum 12 Agustus 2026.",
-    links: [
-      {
-        label: "bit.ly/RegistrationMentorshipILUNIGPTKUI",
-        href: "https://bit.ly/RegistrationMentorshipILUNIGPTKUI",
-      },
-    ],
+    a: "Registrasi mentee sudah ditutup sejak 12 Agustus 2026. Mentee terpilih diumumkan 18 Agustus — lihat linimasa lengkap di halaman Booklet.",
   },
   // ---- Teknis pelaksanaan ----
   {
@@ -276,7 +264,7 @@ export const faqs: Faq[] = [
   {
     category: "general",
     q: "Bagaimana pengelompokan mentor dan mentee ditentukan?",
-    a: "Pengelompokan didasarkan pada kecocokan minat industri yang diisi saat pendaftaran — bukan diundi acak. Setiap kelompok terdiri dari mentor dan mentee di kategori industri yang sama.",
+    a: "Pengelompokan mempertimbangkan kolom topik dan kolom motivasi yang diisi saat pendaftaran — bukan diundi acak. Setiap kelompok berisi mentee di jalur dan minat yang sama, didampingi 1 Anchor Mentor + 1 Co-Mentor. Peta lengkap 20 kelompok ada di halaman Booklet.",
   },
   {
     category: "general",

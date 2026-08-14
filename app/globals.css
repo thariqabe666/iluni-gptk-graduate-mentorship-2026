@@ -144,3 +144,28 @@
     letter-spacing: -0.01em;
   }
 }
+
+/* Booklet print stylesheet — Ctrl+P on /booklet should produce a clean,
+   shareable document: no chrome, no interactive controls, tables/cards
+   don't split mid-row. Scoped to .booklet-page so it never affects the
+   marketing landing page. */
+@media print {
+  .booklet-page .no-print {
+    display: none !important;
+  }
+
+  .booklet-page {
+    background: #fff !important;
+  }
+
+  .booklet-page table,
+  .booklet-page tr,
+  .booklet-page li {
+    break-inside: avoid;
+  }
+
+  .booklet-page a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
