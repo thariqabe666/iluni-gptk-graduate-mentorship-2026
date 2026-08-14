@@ -17,7 +17,7 @@ export const event = {
 export const audienceCopy = {
   mentee: {
     heroDescription:
-      "Program mentorship gratis untuk alumni DTK UI Batch 2020–2022. Dapatkan bimbingan karier langsung dari profesional industri.",
+      "Program mentorship gratis untuk alumni DTK UI Batch 2020–2022. Dapatkan bimbingan karier langsung dari profesional industri!",
     objectives: [
       "Mendapatkan akses langsung ke insider industri dan membangun jejaring yang relevan dengan jalur karier.",
       "Menyusun blueprint karier yang lebih konkret dengan bimbingan personal.",
@@ -45,7 +45,7 @@ export const audienceCopy = {
   },
   mentor: {
     heroDescription:
-      "Undangan khusus untuk profesional DTK UI: bimbing generasi penerus lewat program mentorship fleksibel selama 3 bulan.",
+      "Undangan khusus untuk profesional DTK UI: mari bimbing dan kembangkan generasi penerus lewat program mentorship!",
     objectives: [
       "Mengasah kemampuan coaching dan kepemimpinan.",
       "Memperluas personal branding & jejaring profesional.",
@@ -82,7 +82,7 @@ export const industries = [
 
 export const pairingScheme = {
   ratio: "20 kelompok · 1 Anchor Mentor + 1 Co-Mentor",
-  note: "103 mentee dan 41 mentor terbagi ke 20 kelompok kecil per jalur & minat industri. Tiap kelompok punya 1 Anchor Mentor yang mendampingi penuh dan 1 Co-Mentor sebagai pendalaman teknis & cadangan. Detail lengkap tiap kelompok — nama mentor, perusahaan, dan jabatan — ada di halaman Booklet.",
+  note: "103 mentee dan 41 mentor terbagi ke 20 kelompok kecil per jalur & minat industri. Tiap kelompok punya 1 Anchor Mentor yang mendampingi penuh dan 1 Co-Mentor sebagai partner pendamping untuk memperdalam silaturahmi, memperkuat bimbingan, serta pendalaman teknis. Detail lengkap tiap kelompok — nama mentor, perusahaan, dan jabatan — ada di halaman Booklet.",
 };
 
 export const timeline = [
@@ -202,7 +202,7 @@ export const faqs: Faq[] = [
   {
     category: "mentor",
     q: "Satu mentor akan membimbing berapa mentee?",
-    a: "Tiap kelompok punya 1 Anchor Mentor (memegang kelompok penuh dari awal sampai akhir) dan 1 Co-Mentor (hadir di sesi pendalaman teknis, jadi cadangan bila Anchor berhalangan), mendampingi rata-rata 5 mentee. Bukan beberapa mentor setara — supaya ada satu penanggung jawab yang benar-benar mengenal tiap mentee.",
+    a: "Tiap kelompok didampingi 1 Anchor Mentor (memegang kelompok penuh dari awal sampai akhir) dan 1 Co-Mentor (partner pendamping Anchor Mentor untuk memperdalam silaturahmi, memperkuat bimbingan, serta sesi pendalaman teknis), mendampingi rata-rata 5 mentee. Bukan beberapa mentor setara — supaya ada satu penanggung jawab utama yang benar-benar mengenal tiap mentee.",
   },
   {
     category: "mentor",

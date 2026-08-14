@@ -28,14 +28,14 @@ export function CTASection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <p className="font-heading text-white/70 text-xs font-semibold uppercase tracking-[0.14em] mb-4">
-          Registrasi Ditutup
+          Registrasi Telah Ditutup
         </p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6 max-w-2xl mx-auto">
-          Program Sedang Berjalan Menuju Grand Launch
+          Bersiap Untuk Grand Launch!
         </h2>
         <p className="text-white/80 text-base mb-10 max-w-xl mx-auto">
-          Pendaftaran mentor dan mentee sudah ditutup. Mentor & mentee terpilih diumumkan 18 Agustus,
-          Grand Launch & Onboarding berlangsung 22 Agustus 2026. Info lengkap ada di Booklet Program.
+          Selamat kepada mentor & mentee terpilih! Grand Launch & Onboarding akan
+          berlangsung pada 22 Agustus 2026. Info lengkap ada di Booklet Program.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">

@@ -10,7 +10,7 @@ import {
 export function InsightBriefSection() {
   return (
     <section id="insight-brief" className="scroll-mt-24 py-10">
-      <SectionHeading id="insight-brief" eyebrow="Bagian 9" title="Insight Brief" />
+      <SectionHeading id="insight-brief" eyebrow="Bagian 9" title="Final Project: Insight Brief" />
       <p className="mb-6 max-w-2xl text-sm text-ink/70">{insightBriefLength}</p>
 
       <div className="mb-6 overflow-x-auto">

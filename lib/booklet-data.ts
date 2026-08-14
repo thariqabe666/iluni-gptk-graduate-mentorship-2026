@@ -11,7 +11,10 @@ export const BOOKLET_VERSION = {
 };
 
 export const bookletTruthNote =
-  "Situs ini adalah sumber kebenaran isi program. Bila berbeda dengan PDF atau pesan WhatsApp yang beredar, yang berlaku adalah halaman ini.";
+  "Booklet ini merupakan the source of truth program (dapat berubah sewaktu-waktu dengan pemberitahuan).";
+
+export const bookletChangeNotice =
+  "Isi, jadwal, dan keterangan dapat berubah dengan pemberitahuan dari panitia";
 
 // ---- Bagian 1 — Pembuka ----
 
@@ -21,7 +24,7 @@ export const bookletIntro = {
   tagline: "Connecting Ambition with Leadership Excellence",
   org: "ILUNI GPTK FTUI",
   positioning:
-    "Graduate Mentorship 2026 adalah program pembelajaran terstruktur selama tiga bulan yang mempertemukan alumni DTK UI angkatan 2020–2022 dengan alumni yang telah berpengalaman di industri. Program ini tentang belajar, bukan tentang mencari kerja. Peluang kerja bisa muncul sebagai akibat, tetapi bukan itu yang dijanjikan — dan pembedaan ini disengaja, karena ketika mentorship dijual sebagai jalur kerja, mentee datang menunggu koneksi dan mentor merasa ditagih sesuatu yang bukan wewenangnya.",
+    "Graduate Mentorship 2026 adalah program pembelajaran terstruktur selama tiga bulan yang mempertemukan alumni DTK UI angkatan 2020–2022 dengan alumni yang telah berpengalaman di industri untuk memperkuat silaturahmi ILUNI GPTK FTUI, berbagi pengalaman, dan menguatkan kepemimpinan.",
 };
 
 export const bookletStats: { value: string; label: string }[] = [
@@ -43,12 +46,11 @@ export const tracks = {
   growing: {
     name: "Growing in the Industry",
     count: 49,
-    desc: "Sudah bekerja tetap. Pertanyaan khasnya: bagaimana naik ke tahap berikutnya, mengelola stakeholder, memilih spesialisasi.",
+    desc: "Sudah atau pernah bekerja full-time/kontrak. Pertanyaan khasnya: bagaimana naik ke tahap berikutnya, mengelola stakeholder, memilih spesialisasi.",
   },
   placementRules: [
-    'Magang/intern → Entering, apa pun yang tertulis di kolom "Status Saat Ini" saat mendaftar.',
+    "Magang/intern/early joiner → Entering",
     "Pekerjaan tetap atau kontrak penuh → Growing.",
-    "Angkatan 2020 → Growing, termasuk yang sedang tidak bekerja, karena seluruhnya sudah pernah bekerja.",
   ],
 };
 
@@ -95,7 +97,7 @@ export const activityLayers: { name: string; desc: string }[] = [
   },
   {
     name: "Individual Mentoring",
-    desc: "Opsional, atas permintaan mentee dan kesediaan mentor. Sengaja tidak diwajibkan.",
+    desc: "Opsional, menyesuaikan permintaan mentee dan kesediaan mentor.",
   },
 ];
 
@@ -104,14 +106,14 @@ export const activityLayers: { name: string; desc: string }[] = [
 export const mentorRoles = {
   anchor: {
     title: "Anchor Mentor",
-    desc: "Memegang kelompok dari awal sampai akhir: hadir di seluruh sesi, mengenal tiap mentee, menjadi penanggung jawab tunggal, dan memberi penilaian.",
+    desc: "Memegang kelompok dari awal sampai akhir: mengenal tiap mentee, menjadi penanggung jawab utama, dan memberi penilaian.",
   },
   coMentor: {
     title: "Co-Mentor",
-    desc: "Ditetapkan sejak awal, bukan tamu dadakan: hadir minimal pada satu sesi pendalaman teknis, dan menjadi cadangan bila Anchor berhalangan.",
+    desc: "Partner pendamping Anchor Mentor untuk memperdalam silaturahmi dan memperkuat bimbingan kelompok.",
   },
   rationale:
-    "Kenapa bukan beberapa mentor setara: kepemilikan bersama berujung tidak ada yang merasa memiliki. Dengan hanya empat sesi, kedalaman relasi adalah produk utama program — kalau sesi dibagi rata ke banyak mentor, yang tersisa rangkaian seminar, bukan mentoring.",
+    "Kenapa dibuat anchor + co-mentor: silaturahmi menjadi lebih kuat, ilmu bisa dibagi dari lebih banyak sudut pandang, dan pengerjaan tugas menjadi lebih mudah",
   composition:
     "20 Anchor + 21 Co-Mentor = 41 mentor. Seluruh mentor memegang kelompok. Peran kuliah umum, panel, narasumber sesi lintas kelompok, dan dewan juri bersifat tambahan di atas peran kelompok.",
 };
@@ -315,14 +317,14 @@ export const bookletTimeline: { date: string; label: string; highlight?: boolean
   { date: "20 Agustus – 20 November 2026", label: "Periode mentoring resmi" },
   { date: "Pertengahan September", label: "Kuliah Umum 2 — Steer the Ship" },
   { date: "Pertengahan Oktober", label: "Kuliah Umum 3 — Panel Jalur Karier Alternatif" },
-  { date: "15 November 2026", label: "Publikasi serentak Insight Brief di LinkedIn" },
+  { date: "15 November 2026", label: "Publikasi serentak Final Project di LinkedIn" },
   { date: "22 November 2026", label: "Closing Ceremony" },
 ];
 
 export const bookletTimelineNote =
   "Tanggal onboarding bergeser dari 17 ke 22 Agustus karena 14–17 Agustus adalah libur panjang sekaligus HUT RI. Periode mentoring resmi tidak berubah.";
 
-// ---- Bagian 9 — Insight Brief ----
+// ---- Bagian 9 — Final Project: Insight Brief ----
 
 export const insightBriefParts: { title: string; content: string; length: string }[] = [
   { title: "1. Pertanyaan", content: "Persoalan nyata di industri/karier yang ingin dijawab.", length: "1 paragraf" },
@@ -341,22 +343,22 @@ export const insightBriefLength = "600–900 kata, dipublikasikan di LinkedIn, d
 
 export const insightBriefConfidentiality = {
   warning:
-    'Insight Brief dikerjakan memakai data publik. Mentor memberi problem statement, bukan data internal perusahaan. Mentee tidak boleh mencantumkan "Project for [nama perusahaan mentor]" di CV atau LinkedIn — tidak pernah ada hubungan kerja dengan perusahaan tersebut, dan klaim itu bisa terbongkar saat pemeriksaan latar belakang.',
+    'Final Project dikerjakan memakai data publik. Mentor memberi problem statement, bukan data internal perusahaan. Mentee tidak boleh mencantumkan "Project for [nama perusahaan mentor]" di CV atau LinkedIn — tidak pernah ada hubungan kerja dengan perusahaan tersebut, dan klaim itu bisa terbongkar saat pemeriksaan latar belakang.',
   correctCitation:
-    'Insight Brief — "Judul". Ditulis dalam Graduate Mentorship 2026 ILUNI GPTK FTUI, dibimbing oleh [Nama Mentor], [Jabatan] di [Perusahaan].',
+    'Final Project: Insight Brief — "Judul". Ditulis dalam Graduate Mentorship 2026 ILUNI GPTK FTUI, dibimbing oleh [Nama Mentor], [Jabatan] di [Perusahaan].',
 };
 
 // ---- Bagian 10 — Penilaian & sertifikat ----
 
 export const assessmentComponents: { component: string; weight: string; assessor: string }[] = [
   { component: "Kehadiran & keaktifan sesi", weight: "40%", assessor: "Anchor Mentor" },
-  { component: "Insight Brief", weight: "40%", assessor: "Anchor Mentor + Dewan Juri (10 nominasi teratas)" },
+  { component: "Final Project: Insight Brief", weight: "40%", assessor: "Anchor Mentor + Dewan Juri (10 nominasi teratas)" },
   { component: "Kelengkapan deliverable & publikasi", weight: "20%", assessor: "Otomatis dari checklist" },
 ];
 
 export const certificates: { name: string; requirement: string }[] = [
   { name: "Certificate of Participation", requirement: "Hadir minimal 3 dari 4 sesi" },
-  { name: "Certificate of Completion", requirement: "Hadir minimal 3 sesi + Insight Brief terbit" },
+  { name: "Certificate of Completion", requirement: "Hadir minimal 3 sesi + Final Project terbit" },
   { name: "Certificate of Excellence", requirement: "Completion + terpilih 10 terbaik oleh Dewan Juri" },
 ];
 
@@ -419,10 +421,6 @@ export const bookletFaqs: BookletFaq[] = [
 // ---- Bagian 13 — Penutup halaman ----
 
 export const closing = {
-  // TODO: tautan PDF arsip belum tersedia — jangan ditebak, isi setelah panitia beri link.
-  archivePdfUrl: null as string | null,
-  archivePdfLabel: "Versi arsip — 10 Agustus, sudah tidak berlaku",
-  contactNames: ["Ivan Prasetyadi", "Gyman Mardhiana", "Arif Al-Fath"],
   hashtags: [
     "#ILUNIGPTKFTUI",
     "#GraduateMentorship2026",

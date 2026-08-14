@@ -42,22 +42,29 @@ export function FooterSection() {
               Narahubung
             </p>
             <ul className="space-y-2">
-              {event.contacts.map((c) => (
-                <li key={c.name}>
-                  <a
-                    href={`tel:${c.phone}`}
-                    className="flex items-center gap-2 text-cream/70 hover:text-cream transition-colors text-sm"
-                  >
-                    <Phone
-                      size={13}
-                      className={cn("transition-colors duration-300", accentText)}
-                    />
-                    <span className="font-medium">{c.name}</span>
-                    <span className="text-cream/40">·</span>
-                    <span className="text-cream/60">{c.phone}</span>
-                  </a>
-                </li>
-              ))}
+              {event.contacts.map((c) => {
+                const cleanPhone = c.phone.replace(/^0/, "62").replace(/\D/g, "");
+                const message = `Halo Kak ${c.name}, saya ingin bertanya mengenai program Graduate Mentorship 2026 ILUNI GPTK FTUI.`;
+                const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+                return (
+                  <li key={c.name}>
+                    <a
+                      href={waUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-cream/70 hover:text-cream transition-colors text-sm"
+                    >
+                      <Phone
+                        size={13}
+                        className={cn("transition-colors duration-300", accentText)}
+                      />
+                      <span className="font-medium">{c.name}</span>
+                      <span className="text-cream/40">·</span>
+                      <span className="text-cream/60">{c.phone}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

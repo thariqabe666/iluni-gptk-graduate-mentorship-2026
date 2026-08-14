@@ -1,4 +1,5 @@
-import { bookletIntro, bookletStats } from "@/lib/booklet-data";
+import { Info } from "lucide-react";
+import { bookletIntro, bookletStats, bookletChangeNotice } from "@/lib/booklet-data";
 
 export function OpeningSection() {
   return (
@@ -28,6 +29,13 @@ export function OpeningSection() {
       <p className="max-w-3xl text-base leading-relaxed text-ink/80">
         {bookletIntro.positioning}
       </p>
+
+      <div className="mt-6 flex items-start gap-2.5 rounded-xl border border-ink/15 bg-ink/[0.03] p-3.5 text-xs leading-relaxed text-ink/70">
+        <Info size={16} className="mt-0.5 shrink-0 text-brand-blue" />
+        <span>
+          <strong className="font-semibold text-ink">Catatan:</strong> {bookletChangeNotice}
+        </span>
+      </div>
     </section>
   );
 }

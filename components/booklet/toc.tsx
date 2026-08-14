@@ -13,7 +13,7 @@ const items = [
   { id: "kelompok", label: "Peta 20 Kelompok" },
   { id: "lintas-kelompok", label: "Sesi Lintas Kelompok" },
   { id: "linimasa", label: "Linimasa" },
-  { id: "insight-brief", label: "Insight Brief" },
+  { id: "insight-brief", label: "Final Project: Insight Brief" },
   { id: "penilaian", label: "Penilaian & Sertifikat" },
   { id: "platform", label: "Platform & Peran" },
   { id: "faq", label: "FAQ" },

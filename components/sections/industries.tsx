@@ -29,8 +29,8 @@ export function IndustriesSection() {
           Dua Jalur Mentee
         </h2>
         <p className="text-ink/60 text-base mb-12 max-w-xl">
-          Mentee dibagi ke dua jalur sesuai tahap kariernya — bukan sekadar minat industri — supaya
-          pertanyaan yang dibahas di kelompok memang relevan.
+          Mentee dibagi ke dua jalur sesuai tahap kariernya supaya
+          pertanyaan yang dibahas di kelompok lebih relevan.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
