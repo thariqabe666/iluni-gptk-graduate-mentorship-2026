@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { useAudience } from "@/components/audience-context";
@@ -27,42 +28,35 @@ export function CTASection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <p className="font-heading text-white/70 text-xs font-semibold uppercase tracking-[0.14em] mb-4">
-          {isMentee ? "Mulai Sekarang" : "Bergabung Sebagai Mentor"}
+          Registrasi Ditutup
         </p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6 max-w-2xl mx-auto">
-          {isMentee
-            ? "Siap Memulai Perjalanan Kariermu?"
-            : "Siap Membentuk Generasi Berikutnya?"}
+          Program Sedang Berjalan Menuju Grand Launch
         </h2>
         <p className="text-white/80 text-base mb-10 max-w-xl mx-auto">
-          {isMentee
-            ? "Pendaftaran dibuka 12 Jul – 12 Agu 2026. Gratis, tidak ada syarat khusus selain semangat belajar."
-            : "Pendaftaran mentor dibuka 7 Jul – 7 Agu 2026. Fleksibel, hanya 3 bulan, dampak nyata."}
+          Pendaftaran mentor dan mentee sudah ditutup. Mentor & mentee terpilih diumumkan 18 Agustus,
+          Grand Launch & Onboarding berlangsung 22 Agustus 2026. Info lengkap ada di Booklet Program.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <a
-            href={event.registerLinks[audience]}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/booklet"
             className={cn(
               buttonVariants({ size: "lg" }),
               "rounded-xl border-[1.5px] border-ink bg-white font-heading text-ink font-bold px-10 hover:bg-white/90"
             )}
           >
-            Daftar sebagai {isMentee ? "Mentee" : "Mentor"} →
-          </a>
-          <a
-            href={isMentee ? event.registerLinks.mentor : event.registerLinks.mentee}
-            target="_blank"
-            rel="noopener noreferrer"
+            Baca Booklet Lengkap →
+          </Link>
+          <Link
+            href="/booklet#linimasa"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "rounded-xl border-[1.5px] border-white font-heading text-white bg-transparent hover:bg-white/10 font-bold px-8"
             )}
           >
-            Daftar sebagai {isMentee ? "Mentor" : "Mentee"}
-          </a>
+            Lihat Linimasa
+          </Link>
         </div>
 
         {/* Contact persons */}

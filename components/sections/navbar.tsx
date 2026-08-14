@@ -18,7 +18,7 @@ const navLinks = [
   { href: "#mekanisme", label: "Mekanisme" },
   { href: "#timeline", label: "Timeline" },
   { href: "#faq", label: "FAQ" },
-  { href: "#daftar", label: "Daftar" },
+  { href: "/booklet", label: "Booklet" },
 ];
 
 export function Navbar() {
@@ -106,18 +106,16 @@ export function Navbar() {
             </TabsList>
           </Tabs>
 
-          <a
-            href={event.registerLinks[audience]}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/booklet"
             className={cn(
               buttonVariants({ size: "sm" }),
               "rounded-xl border-[1.5px] border-ink font-heading text-white text-xs font-bold transition-colors duration-300 hidden sm:inline-flex",
               accentBg
             )}
           >
-            Daftar Sekarang
-          </a>
+            Lihat Booklet
+          </Link>
 
           {/* Mobile hamburger */}
           <button
@@ -143,18 +141,17 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={event.registerLinks[audience]}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/booklet"
+            onClick={() => setMobileOpen(false)}
             className={cn(
               buttonVariants({ size: "sm" }),
               "rounded-xl border-[1.5px] border-ink font-heading text-white text-xs font-bold mt-2 transition-colors duration-300",
               accentBg
             )}
           >
-            Daftar Sekarang
-          </a>
+            Lihat Booklet
+          </Link>
         </div>
       )}
     </header>

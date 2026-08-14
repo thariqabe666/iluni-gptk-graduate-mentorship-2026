@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { buttonVariants } from "@/components/ui/button";
 import { useAudience } from "@/components/audience-context";
@@ -61,10 +62,10 @@ export function HeroSection() {
             {copy.heroDescription}
           </p>
 
-          {/* Price note */}
+          {/* Status note */}
           <p className="flex items-center gap-2 text-sm text-cream/50 mb-8">
             <FourPointStar className="w-3 h-3 text-cream/50 shrink-0" />
-            {event.price}
+            Registrasi ditutup · {event.price} · program berjalan menuju Grand Launch 22 Agustus 2026
           </p>
 
           {/* Audience toggle */}
@@ -103,18 +104,16 @@ export function HeroSection() {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={event.registerLinks[audience]}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/booklet"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "rounded-xl border-[1.5px] border-ink font-heading text-white font-bold px-8 transition-colors duration-300",
                 accentBg
               )}
             >
-              Daftar sebagai {isMentee ? "Mentee" : "Mentor"} →
-            </a>
+              Lihat Booklet Lengkap →
+            </Link>
             <a
               href="#tentang"
               className={cn(
