@@ -1,7 +1,7 @@
 "use client";
 
 import { BookletHeader } from "./header";
-import { Toc } from "./toc";
+import { TocDesktop, TocMobile } from "./toc";
 import { OpeningSection } from "./opening";
 import { TracksSection } from "./tracks";
 import { PillarsSection } from "./pillars";
@@ -25,9 +25,10 @@ export function BookletPage() {
     <AudienceContext.Provider value={{ audience: "mentee", setAudience: () => {} }}>
       <div className="booklet-page min-h-screen bg-cream">
         <BookletHeader />
+        <TocMobile />
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex gap-10">
-            <Toc />
+            <TocDesktop />
             <main className="min-w-0 flex-1 divide-y divide-ink/10 py-6">
               <OpeningSection />
               <TracksSection />
@@ -50,3 +51,4 @@ export function BookletPage() {
     </AudienceContext.Provider>
   );
 }
+

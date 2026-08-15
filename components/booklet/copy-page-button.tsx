@@ -112,7 +112,7 @@ export function CopyPageButton({ className }: { className?: string }) {
 
         {/* Dropdown Menu */}
         {menuOpen && (
-          <div className="absolute right-0 top-full z-40 mt-1.5 w-60 rounded-xl border-[1.5px] border-ink bg-cream p-1.5 shadow-xl animate-in fade-in zoom-in-95 duration-150">
+          <div className="absolute left-0 sm:left-auto sm:right-0 top-full z-40 mt-1.5 w-64 max-w-[calc(100vw-2rem)] rounded-xl border-[1.5px] border-ink bg-cream p-1.5 shadow-xl animate-in fade-in zoom-in-95 duration-150">
             <div className="px-2.5 py-1 text-[10px] font-heading font-semibold uppercase tracking-wider text-ink/40">
               Opsi Ekspor Halaman
             </div>
