@@ -60,14 +60,14 @@ export function InsightBriefSection() {
         <div className="mb-3 flex items-center gap-2">
           <AlertTriangle size={18} className="text-brand-red" />
           <p className="font-heading text-sm font-bold uppercase tracking-wide">
-            Aturan Kerahasiaan
+            Catatan Kerahasiaan & Etika Portofolio
           </p>
         </div>
         <p className="mb-4 text-sm leading-relaxed text-cream/85">
           {insightBriefConfidentiality.warning}
         </p>
         <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-cream/50">
-          Penulisan yang benar
+          Saran format penulisan & sitasi
         </p>
         <p className="text-sm italic leading-relaxed text-cream/90">
           {insightBriefConfidentiality.correctCitation}

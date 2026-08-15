@@ -197,7 +197,7 @@ export const groupsGrowing: Group[] = [
     code: "G10",
     track: "Business, Finance & Advisory",
     anchor: { name: "Rayhan Hafidz Ibrahim", org: "Deloitte", role: "Global Trade Advisory Consultant" },
-    coMentor: [{ name: "Vini Paramita Afriadi", org: "Clarichem Indonesia / Kimia Makmur Sentosa", role: "Finance & Direktur" }],
+    coMentor: [{ name: "Wong TjinTak", org: "Protelindo", role: "CIO" }],
     count: 4,
   },
 ];
@@ -269,10 +269,10 @@ export const groupsEntering: Group[] = [
   {
     code: "E10",
     track: "Wirausaha, Bisnis & Arah Karier",
-    anchor: { name: "Wong TjinTak", org: "Protelindo", role: "CIO" },
+    anchor: { name: "Adi Khafidh Persada", org: "Agnitek Tetra Energi", role: "Direktur" },
     coMentor: [
       { name: "Muhammad Yusuf Arya Ramadhan", org: "WearaTech", role: "CTO" },
-      { name: "Adi Khafidh Persada", org: "Agnitek Tetra Energi", role: "Direktur" },
+      { name: "Vini Paramita Afriadi", org: "Kimia Makmur Sentosa / Clarichem Indonesia", role: "Direktur" },
     ],
     count: 7,
   },
@@ -343,7 +343,7 @@ export const insightBriefLength = "600–900 kata, dipublikasikan di LinkedIn, d
 
 export const insightBriefConfidentiality = {
   warning:
-    'Final Project dikerjakan memakai data publik. Mentor memberi problem statement, bukan data internal perusahaan. Mentee tidak boleh mencantumkan "Project for [nama perusahaan mentor]" di CV atau LinkedIn — tidak pernah ada hubungan kerja dengan perusahaan tersebut, dan klaim itu bisa terbongkar saat pemeriksaan latar belakang.',
+    'Secara umum, Final Project disarankan menggunakan data publik atau studi kasus terbuka, di mana mentor memberikan problem statement tanpa mewajibkan data internal perusahaan. Namun, jika mentor dan perusahaan terkait berkenan memberikan tantangan atau proyek nyata, hal tersebut dibebaskan sesuai kesepakatan bersama. Sebagai kehati-hatian etika profesional, mentee disarankan tidak mengklaim hubungan kerja resmi (seperti "Project for [Perusahaan]") di CV atau LinkedIn kecuali atas persetujuan resmi perusahaan, guna menghindari kerancuan saat background check.',
   correctCitation:
     'Final Project: Insight Brief — "Judul". Ditulis dalam Graduate Mentorship 2026 ILUNI GPTK FTUI, dibimbing oleh [Nama Mentor], [Jabatan] di [Perusahaan].',
 };

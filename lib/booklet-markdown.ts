@@ -155,10 +155,10 @@ ${insightBriefParts.map((part) => `- **${part.title}** (${part.length}): ${part.
 - **${insightBriefVariants.a.label}:** ${insightBriefVariants.a.desc}
 - **${insightBriefVariants.b.label}:** ${insightBriefVariants.b.desc}
 
-### Aturan Kerahasiaan & Format Sitasi:
-> ⚠️ **Penting:** ${insightBriefConfidentiality.warning}
+### Catatan Kerahasiaan & Format Sitasi:
+> ⚠️ **Perhatian & Saran:** ${insightBriefConfidentiality.warning}
 
-**Format Sitasi Resmi:**
+**Saran Format Sitasi:**
 \`\`\`text
 ${insightBriefConfidentiality.correctCitation}
 \`\`\`
