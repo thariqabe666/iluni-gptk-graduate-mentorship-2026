@@ -10,7 +10,7 @@ export const event = {
   },
   stats: {
     mentorsJoined: 41,
-    menteesEnrolled: 103,
+    menteesEnrolled: 105,
     groupsCount: 20,
     industryTracks: 5,
     durationMonths: 3,
@@ -163,26 +163,26 @@ export const industries = [
   {
     icon: "Send",
     label: "Entering the Industry",
-    count: "54 Mentee",
+    count: "55 Mentee",
     desc: "Fresh graduate yang belum bekerja penuh atau sedang dalam program magang/internship.",
   },
   {
     icon: "Cog",
     label: "Growing in the Industry",
-    count: "49 Mentee",
+    count: "50 Mentee",
     desc: "Alumni muda yang sudah bekerja tetap dan ingin mengakselerasi jenjang kariernya.",
   },
 ] as const;
 
 export const pairingScheme = {
   ratio: "20 Kelompok · 1 Anchor Mentor + 1 Co-Mentor",
-  note: "103 mentee dan 41 mentor terbagi ke 20 kelompok kecil per jalur & minat industri. Tiap kelompok punya 1 Anchor Mentor yang mendampingi penuh dan 1 Co-Mentor sebagai partner pendamping untuk memperdalam silaturahmi, memperkuat bimbingan, serta pendalaman teknis.",
+  note: "105 mentee dan 41 mentor terbagi ke 20 kelompok kecil per jalur & minat industri. Tiap kelompok punya 1 Anchor Mentor yang mendampingi penuh dan 1 Co-Mentor sebagai partner pendamping untuk memperdalam silaturahmi, memperkuat bimbingan, serta pendalaman teknis.",
 };
 
 export const timeline = [
   { phase: "Pendaftaran Mentor", date: "7 Jul – 7 Agu 2026", status: "completed", note: "Selesai" },
   { phase: "Pendaftaran Mentee", date: "12 Jul – 12 Agu 2026", status: "completed", note: "Selesai" },
-  { phase: "Pengumuman Kelompok", date: "18 Agu 2026", status: "completed", note: "103 Mentee / 20 Kelompok" },
+  { phase: "Pengumuman Kelompok", date: "18 Agu 2026", status: "completed", note: "105 Mentee / 20 Kelompok" },
   { phase: "Grand Launch & Onboarding", date: "22 Agu 2026", status: "upcoming", note: "Hybrid — Jakarta + Zoom" },
   { phase: "Periode Mentoring", date: "20 Agu – 20 Nov 2026", status: "upcoming", note: "~3 bulan, fleksibel" },
   { phase: "Closing Ceremony", date: "22 Nov 2026", status: "upcoming", note: "Offline / Onsite" },

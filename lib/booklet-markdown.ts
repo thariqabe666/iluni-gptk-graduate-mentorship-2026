@@ -11,8 +11,11 @@ import {
   mentorRoles,
   groupsGrowing,
   groupsEntering,
-  crossGroupSessions,
-  crossGroupNote,
+  thematicSessions,
+  thematicSessionsNote,
+  thematicHowTo,
+  thematicQuotaNote,
+  thematicOptionalNote,
   bookletTimeline,
   bookletTimelineNote,
   insightBriefParts,
@@ -20,8 +23,11 @@ import {
   insightBriefLength,
   insightBriefConfidentiality,
   assessmentComponents,
+  assessmentKuliahUmumNote,
   certificates,
   platform,
+  platformToolsNote,
+  classroomJoin,
   bookletFaqs,
   closing,
   Group,
@@ -94,7 +100,7 @@ ${pillars
 ## 3. Empat Lapis Kegiatan
 
 ${activityLayers
-  .map((layer, i) => `${i + 1}. **${layer.name}**: ${layer.desc}`)
+  .map((layer, i) => `${i + 1}. **${layer.name}** (${layer.type} · ${layer.wajib} · ${layer.dinilai}): ${layer.desc}`)
   .join("\n")}
 
 ---
@@ -120,15 +126,22 @@ ${formatGroupTable(groupsEntering)}
 
 ---
 
-## 6. Sesi Lintas Kelompok
+## 6. Sesi Tematik Terbuka
 
 | Sesi | Peserta Sasaran | Narasumber & Mentor |
 |:---|:---|:---|
-${crossGroupSessions
+${thematicSessions
   .map((s) => `| **${s.name}** | ${s.audience} | ${s.speakers} |`)
   .join("\n")}
 
-> 📌 **Catatan:** ${crossGroupNote}
+> 📌 **Catatan:** ${thematicSessionsNote}
+
+### Cara Mendaftar
+${thematicHowTo.map((step, i) => `${i + 1}. **${step.title}** — ${step.desc}`).join("\n")}
+
+> ${thematicQuotaNote}
+>
+> ${thematicOptionalNote}
 
 ---
 
@@ -172,6 +185,8 @@ ${insightBriefConfidentiality.correctCitation}
 |:---|:---:|:---|
 ${assessmentComponents.map((c) => `| ${c.component} | ${c.weight} | ${c.assessor} |`).join("\n")}
 
+> ℹ️ ${assessmentKuliahUmumNote}
+
 ### Kategori Sertifikat:
 ${certificates.map((cert) => `- **${cert.name}**: ${cert.requirement}`).join("\n")}
 
@@ -180,6 +195,10 @@ ${certificates.map((cert) => `- **${cert.name}**: ${cert.requirement}`).join("\n
 ## 10. Platform & Peran
 
 ${platform.map((p) => `- **${p.name}**: ${p.desc}`).join("\n")}
+
+> ${platformToolsNote}
+
+**${classroomJoin.label}:** ${classroomJoin.code}
 
 ---
 

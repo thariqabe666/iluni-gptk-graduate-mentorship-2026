@@ -5,9 +5,9 @@
  */
 
 export const BOOKLET_VERSION = {
-  label: "Versi 14 Agustus 2026",
-  revision: "rev.6",
-  updatedAt: "2026-08-14",
+  label: "Versi 17 Agustus 2026",
+  revision: "rev.10",
+  updatedAt: "2026-08-17",
 };
 
 export const bookletTruthNote =
@@ -28,7 +28,7 @@ export const bookletIntro = {
 };
 
 export const bookletStats: { value: string; label: string }[] = [
-  { value: "103", label: "Mentee aktif" },
+  { value: "105", label: "Mentee aktif" },
   { value: "41", label: "Mentor" },
   { value: "20", label: "Kelompok mentoring" },
   { value: "2", label: "Jalur karier" },
@@ -40,12 +40,12 @@ export const bookletStats: { value: string; label: string }[] = [
 export const tracks = {
   entering: {
     name: "Entering the Industry",
-    count: 54,
+    count: 55,
     desc: "Belum bekerja penuh atau sedang magang. Pertanyaan khasnya: bagaimana masuk ke industri tujuan, kompetensi apa yang menentukan, jalur rekrutmen seperti apa.",
   },
   growing: {
     name: "Growing in the Industry",
-    count: 49,
+    count: 50,
     desc: "Sudah atau pernah bekerja full-time/kontrak. Pertanyaan khasnya: bagaimana naik ke tahap berikutnya, mengelola stakeholder, memilih spesialisasi.",
   },
   placementRules: [
@@ -82,21 +82,33 @@ export const pillarsPrinciple =
 
 // ---- Bagian 4 — Empat lapis kegiatan ----
 
-export const activityLayers: { name: string; desc: string }[] = [
+export const activityLayers: { name: string; type: string; wajib: string; dinilai: string; desc: string }[] = [
   {
     name: "Kuliah Umum",
-    desc: "Seluruh 103 mentee. KU1 Know Your Compass, KU2 Steer the Ship, KU3 Panel Jalur Karier Alternatif.",
+    type: "INTI",
+    wajib: "Wajib 3 sesi",
+    dinilai: "Dinilai 10%",
+    desc: "Seluruh 105 mentee. KU1 Know Your Compass, KU2 Steer the Ship, KU3 Panel Jalur Karier Alternatif.",
   },
   {
     name: "Group Mentoring",
+    type: "INTI",
+    wajib: "Minimal 4 sesi",
+    dinilai: "Dinilai 35%",
     desc: "Inti program. Minimal 4 sesi, 60–90 menit, daring/luring/hybrid sesuai kesepakatan kelompok.",
   },
   {
-    name: "Sesi Lintas Kelompok",
-    desc: "Empat sesi tematik untuk permintaan yang tersebar di banyak kelompok.",
+    name: "Sesi Tematik Terbuka",
+    type: "OPSIONAL",
+    wajib: "Tidak wajib",
+    dinilai: "Tidak dinilai",
+    desc: "Dua sesi tematik untuk permintaan yang tersebar di banyak kelompok.",
   },
   {
     name: "Individual Mentoring",
+    type: "OPSIONAL",
+    wajib: "Tidak wajib",
+    dinilai: "Tidak dinilai",
     desc: "Opsional, menyesuaikan permintaan mentee dan kesediaan mentor.",
   },
 ];
@@ -115,7 +127,7 @@ export const mentorRoles = {
   rationale:
     "Kenapa dibuat anchor + co-mentor: silaturahmi menjadi lebih kuat, ilmu bisa dibagi dari lebih banyak sudut pandang, dan pengerjaan tugas menjadi lebih mudah",
   composition:
-    "20 Anchor + 21 Co-Mentor = 41 mentor. Seluruh mentor memegang kelompok. Peran kuliah umum, panel, narasumber sesi lintas kelompok, dan dewan juri bersifat tambahan di atas peran kelompok.",
+    "20 Anchor + 21 Co-Mentor = 41 mentor. Seluruh mentor memegang kelompok. Peran kuliah umum, panel, narasumber sesi tematik, dan dewan juri bersifat tambahan di atas peran kelompok.",
 };
 
 // ---- Bagian 6 — Peta 20 kelompok ----
@@ -135,7 +147,7 @@ export const groupsGrowing: Group[] = [
     track: "Process Safety — Sisi Operator",
     anchor: { name: "Bugi Setiadi", org: "bp", role: "Process & Process Safety Engineering Team Lead" },
     coMentor: [{ name: "Fakhrian Abqari", org: "QatarEnergy", role: "Sr. Process Safety Engineer" }],
-    count: 5,
+    count: 4,
   },
   {
     code: "G2",
@@ -149,7 +161,7 @@ export const groupsGrowing: Group[] = [
     track: "O&G Operations & Karier Global",
     anchor: { name: "Rieski Anna Dewi", org: "ExxonMobil Papua New Guinea", role: "Manager Operations Support" },
     coMentor: [{ name: "Khofiful Walidani", org: "Pertamina Hulu Mahakam", role: "Engineer Process" }],
-    count: 5,
+    count: 6,
   },
   {
     code: "G4",
@@ -198,7 +210,7 @@ export const groupsGrowing: Group[] = [
     track: "Business, Finance & Advisory",
     anchor: { name: "Rayhan Hafidz Ibrahim", org: "Deloitte", role: "Global Trade Advisory Consultant" },
     coMentor: [{ name: "Wong TjinTak", org: "Protelindo", role: "CIO" }],
-    count: 4,
+    count: 5,
   },
 ];
 
@@ -236,7 +248,7 @@ export const groupsEntering: Group[] = [
     track: "Energy & Engineering Consultancy",
     anchor: { name: "Jayusandi Mulya Sentosa", org: "Meinhardt Indonesia", role: "Process Engineer" },
     coMentor: [{ name: "Justin Edgar", org: "Beca (Bimatekno Karyatama Konsultan)", role: "Process Engineer" }],
-    count: 5,
+    count: 6,
   },
   {
     code: "E6",
@@ -272,15 +284,15 @@ export const groupsEntering: Group[] = [
     anchor: { name: "Adi Khafidh Persada", org: "Agnitek Tetra Energi", role: "Direktur" },
     coMentor: [
       { name: "Muhammad Yusuf Arya Ramadhan", org: "WearaTech", role: "CTO" },
-      { name: "Vini Paramita Afriadi", org: "Kimia Makmur Sentosa / Clarichem Indonesia", role: "Direktur" },
+      { name: "Vini Paramita Afriadi", org: "Clarichem Indonesia / Kimia Makmur Sentosa", role: "Finance & Direktur" },
     ],
     count: 7,
   },
 ];
 
-// ---- Bagian 7 — Empat sesi lintas kelompok ----
+// ---- Bagian 7 — Sesi Tematik Terbuka ----
 
-export const crossGroupSessions: { name: string; audience: string; speakers: string }[] = [
+export const thematicSessions: { name: string; audience: string; speakers: string }[] = [
   {
     name: "Karier & Kerja di Luar Negeri",
     audience: "8 mentee dari 6 kelompok",
@@ -291,20 +303,31 @@ export const crossGroupSessions: { name: string; audience: string; speakers: str
     audience: "7 mentee dari 7 kelompok",
     speakers: "11 mentor, termasuk yang menempuh S2 sambil bekerja",
   },
+];
+
+export const thematicSessionsNote =
+  "Sesi tematik terbuka tidak menggantikan minimal 4 sesi kelompok wajib.";
+
+export const thematicHowTo: { title: string; desc: string }[] = [
   {
-    name: "Gabungan Process Safety (G1 + G2)",
-    audience: "10 mentee + tamu dari E5",
-    speakers: "4 praktisi Process Safety senior",
+    title: "Minat awal — dibuka di Grand Launch, 22 Agustus",
+    desc: "Satu formulir, dua centang, tanpa komitmen. Hanya untuk memperkirakan jumlah dan memilih narasumber.",
   },
   {
-    name: "Gabungan O&G Jalur Masuk (E1 + E2)",
-    audience: "11 mentee",
-    speakers: "Ismail Ghulam (bp) sebagai narasumber tamu",
+    title: "Konfirmasi — H-10 sebelum sesi",
+    desc: "Peserta yang menyatakan minat menerima tautan konfirmasi dan wajib menuliskan satu pertanyaan yang ingin dijawab di sesi. Tanpa pertanyaan, pendaftaran tidak dihitung.",
+  },
+  {
+    title: "Undangan kalender — H-7",
+    desc: "Peserta terkonfirmasi menerima undangan Google Calendar berisi tautan Zoom.",
   },
 ];
 
-export const crossGroupNote =
-  "Sesi lintas kelompok tidak menggantikan minimal 4 sesi kelompok.";
+export const thematicQuotaNote =
+  "Sesi digelar bila terkumpul minimal 10 pendaftar terkonfirmasi. Di bawah itu, panitia menghubungkan pendaftar langsung ke narasumber yang relevan. Pertanyaan yang masuk dikirim ke narasumber sebelum sesi, jadi paparannya menjawab pertanyaan nyata — bukan materi umum.";
+
+export const thematicOptionalNote =
+  "Sesi ini opsional dan tidak dinilai. Tidak ikut tidak mengurangi nilai apa pun. Seluruh sesi direkam dan rekamannya dibagikan ke seluruh peserta, termasuk yang tidak mendaftar.";
 
 // ---- Bagian 8 — Linimasa ----
 
@@ -351,10 +374,14 @@ export const insightBriefConfidentiality = {
 // ---- Bagian 10 — Penilaian & sertifikat ----
 
 export const assessmentComponents: { component: string; weight: string; assessor: string }[] = [
-  { component: "Kehadiran & keaktifan sesi", weight: "40%", assessor: "Anchor Mentor" },
-  { component: "Final Project: Insight Brief", weight: "40%", assessor: "Anchor Mentor + Dewan Juri (10 nominasi teratas)" },
-  { component: "Kelengkapan deliverable & publikasi", weight: "20%", assessor: "Otomatis dari checklist" },
+  { component: "Kehadiran & keaktifan sesi kelompok", weight: "35%", assessor: "Anchor Mentor" },
+  { component: "Kehadiran Kuliah Umum", weight: "10%", assessor: "Panitia" },
+  { component: "Insight Brief", weight: "40%", assessor: "Anchor Mentor + Dewan Juri (10 nominasi teratas)" },
+  { component: "Kelengkapan deliverable & publikasi", weight: "15%", assessor: "Otomatis dari checklist" },
 ];
+
+export const assessmentKuliahUmumNote =
+  "Tiap Kuliah Umum bernilai 3,33%. Hadir langsung memperoleh nilai penuh. Berhalangan hadir tetap bisa memperoleh 70% dengan menonton rekaman dan mengisi refleksi tiga kalimat dalam 7 hari — ketentuan ini ada karena sebagian peserta dan mentor berada di zona waktu Qatar, UEA, Melbourne, dan Papua Nugini.";
 
 export const certificates: { name: string; requirement: string }[] = [
   { name: "Certificate of Participation", requirement: "Hadir minimal 3 dari 4 sesi" },
@@ -367,17 +394,30 @@ export const certificates: { name: string; requirement: string }[] = [
 export const platform: { name: string; desc: string }[] = [
   {
     name: "WhatsApp Community",
-    desc: "20 subgrup — satu siaran sampai ke seluruh peserta, tiap kelompok tetap punya ruang sendiri.",
+    desc: "20 subgrup — pengumuman dan koordinasi harian. Satu siaran sampai ke seluruh peserta, tiap kelompok tetap punya ruang sendiri.",
   },
   {
     name: "Google Classroom",
-    desc: "Materi, penugasan, dan pengingat tenggat otomatis.",
+    desc: "Materi, penugasan, tenggat, rekaman, dan nilai. Satu kelas berisi seluruh peserta; tiap kelompok punya Topic sendiri.",
+  },
+  {
+    name: "Google Form",
+    desc: "Pendaftaran Sesi Tematik dan penilaian akhir Anchor Mentor.",
   },
   {
     name: "Group Coordinator",
-    desc: "Satu mentee per kelompok, dipilih saat Group Huddle di Grand Launch. Tugasnya menjadwalkan sesi, mengingatkan anggota, dan melapor ke panitia. Panitia berhubungan dengan 20 koordinator, bukan 103 mentee.",
+    desc: "Satu mentee per kelompok, dipilih saat Group Huddle di Grand Launch. Tugasnya menjadwalkan sesi, mengingatkan anggota, dan melapor ke panitia. Panitia berhubungan dengan 20 koordinator, bukan 105 mentee.",
   },
 ];
+
+export const platformToolsNote =
+  "Seluruh penugasan dan pengumpulan dilakukan di Google Classroom, kecuali pendaftaran Sesi Tematik dan penilaian akhir yang memakai Google Form.";
+
+export const classroomJoin = {
+  label: "Gabung Google Classroom",
+  code: "TODO: kode kelas belum tersedia",
+  url: "",
+};
 
 // ---- Bagian 12 — FAQ ----
 
@@ -402,7 +442,11 @@ export const bookletFaqs: BookletFaq[] = [
   },
   {
     q: "Bisakah saya ikut sesi kelompok lain?",
-    a: "Untuk tema yang tersebar — kerja di luar negeri, studi lanjut S2, process safety — sudah disediakan sesi lintas kelompok yang terbuka. Di luar itu, sampaikan ke Anchor Mentor.",
+    a: "Untuk tema yang tersebar — kerja di luar negeri dan studi lanjut S2 — sudah disediakan Sesi Tematik Terbuka. Di luar itu, sampaikan ke Anchor Mentor.",
+  },
+  {
+    q: "Topik yang saya minta tidak ada di kelompok saya. Bagaimana?",
+    a: "Sampaikan ke Anchor Mentor. Anchor bisa mengundang mentor lain sebagai narasumber tamu di salah satu sesi kelompok — ini keputusan Anchor, tidak perlu lewat panitia.",
   },
   {
     q: "Apakah program ini menjamin pekerjaan?",
@@ -415,6 +459,10 @@ export const bookletFaqs: BookletFaq[] = [
   {
     q: "Apakah program ini berbayar?",
     a: "Tidak. Gratis sepenuhnya.",
+  },
+  {
+    q: "Saya tidak bisa gabung Classroom pakai email kampus/kantor.",
+    a: "Gunakan akun Gmail pribadi. Akun Google Workspace institusi tidak bisa bergabung ke kelas lintas domain.",
   },
 ];
 

@@ -54,7 +54,7 @@ export function CTASection() {
               </h2>
 
               <p className="text-white/90 text-sm sm:text-base leading-relaxed max-w-xl mb-8">
-                Selamat kepada 103 mentee dan 41 mentor terpilih! Panduan teknis, silabus bimbingan, serta jadwal lengkap setiap sesi tersedia di Booklet Program.
+                Selamat kepada 105 mentee dan 41 mentor terpilih! Panduan teknis, silabus bimbingan, serta jadwal lengkap setiap sesi tersedia di Booklet Program.
               </p>
 
               {/* Action Buttons */}

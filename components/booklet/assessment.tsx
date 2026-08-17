@@ -1,5 +1,6 @@
+import { Info } from "lucide-react";
 import { SectionHeading } from "./section-heading";
-import { assessmentComponents, certificates } from "@/lib/booklet-data";
+import { assessmentComponents, assessmentKuliahUmumNote, certificates } from "@/lib/booklet-data";
 
 export function AssessmentSection() {
   return (
@@ -31,6 +32,11 @@ export function AssessmentSection() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="mb-8 flex items-start gap-2.5 rounded-xl border border-ink/15 bg-ink/[0.03] p-3.5 text-xs sm:text-sm leading-relaxed text-ink/70">
+        <Info size={16} className="mt-0.5 shrink-0 text-brand-blue" />
+        <span>{assessmentKuliahUmumNote}</span>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-3">

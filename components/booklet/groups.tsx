@@ -12,14 +12,14 @@ const trackMeta: Record<TrackKey, { label: string; groups: Group[]; total: numbe
   entering: {
     label: "Entering",
     groups: groupsEntering,
-    total: 54,
+    total: 55,
     accent: "text-brand-red",
     border: "border-brand-red",
   },
   growing: {
     label: "Growing",
     groups: groupsGrowing,
-    total: 49,
+    total: 50,
     accent: "text-brand-blue",
     border: "border-brand-blue",
   },

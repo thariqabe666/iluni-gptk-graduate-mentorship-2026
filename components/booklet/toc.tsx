@@ -13,7 +13,7 @@ export const tocItems = [
   { id: "empat-lapis", num: "04", label: "Empat Lapis Kegiatan" },
   { id: "anchor-co-mentor", num: "05", label: "Anchor & Co-Mentor" },
   { id: "kelompok", num: "06", label: "Peta 20 Kelompok" },
-  { id: "lintas-kelompok", num: "07", label: "Sesi Lintas Kelompok" },
+  { id: "sesi-tematik", num: "07", label: "Sesi Tematik Terbuka" },
   { id: "linimasa", num: "08", label: "Linimasa" },
   { id: "insight-brief", num: "09", label: "Final Project: Insight Brief" },
   { id: "penilaian", num: "10", label: "Penilaian & Sertifikat" },
