@@ -5,6 +5,7 @@ import { Plus } from "lucide-react";
 import { useAudience } from "@/components/audience-context";
 import { faqs, faqCategories, type FaqCategory } from "@/lib/data";
 import { FourPointStar } from "@/components/shapes";
+import { cn } from "@/lib/utils";
 
 type Filter = FaqCategory | "all";
 
