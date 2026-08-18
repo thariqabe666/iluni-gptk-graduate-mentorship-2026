@@ -5,9 +5,9 @@
  */
 
 export const BOOKLET_VERSION = {
-  label: "Versi 17 Agustus 2026",
-  revision: "rev.10",
-  updatedAt: "2026-08-17",
+  label: "Versi 18 Agustus 2026",
+  revision: "rev.11",
+  updatedAt: "2026-08-18",
 };
 
 export const bookletTruthNote =
@@ -28,8 +28,8 @@ export const bookletIntro = {
 };
 
 export const bookletStats: { value: string; label: string }[] = [
-  { value: "105", label: "Mentee aktif" },
-  { value: "41", label: "Mentor" },
+  { value: "106", label: "Mentee aktif" },
+  { value: "42", label: "Mentor" },
   { value: "20", label: "Kelompok mentoring" },
   { value: "2", label: "Jalur karier" },
   { value: "3", label: "Bulan program" },
@@ -45,7 +45,7 @@ export const tracks = {
   },
   growing: {
     name: "Growing in the Industry",
-    count: 50,
+    count: 51,
     desc: "Sudah atau pernah bekerja full-time/kontrak. Pertanyaan khasnya: bagaimana naik ke tahap berikutnya, mengelola stakeholder, memilih spesialisasi.",
   },
   placementRules: [
@@ -88,7 +88,7 @@ export const activityLayers: { name: string; type: string; wajib: string; dinila
     type: "INTI",
     wajib: "Wajib 3 sesi",
     dinilai: "Dinilai 10%",
-    desc: "Seluruh 105 mentee. KU1 Know Your Compass, KU2 Steer the Ship, KU3 Panel Jalur Karier Alternatif.",
+    desc: "Seluruh 106 mentee. KU1 Know Your Compass, KU2 Steer the Ship, KU3 Panel Jalur Karier Alternatif.",
   },
   {
     name: "Group Mentoring",
@@ -127,7 +127,7 @@ export const mentorRoles = {
   rationale:
     "Kenapa dibuat anchor + co-mentor: silaturahmi menjadi lebih kuat, ilmu bisa dibagi dari lebih banyak sudut pandang, dan pengerjaan tugas menjadi lebih mudah",
   composition:
-    "20 Anchor + 21 Co-Mentor = 41 mentor. Seluruh mentor memegang kelompok. Peran kuliah umum, panel, narasumber sesi tematik, dan dewan juri bersifat tambahan di atas peran kelompok.",
+    "20 Anchor + 22 Co-Mentor = 42 mentor. Seluruh mentor memegang kelompok. Peran kuliah umum, panel, narasumber sesi tematik, dan dewan juri bersifat tambahan di atas peran kelompok.",
 };
 
 // ---- Bagian 6 — Peta 20 kelompok ----
@@ -210,7 +210,7 @@ export const groupsGrowing: Group[] = [
     track: "Business, Finance & Advisory",
     anchor: { name: "Rayhan Hafidz Ibrahim", org: "Deloitte", role: "Global Trade Advisory Consultant" },
     coMentor: [{ name: "Wong TjinTak", org: "Protelindo", role: "CIO" }],
-    count: 5,
+    count: 6,
   },
 ];
 
@@ -226,7 +226,10 @@ export const groupsEntering: Group[] = [
     code: "E2",
     track: "O&G Upstream, Drilling & Well Operations — Jalur Masuk",
     anchor: { name: "Muhammad Asyri Nugraha Hidayatullah", org: "ADNOC Offshore", role: "Well Operations Supervisor" },
-    coMentor: [{ name: "Afriandi Eka Prasetya", org: "SKK Migas", role: "Kepala Kelompok Kerja Keteknikan Kerja Ulang & Perawatan Sumur" }],
+    coMentor: [
+      { name: "Afriandi Eka Prasetya", org: "SKK Migas", role: "Kepala Kelompok Kerja Keteknikan Kerja Ulang & Perawatan Sumur" },
+      { name: "Muhammad Arif Alfat", org: "PT Pertamina Hulu Mahakam", role: "Sr Engineer Surface Facility" },
+    ],
     count: 5,
   },
   {
@@ -290,6 +293,9 @@ export const groupsEntering: Group[] = [
   },
 ];
 
+export const groupsAssignmentNote =
+  "Susunan Anchor Mentor dan Co-Mentor pada tiap kelompok masih dapat berubah, menyesuaikan kesepakatan internal lebih lanjut antar mentor.";
+
 // ---- Bagian 7 — Sesi Tematik Terbuka ----
 
 export const thematicSessions: { name: string; audience: string; speakers: string }[] = [
@@ -308,9 +314,12 @@ export const thematicSessions: { name: string; audience: string; speakers: strin
 export const thematicSessionsNote =
   "Sesi tematik terbuka tidak menggantikan minimal 4 sesi kelompok wajib.";
 
+export const thematicMoreTopicsNote =
+  "Sesi Tematik Terbuka tidak terbatas pada dua topik di atas — topik tambahan dapat dibuka kemudian berdasarkan hasil diskusi mentor-mentee di masing-masing kelompok.";
+
 export const thematicHowTo: { title: string; desc: string }[] = [
   {
-    title: "Minat awal — dibuka di Grand Launch, 22 Agustus",
+    title: "Minat awal — dibuka di Grand Launch, 25 Agustus",
     desc: "Satu formulir, dua centang, tanpa komitmen. Hanya untuk memperkirakan jumlah dan memilih narasumber.",
   },
   {
@@ -334,8 +343,8 @@ export const thematicOptionalNote =
 export const bookletTimeline: { date: string; label: string; highlight?: boolean }[] = [
   { date: "12 Agustus 2026", label: "Pendaftaran mentee ditutup" },
   { date: "18 Agustus 2026", label: "Pengumuman mentor, mentee, dan pembagian kelompok" },
-  { date: "19 Agustus 2026", label: "Mentor Briefing (daring, 60 menit, direkam)" },
-  { date: "22 Agustus 2026", label: "Grand Launch & Onboarding (hybrid, Jakarta + Zoom)", highlight: true },
+  { date: "20 Agustus 2026", label: "Mentor Briefing (daring, 60 menit, direkam)" },
+  { date: "25 Agustus 2026", label: "Grand Launch & Onboarding (hybrid, Jakarta + Zoom)", highlight: true },
   { date: "25–31 Agustus 2026", label: "Sesi 1 tiap kelompok" },
   { date: "20 Agustus – 20 November 2026", label: "Periode mentoring resmi" },
   { date: "Pertengahan September", label: "Kuliah Umum 2 — Steer the Ship" },
@@ -345,7 +354,7 @@ export const bookletTimeline: { date: string; label: string; highlight?: boolean
 ];
 
 export const bookletTimelineNote =
-  "Tanggal onboarding bergeser dari 17 ke 22 Agustus karena 14–17 Agustus adalah libur panjang sekaligus HUT RI. Periode mentoring resmi tidak berubah.";
+  "Mentor Briefing bergeser dari 19 ke 20 Agustus, dan Grand Launch bergeser dari 22 ke 25 Agustus. Periode mentoring resmi tidak berubah.";
 
 // ---- Bagian 9 — Final Project: Insight Brief ----
 
@@ -406,7 +415,7 @@ export const platform: { name: string; desc: string }[] = [
   },
   {
     name: "Group Coordinator",
-    desc: "Satu mentee per kelompok, dipilih saat Group Huddle di Grand Launch. Tugasnya menjadwalkan sesi, mengingatkan anggota, dan melapor ke panitia. Panitia berhubungan dengan 20 koordinator, bukan 105 mentee.",
+    desc: "Satu mentee per kelompok, dipilih saat Group Huddle di Grand Launch. Tugasnya menjadwalkan sesi, mengingatkan anggota, dan melapor ke panitia. Panitia berhubungan dengan 20 koordinator, bukan 106 mentee.",
   },
 ];
 

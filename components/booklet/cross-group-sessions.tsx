@@ -6,6 +6,7 @@ import { SectionHeading } from "./section-heading";
 import {
   thematicSessions,
   thematicSessionsNote,
+  thematicMoreTopicsNote,
   thematicHowTo,
   thematicQuotaNote,
   thematicOptionalNote,
@@ -39,7 +40,8 @@ export function CrossGroupSessionsSection() {
           </div>
         ))}
       </div>
-      <p className="mb-8 text-sm italic text-ink/60">{thematicSessionsNote}</p>
+      <p className="mb-2 text-sm italic text-ink/60">{thematicSessionsNote}</p>
+      <p className="mb-8 text-sm italic text-ink/60">{thematicMoreTopicsNote}</p>
 
       <p className="mb-4 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-brand-red">
         Cara Mendaftar

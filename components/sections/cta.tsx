@@ -7,11 +7,8 @@ import { useAudience } from "@/components/audience-context";
 import { event } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import {
-  Pinwheel,
-  FourPointStar,
   Burst,
   FanArches,
-  Quatrefoil,
   ShapeCollage,
 } from "@/components/shapes";
 
@@ -20,7 +17,6 @@ export function CTASection() {
   const isMentee = audience === "mentee";
 
   const accentBg = isMentee ? "bg-brand-red" : "bg-brand-blue";
-  const accentText = isMentee ? "text-brand-red" : "text-brand-blue";
 
   return (
     <section
@@ -44,7 +40,7 @@ export function CTASection() {
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/25 text-white font-heading text-xs font-bold uppercase tracking-wider mb-6">
                 <Sparkles size={14} />
-                <span>Grand Launch & Onboarding · 22 Agustus 2026</span>
+                <span>Grand Launch & Onboarding · 25 Agustus 2026</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.96] mb-4">
@@ -54,7 +50,7 @@ export function CTASection() {
               </h2>
 
               <p className="text-white/90 text-sm sm:text-base leading-relaxed max-w-xl mb-8">
-                Selamat kepada 105 mentee dan 41 mentor terpilih! Panduan teknis, silabus bimbingan, serta jadwal lengkap setiap sesi tersedia di Booklet Program.
+                Selamat kepada 106 mentee dan 42 mentor terpilih! Panduan teknis, silabus bimbingan, serta jadwal lengkap setiap sesi tersedia di Booklet Program.
               </p>
 
               {/* Action Buttons */}

@@ -13,7 +13,6 @@ import {
   GearStar,
   FourPointStar,
   InfinityMark,
-  IluniRoofLogo,
 } from "@/components/shapes";
 import { Logo } from "@/components/logo";
 
@@ -24,7 +23,6 @@ export function HeroSection() {
 
   const accentBg = isMentee ? "bg-brand-red" : "bg-brand-blue";
   const accentText = isMentee ? "text-brand-red" : "text-brand-blue";
-  const accentBorder = isMentee ? "border-brand-red" : "border-brand-blue";
 
   return (
     <section
@@ -165,7 +163,7 @@ export function HeroSection() {
               <div className="flex flex-wrap items-center gap-2 text-xs text-cream/60 mb-6 bg-cream/5 border border-cream/10 rounded-2xl px-4 py-2.5 w-fit">
                 <FourPointStar className={cn("w-3.5 h-3.5 shrink-0", accentText)} />
                 <span>
-                  Registrasi ditutup · {event.price} · Grand Launch 22 Agustus 2026
+                  Registrasi ditutup · {event.price} · Grand Launch 25 Agustus 2026
                 </span>
               </div>
 

@@ -4,8 +4,7 @@ import { useMemo, useState } from "react";
 import { Plus } from "lucide-react";
 import { useAudience } from "@/components/audience-context";
 import { faqs, faqCategories, type FaqCategory } from "@/lib/data";
-import { cn } from "@/lib/utils";
-import { FourPointStar, Burst } from "@/components/shapes";
+import { FourPointStar } from "@/components/shapes";
 
 type Filter = FaqCategory | "all";
 

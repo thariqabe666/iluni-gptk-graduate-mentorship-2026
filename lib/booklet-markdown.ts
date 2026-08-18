@@ -11,8 +11,10 @@ import {
   mentorRoles,
   groupsGrowing,
   groupsEntering,
+  groupsAssignmentNote,
   thematicSessions,
   thematicSessionsNote,
+  thematicMoreTopicsNote,
   thematicHowTo,
   thematicQuotaNote,
   thematicOptionalNote,
@@ -124,6 +126,8 @@ ${formatGroupTable(groupsGrowing)}
 ### Jalur Entering the Industry (E1–E10)
 ${formatGroupTable(groupsEntering)}
 
+> 📌 **Catatan:** ${groupsAssignmentNote}
+
 ---
 
 ## 6. Sesi Tematik Terbuka
@@ -135,6 +139,8 @@ ${thematicSessions
   .join("\n")}
 
 > 📌 **Catatan:** ${thematicSessionsNote}
+>
+> 📌 ${thematicMoreTopicsNote}
 
 ### Cara Mendaftar
 ${thematicHowTo.map((step, i) => `${i + 1}. **${step.title}** — ${step.desc}`).join("\n")}

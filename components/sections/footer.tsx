@@ -7,7 +7,6 @@ import { Logo } from "@/components/logo";
 import { useAudience } from "@/components/audience-context";
 import { event } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { FourPointStar } from "@/components/shapes";
 
 export function FooterSection() {
   const { audience } = useAudience();

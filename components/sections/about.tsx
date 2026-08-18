@@ -88,7 +88,7 @@ export function AboutSection() {
                   Kolaborasi Sinergis Lintas Generasi DTK UI
                 </p>
                 <p className="text-white/70 text-xs mt-1">
-                  105 Mentees · 41 Mentors · 20 Kelompok Bimbingan
+                  106 Mentees · 42 Mentors · 20 Kelompok Bimbingan
                 </p>
               </div>
             </div>

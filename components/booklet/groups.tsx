@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SectionHeading } from "./section-heading";
-import { groupsEntering, groupsGrowing, type Group } from "@/lib/booklet-data";
+import { groupsEntering, groupsGrowing, groupsAssignmentNote, type Group } from "@/lib/booklet-data";
 import { cn } from "@/lib/utils";
 
 type TrackKey = "entering" | "growing";
@@ -19,7 +19,7 @@ const trackMeta: Record<TrackKey, { label: string; groups: Group[]; total: numbe
   growing: {
     label: "Growing",
     groups: groupsGrowing,
-    total: 50,
+    total: 51,
     accent: "text-brand-blue",
     border: "border-brand-blue",
   },
@@ -46,10 +46,11 @@ export function GroupsSection() {
   return (
     <section id="kelompok" className="scroll-mt-24 py-10">
       <SectionHeading id="kelompok" eyebrow="Bagian 6" title="Peta 20 Kelompok" />
-      <p className="mb-6 max-w-2xl text-sm text-ink/70">
+      <p className="mb-3 max-w-2xl text-sm text-ink/70">
         Kode kelompok, jalur, nama Anchor &amp; Co-Mentor beserta perusahaan/jabatan, dan jumlah
         mentee. Nama mentee tidak ditampilkan.
       </p>
+      <p className="mb-6 max-w-2xl text-sm italic text-ink/60">{groupsAssignmentNote}</p>
 
       <Tabs value={track} onValueChange={(v) => setTrack(v as TrackKey)}>
         <TabsList className="mb-6 h-9 rounded-xl border-2 border-ink bg-cream p-0.5">

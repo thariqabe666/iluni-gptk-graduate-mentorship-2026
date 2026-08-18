@@ -1,18 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Calendar, MapPin, CheckCircle2, Clock } from "lucide-react";
+import { MapPin, CheckCircle2, Clock } from "lucide-react";
 import { useAudience } from "@/components/audience-context";
 import { timeline, timelineNote } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { FourPointStar, Burst, GearStar } from "@/components/shapes";
+import { FourPointStar, GearStar } from "@/components/shapes";
 
 export function TimelineSection() {
   const { audience } = useAudience();
   const isMentee = audience === "mentee";
 
   const accentText = isMentee ? "text-brand-red" : "text-brand-blue";
-  const accentBg = isMentee ? "bg-brand-red" : "bg-brand-blue";
 
   return (
     <section
@@ -40,7 +39,7 @@ export function TimelineSection() {
             </h2>
           </div>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red text-white font-heading text-xs font-bold uppercase tracking-wider w-fit">
-            <Clock size={14} /> Grand Launch: 22 Agustus 2026
+            <Clock size={14} /> Grand Launch: 25 Agustus 2026
           </span>
         </div>
 
