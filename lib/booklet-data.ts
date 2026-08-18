@@ -72,7 +72,7 @@ export const pillars: { name: string; subtitle: string; content: string; deliver
   {
     name: "Know Your Compass",
     subtitle: "Pengembangan Diri",
-    content: "Self-leadership, resiliensi, learning agility, personal branding, IDP.",
+    content: "Self-leadership, resiliensi, learning agility, personal branding.",
     deliveredIn: "Kuliah Umum + refleksi mandiri",
   },
 ];
@@ -190,7 +190,7 @@ export const agendaSesiTable: AgendaSesiRow[] = [
     fokus: "Refleksi & finalisasi",
     pillarMain: "Know Your Compass",
     pillarSupport: ["Steer the Ship", "Read the Map"],
-    bahan: "Rekomendasi + IDP",
+    bahan: "Rekomendasi",
     briefLabel: "4. Rekomendasi · 5. Kredit",
     briefRefs: ["ib-4", "ib-5"],
   },
@@ -279,7 +279,7 @@ export const agendaSesiCards: AgendaSesiCard[] = [
     duration: "90 menit",
     pillar: "Know Your Compass",
     items: [
-      "Apa yang berubah dalam tiga bulan, dibandingkan dengan IDP",
+      "Apa yang berubah dalam tiga bulan selama program",
       "Menajamkan rekomendasi",
       "Pandangan kedua mentor tentang 3–5 tahun ke depan",
       "Rencana setelah program",
@@ -290,11 +290,6 @@ export const agendaSesiCards: AgendaSesiCard[] = [
 
 export const agendaSesiNonNegotiable =
   "Bila kelompok hanya sanggup 60 menit per sesi, bagian mana pun boleh dipersingkat kecuali dua: merumuskan pertanyaan di Sesi 1 dan ulasan draft di Sesi 3. Tanpa keduanya, Insight Brief tidak akan selesai.";
-
-export const agendaSesiMentorGuide = {
-  label: "Unduh Panduan Lengkap untuk Mentor",
-  url: "", // TODO: tautan menyusul
-};
 
 // ---- Bagian 7 — Peta 20 kelompok ----
 

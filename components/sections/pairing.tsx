@@ -84,7 +84,7 @@ export function PairingSection() {
                     </span>
                   </div>
                   <p className="text-xs text-cream/60 leading-relaxed">
-                    Penanggung jawab utama yang mendampingi kelompok dari awal hingga akhir, memfasilitasi diskusi & penyusunan IDP.
+                    Penanggung jawab utama yang mendampingi kelompok dari awal hingga akhir, memfasilitasi diskusi & pendampingan kelompok.
                   </p>
                 </div>
 

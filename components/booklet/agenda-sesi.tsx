@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Info, ShieldAlert, Download, Plus } from "lucide-react";
+import { Info, ShieldAlert, Plus } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 import {
   agendaSesiFrame,
@@ -11,7 +11,6 @@ import {
   agendaThreePillars,
   agendaSesiCards,
   agendaSesiNonNegotiable,
-  agendaSesiMentorGuide,
   insightBriefParts,
   type AgendaSesiRow,
 } from "@/lib/booklet-data";
@@ -230,7 +229,7 @@ export function AgendaSesiSection() {
       </div>
 
       {/* Blok 5 — Yang tidak boleh dipotong */}
-      <div className="mb-8 rounded-xl border-2 border-brand-red bg-brand-red/5 p-5">
+      <div className="rounded-xl border-2 border-brand-red bg-brand-red/5 p-5">
         <div className="mb-2 flex items-center gap-2">
           <ShieldAlert size={18} className="shrink-0 text-brand-red" />
           <p className="font-heading text-sm font-bold uppercase tracking-wide text-brand-red">
@@ -238,17 +237,6 @@ export function AgendaSesiSection() {
           </p>
         </div>
         <p className="text-sm leading-relaxed text-ink/80">{agendaSesiNonNegotiable}</p>
-      </div>
-
-      {/* Blok 6 — Tautan unduh panduan lengkap untuk mentor */}
-      <div className="inline-flex flex-wrap items-center gap-3 rounded-xl border-[1.5px] border-ink p-4">
-        <span className="flex items-center gap-2 rounded-lg border-[1.5px] border-ink px-4 py-2.5 font-heading text-xs font-bold uppercase tracking-wide text-ink/40">
-          <Download size={16} />
-          {agendaSesiMentorGuide.label}
-        </span>
-        <span className="font-heading text-xs font-semibold uppercase tracking-wide text-brand-red">
-          TODO: tautan menyusul
-        </span>
       </div>
     </section>
   );

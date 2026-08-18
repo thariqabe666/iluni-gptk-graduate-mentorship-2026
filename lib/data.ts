@@ -76,7 +76,7 @@ export const audienceCopy = {
       "Program mentorship intensif dan 100% gratis untuk alumni DTK UI Batch 2020–2022. Dapatkan bimbingan karier 1-on-group langsung dari profesional terkemuka di industri!",
     objectives: [
       "Mendapatkan akses langsung ke insider industri dan membangun jejaring yang relevan dengan jalur karier.",
-      "Menyusun Individual Development Plan (IDP) dan blueprint karier konkret dengan bimbingan personal.",
+      "Menyusun rencana dan blueprint karier konkret dengan bimbingan personal.",
       "Memahami lanskap dunia kerja nyata dan standar rekrutmen di 5 bidang industri utama DTK UI.",
     ],
     /** Who the track is open to — shown as the eligibility column in RolesSection. */
@@ -89,7 +89,7 @@ export const audienceCopy = {
     responsibilities: [
       "Mengikuti seluruh sesi sesuai jadwal yang disepakati bersama mentor.",
       "Berpartisipasi aktif dalam diskusi dan sesi tanya jawab.",
-      "Menyusun Individual Development Plan (IDP) bersama mentor.",
+      "Menyusun rencana dan strategi pengembangan karier bersama mentor.",
       "Menjaga komunikasi yang baik dan menindaklanjuti tugas dari mentor.",
     ],
     benefitsHeading: "Real Benefits for Mentees",
@@ -102,7 +102,7 @@ export const audienceCopy = {
       {
         shape: "Quatrefoil",
         title: "Get a Blueprint",
-        desc: "Custom guidance for your career melalui penyusunan Individual Development Plan (IDP).",
+        desc: "Custom guidance for your career melalui penyusunan rencana karier yang terarah.",
       },
       {
         shape: "TriangleArrow",
@@ -130,7 +130,7 @@ export const audienceCopy = {
       "Menjadi pembimbing sekaligus fasilitator dalam proses pengembangan diri mentee.",
       "Berbagi pengalaman kerja, kepemimpinan, dan dinamika industri.",
       "Memberi masukan objektif untuk pengembangan kompetensi mentee.",
-      "Membantu mentee menyusun Individual Development Plan (IDP).",
+      "Membantu mentee menyusun strategi pengembangan karier.",
       "Mendorong mentee mengeksplorasi potensi karier terbaiknya.",
     ],
     benefitsHeading: "The Rewards of Paying It Forward",
@@ -232,7 +232,7 @@ export const mentoringTopics = [
   },
   {
     title: "Reflection & Growth",
-    desc: "Evaluasi capaian Individual Development Plan (IDP) dan penyusunan langkah tindak lanjut.",
+    desc: "Evaluasi capaian pembelajaran dan penyusunan langkah tindak lanjut.",
   },
 ];
 
@@ -296,7 +296,7 @@ export const faqs: Faq[] = [
   {
     category: "mentor",
     q: "Apa saja peran dan tanggung jawab seorang mentor?",
-    a: "Menjadi pembimbing sekaligus fasilitator, berbagi pengalaman kerja dan kepemimpinan, memberi masukan pengembangan kompetensi, membantu mentee menyusun Individual Development Plan (IDP), serta mendorong mentee mengeksplorasi potensi kariernya.",
+    a: "Menjadi pembimbing sekaligus fasilitator, berbagi pengalaman kerja dan kepemimpinan, memberi masukan pengembangan kompetensi, serta mendorong mentee mengeksplorasi potensi kariernya.",
   },
   {
     category: "mentor",

@@ -172,7 +172,7 @@ function GroupMentoringDiagram() {
             Interaksi Intensif 2 Arah
           </p>
           <p className="text-[10px] text-ink/60 mt-0.5 leading-snug">
-            Min. 4 Sesi (60–90 mnt) · IDP & Bedah Karier
+            Min. 4 Sesi (60–90 mnt) · Bimbingan & Bedah Karier
           </p>
         </div>
 
