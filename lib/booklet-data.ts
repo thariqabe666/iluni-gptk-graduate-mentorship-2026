@@ -131,7 +131,7 @@ export const mentorRoles = {
     body: "Keduanya diharapkan hadir di seluruh sesi, sama-sama memimpin diskusi, dan sama-sama mengenal tiap mentee. Pembedaannya tinggal satu hal administratif: Anchor Mentor yang mengisi formulir penilaian di akhir program dan menjadi penanggung jawab kelompok bagi panitia.",
   },
   diversityNote:
-    "Dua mentor di ruangan yang sama adalah keunggulan terbesar desain ini — terutama saat keduanya tidak sependapat. Beda perusahaan, beda fungsi, beda jalur: perbedaan itu bukan gangguan, melainkan materi. Mentee perlu melihat bahwa jawaban profesional jarang tunggal.",
+    "Dua mentor di ruangan yang sama adalah upaya untuk mendiversifikasi sudut pandang dan memperkaya diskusi, sekaligus menguatkan silaturahmi dan meringankan beban individual",
   composition:
     "20 Anchor + 22 Co-Mentor = 42 mentor. Seluruh mentor memegang kelompok, hadir penuh di tiap sesi. Peran kuliah umum, panel, narasumber sesi tematik, dan dewan juri bersifat tambahan di atas peran kelompok.",
 };
@@ -139,7 +139,7 @@ export const mentorRoles = {
 // ---- Bagian 6 — Agenda Sesi ----
 
 export const agendaSesiFrame =
-  "Agenda ini usulan, bukan naskah. Yang dikunci hanya satu per sesi: bahan yang mentee bawa pulang. Cara kelompok sampai ke sana sepenuhnya keputusan masing-masing.";
+  "Agenda ini hanya usulan yang bisa dijadikan dasar dalam membangun agenda di dalam kelompok. Yang terpenting adalah bahan yang akan dibawa pulang oleh para mentee. Bagaimana kelompok sampai ke sana sepenuhnya keputusan masing-masing.";
 
 export type AgendaSesiRow = {
   sesi: string;
@@ -209,20 +209,18 @@ export const agendaSesiTable: AgendaSesiRow[] = [
 
 export const agendaSesiTableNotes: string[] = [
   "Pilar yang ditebalkan adalah porsi utama sesi itu; dua lainnya porsi pendukung.",
-  "Baris terakhir sengaja berbeda — sesi ini terbuka, bukan sesi yang sudah ditetapkan. Empat sesi adalah minimum, bukan target.",
-  'Kolom "Masuk Insight Brief" adalah inti pesan bagian ini: tugas akhir bukan pekerjaan tambahan di bulan ketiga, melainkan akumulasi empat sesi.',
+  "Empat sesi adalah jumlah minimum yang bisa ditambah lebih banyak sesuai kesepakatan kelompok",
 ];
 
 export const agendaSesiDeadlineNote =
   "Tenggat tiap bahan: 3 hari setelah sesi, dikumpulkan di Google Classroom.";
 
 export const agendaThreePillars = {
-  lead: "Kuliah Umum menyampaikan pilar dalam bentuk paparan; sesi kelompok menyampaikannya dalam bentuk percakapan.",
-  bold: "Ketiga pilar sebaiknya tersentuh di tiap sesi kelompok",
-  tail: "— bukan dijatah satu pilar per sesi.",
+  lead: "",
+  bold: "",
+  tail: "",
   paragraphs: [
-    "Ketika satu sesi hanya membahas industri, mentee pulang membawa informasi tanpa tahu apa artinya bagi dirinya. Ketika satu sesi hanya membahas pengembangan diri, percakapannya melayang tanpa bahan. Ketiganya bekerja justru saat dianyam.",
-    "Yang perlu dijaga: satu pilar menjadi porsi utama, dua lainnya cukup 10–15 menit masing-masing. Membagi rata 30-30-30 akan membuat ketiganya dangkal.",
+    "",
   ],
 };
 
@@ -243,13 +241,13 @@ export const agendaSesiCards: AgendaSesiCard[] = [
     pillar: "Read the Map",
     items: [
       "Perkenalan mendalam",
-      "Kedua mentor bercerita tentang perjalanan karier, 10 menit masing-masing",
+      "Kedua mentor bercerita tentang perjalanan karier masing-masing",
       "Lanskap industri sesuai jalur",
-      "Merumuskan pertanyaan utama bersama",
+      "Merumuskan pertanyaan utama (case study) bersama",
       "Sepakati tanggal Sesi 2",
     ],
     extra:
-      "Tiga saringan menguji pertanyaan: bisa dijawab dengan data publik · ada orang lain yang butuh jawabannya · penulisnya benar-benar ingin tahu.",
+      "Tiga kriteria case study: bisa dijawab dengan data publik · ada orang lain yang ingin mengetahui jawabannya · mentee (ataupun mentor) benar-benar ingin tahu.",
   },
   {
     num: "Sesi 2",
