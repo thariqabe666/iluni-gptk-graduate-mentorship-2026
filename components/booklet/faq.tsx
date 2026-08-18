@@ -11,7 +11,7 @@ export function BookletFaqSection() {
 
   return (
     <section id="faq" className="scroll-mt-24 py-10">
-      <SectionHeading id="faq" eyebrow="Bagian 12" title="FAQ" />
+      <SectionHeading id="faq" eyebrow="Bagian 13" title="FAQ" />
       <ul className="space-y-3">
         {bookletFaqs.map((faq, i) => {
           const open = openIndex === i;

@@ -45,7 +45,7 @@ export function GroupsSection() {
 
   return (
     <section id="kelompok" className="scroll-mt-24 py-10">
-      <SectionHeading id="kelompok" eyebrow="Bagian 6" title="Peta 20 Kelompok" />
+      <SectionHeading id="kelompok" eyebrow="Bagian 7" title="Peta 20 Kelompok" />
       <p className="mb-3 max-w-2xl text-sm text-ink/70">
         Kode kelompok, jalur, nama Anchor &amp; Co-Mentor beserta perusahaan/jabatan, dan jumlah
         mentee. Nama mentee tidak ditampilkan.

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Users,
   User,
@@ -12,6 +13,8 @@ import {
   ShieldCheck,
   Radio,
   Clock,
+  ChevronDown,
+  ChevronsUpDown,
 } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 import { activityLayers } from "@/lib/booklet-data";
@@ -20,8 +23,8 @@ import { cn } from "@/lib/utils";
 // Visual diagram definitions for each layer
 function KuliahUmumDiagram() {
   return (
-    <div className="mt-4 rounded-xl border border-ink/15 bg-white/70 p-4 sm:p-5 shadow-xs">
-      <div className="mb-3 flex items-center justify-between border-b border-ink/10 pb-2.5">
+    <div className="mt-4 rounded-xl border border-ink/15 bg-white/80 p-4 sm:p-5 shadow-xs">
+      <div className="mb-3.5 flex items-center justify-between border-b border-ink/10 pb-2.5">
         <span className="font-heading text-[11px] font-bold uppercase tracking-wider text-brand-red flex items-center gap-1.5">
           <Radio size={14} className="animate-pulse" /> Diagram Alir: 1-to-All Broadcast (1 : 106)
         </span>
@@ -56,20 +59,28 @@ function KuliahUmumDiagram() {
         </div>
 
         {/* Transmission / Flow Connector */}
-        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-1 py-2">
-          <div className="hidden md:flex items-center justify-center w-full relative">
-            <div className="h-[2px] w-full bg-gradient-to-r from-brand-red/40 via-ink/30 to-brand-red/40" />
-            <div className="absolute w-6 h-6 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-red shadow-xs">
-              <ArrowRight size={13} />
+        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-2 py-2">
+          {/* Desktop Line + Centered Arrow Badge */}
+          <div className="hidden md:flex items-center justify-center w-full relative my-3">
+            <div className="h-[2px] w-full bg-gradient-to-r from-brand-red/40 via-ink/20 to-brand-red/40" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-red shadow-xs">
+              <ArrowRight size={14} />
             </div>
           </div>
-          <div className="md:hidden flex items-center justify-center py-1">
-            <ArrowRight size={16} className="rotate-90 text-brand-red" />
+
+          {/* Mobile Arrow Badge */}
+          <div className="md:hidden flex items-center justify-center my-2">
+            <div className="w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-red shadow-xs">
+              <ArrowRight size={14} className="rotate-90" />
+            </div>
           </div>
-          <p className="font-heading text-[11px] font-bold uppercase tracking-wide text-ink mt-1.5">
+
+          <p className="font-heading text-[11px] font-bold uppercase tracking-wider text-ink mt-1.5">
             Broadcast 1 Arah + Q&A
           </p>
-          <p className="text-[10px] text-ink/60">Materi Universal & Fondasi Karier</p>
+          <p className="text-[10px] text-ink/60 mt-0.5 leading-snug">
+            Materi Universal & Fondasi Karier
+          </p>
         </div>
 
         {/* All Mentees Receiver Pod */}
@@ -108,8 +119,8 @@ function KuliahUmumDiagram() {
 
 function GroupMentoringDiagram() {
   return (
-    <div className="mt-4 rounded-xl border border-ink/15 bg-white/70 p-4 sm:p-5 shadow-xs">
-      <div className="mb-3 flex items-center justify-between border-b border-ink/10 pb-2.5">
+    <div className="mt-4 rounded-xl border border-ink/15 bg-white/80 p-4 sm:p-5 shadow-xs">
+      <div className="mb-3.5 flex items-center justify-between border-b border-ink/10 pb-2.5">
         <span className="font-heading text-[11px] font-bold uppercase tracking-wider text-brand-blue flex items-center gap-1.5">
           <Users size={14} /> Diagram Alir: Dual-Mentor Pod (2 : 5–6 Mentee)
         </span>
@@ -124,37 +135,45 @@ function GroupMentoringDiagram() {
           <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-brand-blue">
             Dual Mentor Hub
           </p>
-          <div className="flex items-center gap-2 rounded-lg bg-white/80 border border-brand-blue/20 p-1.5">
+          <div className="flex items-center gap-2 rounded-lg bg-white/90 border border-brand-blue/20 p-1.5">
             <ShieldCheck size={14} className="text-brand-red shrink-0" />
             <div className="min-w-0">
               <p className="font-heading text-[11px] font-bold text-ink truncate">Anchor Mentor</p>
               <p className="text-[9px] text-ink/60">PJ Kelompok & Penilai</p>
             </div>
           </div>
-          <div className="flex items-center gap-2 rounded-lg bg-white/80 border border-brand-blue/20 p-1.5">
+          <div className="flex items-center gap-2 rounded-lg bg-white/90 border border-brand-blue/20 p-1.5">
             <Sparkles size={14} className="text-brand-blue shrink-0" />
             <div className="min-w-0">
               <p className="font-heading text-[11px] font-bold text-ink truncate">Co-Mentor</p>
-              <p className="text-[9px] text-ink/60">Partner Pendamping</p>
+              <p className="text-[9px] text-ink/60">Setara Anchor</p>
             </div>
           </div>
         </div>
 
         {/* Bi-directional Flow Connector */}
-        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-1 py-2">
-          <div className="hidden md:flex items-center justify-center w-full relative">
-            <div className="h-[2px] w-full bg-gradient-to-r from-brand-blue/40 via-ink/30 to-brand-blue/40" />
-            <div className="absolute w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-blue shadow-xs">
-              <ArrowLeftRight size={13} />
+        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-2 py-2">
+          {/* Desktop Line + Centered Arrow Badge */}
+          <div className="hidden md:flex items-center justify-center w-full relative my-3">
+            <div className="h-[2px] w-full bg-gradient-to-r from-brand-blue/40 via-ink/20 to-brand-blue/40" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-blue shadow-xs">
+              <ArrowLeftRight size={14} />
             </div>
           </div>
-          <div className="md:hidden flex items-center justify-center py-1">
-            <ArrowLeftRight size={16} className="rotate-90 text-brand-blue" />
+
+          {/* Mobile Arrow Badge */}
+          <div className="md:hidden flex items-center justify-center my-2">
+            <div className="w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-blue shadow-xs">
+              <ArrowLeftRight size={14} className="rotate-90" />
+            </div>
           </div>
+
           <p className="font-heading text-[11px] font-bold uppercase tracking-wide text-ink mt-1.5">
             Interaksi Intensif 2 Arah
           </p>
-          <p className="text-[10px] text-ink/60">Min. 4 Sesi (60–90 mnt) · IDP & Bedah Karier</p>
+          <p className="text-[10px] text-ink/60 mt-0.5 leading-snug">
+            Min. 4 Sesi (60–90 mnt) · IDP & Bedah Karier
+          </p>
         </div>
 
         {/* Mentee Pod Node */}
@@ -188,8 +207,8 @@ function GroupMentoringDiagram() {
 
 function SesiTematikDiagram() {
   return (
-    <div className="mt-4 rounded-xl border border-ink/15 bg-white/70 p-4 sm:p-5 shadow-xs">
-      <div className="mb-3 flex items-center justify-between border-b border-ink/10 pb-2.5">
+    <div className="mt-4 rounded-xl border border-ink/15 bg-white/80 p-4 sm:p-5 shadow-xs">
+      <div className="mb-3.5 flex items-center justify-between border-b border-ink/10 pb-2.5">
         <span className="font-heading text-[11px] font-bold uppercase tracking-wider text-ink/80 flex items-center gap-1.5">
           <Layers size={14} className="text-brand-blue" /> Diagram Alir: Open Thematic Hub (1 : N Lintas Kelompok)
         </span>
@@ -218,20 +237,28 @@ function SesiTematikDiagram() {
         </div>
 
         {/* Transmission / Open Hub Connector */}
-        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-1 py-2">
-          <div className="hidden md:flex items-center justify-center w-full relative">
-            <div className="h-[2px] w-full bg-gradient-to-r from-ink/30 via-brand-blue/40 to-ink/30" />
-            <div className="absolute w-6 h-6 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-blue shadow-xs">
-              <ArrowRight size={13} />
+        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-2 py-2">
+          {/* Desktop Line + Centered Arrow Badge */}
+          <div className="hidden md:flex items-center justify-center w-full relative my-3">
+            <div className="h-[2px] w-full bg-gradient-to-r from-ink/25 via-brand-blue/35 to-ink/25" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-blue shadow-xs">
+              <ArrowRight size={14} />
             </div>
           </div>
-          <div className="md:hidden flex items-center justify-center py-1">
-            <ArrowRight size={16} className="rotate-90 text-brand-blue" />
+
+          {/* Mobile Arrow Badge */}
+          <div className="md:hidden flex items-center justify-center my-2">
+            <div className="w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-blue shadow-xs">
+              <ArrowRight size={14} className="rotate-90" />
+            </div>
           </div>
+
           <p className="font-heading text-[11px] font-bold uppercase tracking-wide text-ink mt-1.5">
             Pendaftaran Terbuka
           </p>
-          <p className="text-[10px] text-ink/60">Mewadahi Minat Khusus Lintas Kelompok</p>
+          <p className="text-[10px] text-ink/60 mt-0.5 leading-snug">
+            Mewadahi Minat Khusus Lintas Kelompok
+          </p>
         </div>
 
         {/* Cross-Group Mentees Cluster */}
@@ -267,8 +294,8 @@ function SesiTematikDiagram() {
 
 function IndividualMentoringDiagram() {
   return (
-    <div className="mt-4 rounded-xl border border-ink/15 bg-white/70 p-4 sm:p-5 shadow-xs">
-      <div className="mb-3 flex items-center justify-between border-b border-ink/10 pb-2.5">
+    <div className="mt-4 rounded-xl border border-ink/15 bg-white/80 p-4 sm:p-5 shadow-xs">
+      <div className="mb-3.5 flex items-center justify-between border-b border-ink/10 pb-2.5">
         <span className="font-heading text-[11px] font-bold uppercase tracking-wider text-ink/80 flex items-center gap-1.5">
           <UserCheck size={14} className="text-brand-red" /> Diagram Alir: 1-on-1 Personal Deep-Dive (1 : 1)
         </span>
@@ -290,20 +317,28 @@ function IndividualMentoringDiagram() {
         </div>
 
         {/* Direct 1:1 Flow Connector */}
-        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-1 py-2">
-          <div className="hidden md:flex items-center justify-center w-full relative">
-            <div className="h-[2px] w-full bg-gradient-to-r from-brand-red/30 via-ink/30 to-brand-red/30" />
-            <div className="absolute w-6 h-6 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-red shadow-xs">
-              <ArrowLeftRight size={13} />
+        <div className="md:col-span-4 flex flex-col items-center justify-center text-center px-2 py-2">
+          {/* Desktop Line + Centered Arrow Badge */}
+          <div className="hidden md:flex items-center justify-center w-full relative my-3">
+            <div className="h-[2px] w-full bg-gradient-to-r from-brand-red/35 via-ink/20 to-brand-red/35" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-red shadow-xs">
+              <ArrowLeftRight size={14} />
             </div>
           </div>
-          <div className="md:hidden flex items-center justify-center py-1">
-            <ArrowLeftRight size={16} className="rotate-90 text-brand-red" />
+
+          {/* Mobile Arrow Badge */}
+          <div className="md:hidden flex items-center justify-center my-2">
+            <div className="w-7 h-7 rounded-full bg-cream border border-ink/30 flex items-center justify-center text-brand-red shadow-xs">
+              <ArrowLeftRight size={14} className="rotate-90" />
+            </div>
           </div>
+
           <p className="font-heading text-[11px] font-bold uppercase tracking-wide text-ink mt-1.5">
             Sesi Konsultasi 1-on-1 Privat
           </p>
-          <p className="text-[10px] text-ink/60">Penyesuaian Jadwal & Kebutuhan Spesifik</p>
+          <p className="text-[10px] text-ink/60 mt-0.5 leading-snug">
+            Penyesuaian Jadwal & Kebutuhan Spesifik
+          </p>
         </div>
 
         {/* Mentee Node */}
@@ -330,6 +365,25 @@ const DIAGRAMS = [
 ];
 
 export function ActivityLayersSection() {
+  // Accordion state: Store array of opened layer indices. Default to opening the first layer (Kuliah Umum).
+  const [openItems, setOpenItems] = useState<number[]>([0]);
+
+  const toggleItem = (index: number) => {
+    setOpenItems((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
+
+  const toggleAll = () => {
+    if (openItems.length === activityLayers.length) {
+      setOpenItems([]);
+    } else {
+      setOpenItems(activityLayers.map((_, i) => i));
+    }
+  };
+
+  const allOpen = openItems.length === activityLayers.length;
+
   return (
     <section id="empat-lapis" className="scroll-mt-24 py-10">
       <SectionHeading id="empat-lapis" eyebrow="Bagian 4" title="Empat Lapis Kegiatan" />
@@ -385,28 +439,50 @@ export function ActivityLayersSection() {
         </div>
       </div>
 
-      {/* Layer by layer cards with embedded visual diagrams */}
-      <ol className="space-y-4">
+      {/* Accordion Controls Bar */}
+      <div className="mb-4 flex items-center justify-between">
+        <p className="font-heading text-xs font-semibold uppercase tracking-wider text-ink/60">
+          Pilih lapis kegiatan untuk melihat rincian & diagram alir:
+        </p>
+        <button
+          type="button"
+          onClick={toggleAll}
+          className="no-print inline-flex items-center gap-1.5 rounded-lg border border-ink/20 bg-white px-3 py-1.5 text-xs font-medium text-ink/70 hover:border-ink hover:text-ink transition-colors shadow-2xs cursor-pointer"
+        >
+          <ChevronsUpDown size={13} />
+          <span>{allOpen ? "Tutup Semua" : "Buka Semua"}</span>
+        </button>
+      </div>
+
+      {/* Accordion items */}
+      <div className="space-y-3.5">
         {activityLayers.map((a, i) => {
           const DiagramComponent = DIAGRAMS[i];
           const isCore = a.type === "INTI";
+          const isOpen = openItems.includes(i);
 
           return (
-            <li
+            <div
               key={a.name}
               className={cn(
-                "rounded-2xl border-[1.5px] border-ink p-5 sm:p-6 transition-all duration-200 shadow-xs",
-                isCore ? "bg-cream/40" : "bg-white/40"
+                "rounded-2xl border-[1.5px] border-ink transition-all duration-200 shadow-xs overflow-hidden",
+                isCore ? "bg-cream/40" : "bg-white/40",
+                isOpen ? "ring-1 ring-ink/10" : ""
               )}
             >
-              {/* Header Info */}
-              <div className="flex items-start gap-4">
-                <span className="shrink-0 font-heading text-2xl sm:text-3xl font-black text-brand-red">
+              {/* Accordion Clickable Header */}
+              <button
+                type="button"
+                onClick={() => toggleItem(i)}
+                aria-expanded={isOpen}
+                className="w-full text-left p-4 sm:p-5 flex items-start gap-3 sm:gap-4 hover:bg-ink/[0.02] transition-colors cursor-pointer select-none"
+              >
+                <span className="shrink-0 font-heading text-2xl sm:text-3xl font-black text-brand-red pt-0.5">
                   0{i + 1}
                 </span>
 
-                <div className="flex-1">
-                  <div className="mb-2 flex flex-wrap items-center gap-2">
+                <div className="flex-1 min-w-0">
+                  <div className="mb-1.5 flex flex-wrap items-center gap-2">
                     <h3 className="font-heading text-base sm:text-lg font-bold uppercase text-ink">
                       {a.name}
                     </h3>
@@ -419,25 +495,53 @@ export function ActivityLayersSection() {
                     >
                       {a.type}
                     </span>
-                    <span className="rounded-full border border-ink/10 bg-white px-2.5 py-0.5 font-heading text-[10px] font-medium text-ink/70">
+                    <span className="rounded-full border border-ink/10 bg-white px-2 py-0.5 font-heading text-[10px] font-medium text-ink/70">
                       {a.wajib}
                     </span>
-                    <span className="rounded-full border border-ink/10 bg-white px-2.5 py-0.5 font-heading text-[10px] font-medium text-ink/70">
+                    <span className="rounded-full border border-ink/10 bg-white px-2 py-0.5 font-heading text-[10px] font-medium text-ink/70">
                       {a.dinilai}
                     </span>
                   </div>
 
-                  <p className="text-sm leading-relaxed text-ink/75 mb-3">{a.desc}</p>
+                  <p className="text-xs sm:text-sm leading-relaxed text-ink/75 line-clamp-2">
+                    {a.desc}
+                  </p>
                 </div>
-              </div>
 
-              {/* Embedded Visual Flow Diagram for this layer */}
-              {DiagramComponent && <DiagramComponent />}
-            </li>
+                {/* Toggle icon button */}
+                <div className="shrink-0 pt-1">
+                  <div
+                    className={cn(
+                      "flex items-center gap-1 rounded-lg border border-ink/15 bg-white px-2.5 py-1 text-xs font-medium text-ink/70 transition-all",
+                      isOpen ? "border-ink bg-ink text-cream" : "hover:border-ink hover:text-ink"
+                    )}
+                  >
+                    <span className="hidden sm:inline text-[11px] font-heading font-semibold uppercase tracking-wider">
+                      {isOpen ? "Tutup Diagram" : "Diagram Alir"}
+                    </span>
+                    <ChevronDown
+                      size={15}
+                      className={cn(
+                        "transition-transform duration-200",
+                        isOpen ? "rotate-180 text-cream" : ""
+                      )}
+                    />
+                  </div>
+                </div>
+              </button>
+
+              {/* Accordion Collapsible Content */}
+              {isOpen && (
+                <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 border-t border-ink/10 animate-in fade-in-50 duration-200">
+                  {DiagramComponent && <DiagramComponent />}
+                </div>
+              )}
+            </div>
           );
         })}
-      </ol>
+      </div>
     </section>
   );
 }
+
 

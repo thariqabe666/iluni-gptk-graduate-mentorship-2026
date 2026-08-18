@@ -5,7 +5,7 @@ import { platform, platformToolsNote, classroomJoin } from "@/lib/booklet-data";
 export function PlatformSection() {
   return (
     <section id="platform" className="scroll-mt-24 py-10">
-      <SectionHeading id="platform" eyebrow="Bagian 11" title="Platform & Peran" />
+      <SectionHeading id="platform" eyebrow="Bagian 12" title="Platform & Peran" />
       <div className="mb-4 grid gap-3 sm:grid-cols-3">
         {platform.map((p) => (
           <div key={p.name} className="rounded-xl border-[1.5px] border-ink p-5">

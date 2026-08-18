@@ -7,6 +7,7 @@ import { TracksSection } from "./tracks";
 import { PillarsSection } from "./pillars";
 import { ActivityLayersSection } from "./activity-layers";
 import { MentorRolesSection } from "./mentor-roles";
+import { AgendaSesiSection } from "./agenda-sesi";
 import { GroupsSection } from "./groups";
 import { CrossGroupSessionsSection } from "./cross-group-sessions";
 import { BookletTimelineSection } from "./timeline";
@@ -35,6 +36,7 @@ export function BookletPage() {
               <PillarsSection />
               <ActivityLayersSection />
               <MentorRolesSection />
+              <AgendaSesiSection />
               <GroupsSection />
               <CrossGroupSessionsSection />
               <BookletTimelineSection />

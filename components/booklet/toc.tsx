@@ -12,14 +12,15 @@ export const tocItems = [
   { id: "tiga-pilar", num: "03", label: "Tiga Pilar Kurikulum" },
   { id: "empat-lapis", num: "04", label: "Empat Lapis Kegiatan" },
   { id: "anchor-co-mentor", num: "05", label: "Anchor & Co-Mentor" },
-  { id: "kelompok", num: "06", label: "Peta 20 Kelompok" },
-  { id: "sesi-tematik", num: "07", label: "Sesi Tematik Terbuka" },
-  { id: "linimasa", num: "08", label: "Linimasa" },
-  { id: "insight-brief", num: "09", label: "Final Project: Insight Brief" },
-  { id: "penilaian", num: "10", label: "Penilaian & Sertifikat" },
-  { id: "platform", num: "11", label: "Platform & Peran" },
-  { id: "faq", num: "12", label: "FAQ" },
-  { id: "penutup", num: "13", label: "Penutup" },
+  { id: "agenda-sesi", num: "06", label: "Agenda Sesi" },
+  { id: "kelompok", num: "07", label: "Peta 20 Kelompok" },
+  { id: "sesi-tematik", num: "08", label: "Sesi Tematik Terbuka" },
+  { id: "linimasa", num: "09", label: "Linimasa" },
+  { id: "insight-brief", num: "10", label: "Final Project: Insight Brief" },
+  { id: "penilaian", num: "11", label: "Penilaian & Sertifikat" },
+  { id: "platform", num: "12", label: "Platform & Peran" },
+  { id: "faq", num: "13", label: "FAQ" },
+  { id: "penutup", num: "14", label: "Penutup" },
 ];
 
 function useActiveSection() {

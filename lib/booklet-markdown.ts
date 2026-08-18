@@ -9,6 +9,12 @@ import {
   pillarsPrinciple,
   activityLayers,
   mentorRoles,
+  agendaSesiFrame,
+  agendaSesiTable,
+  agendaSesiDeadlineNote,
+  agendaThreePillars,
+  agendaSesiCards,
+  agendaSesiNonNegotiable,
   groupsGrowing,
   groupsEntering,
   groupsAssignmentNote,
@@ -109,16 +115,55 @@ ${activityLayers
 
 ## 4. Struktur Anchor & Co-Mentor
 
+**${mentorRoles.teamStatement.lead}** ${mentorRoles.teamStatement.body}
+
+| Peran | Komitmen Sesi | Yang Membedakan |
+|:---|:---|:---|
+| **${mentorRoles.anchor.title}** | ${mentorRoles.anchor.commitment} | Mengisi formulir penilaian & PJ kelompok bagi panitia |
+| **${mentorRoles.coMentor.title}** | ${mentorRoles.coMentor.commitment} | Tidak mengisi formulir penilaian akhir |
+
 - **${mentorRoles.anchor.title}:** ${mentorRoles.anchor.desc}
 - **${mentorRoles.coMentor.title}:** ${mentorRoles.coMentor.desc}
 
-### Rationale & Komposisi:
-- **Alasan Pasangan Mentor:** ${mentorRoles.rationale}
+> 💡 ${mentorRoles.diversityNote}
+
+### Komposisi:
 - **Total:** ${mentorRoles.composition}
 
 ---
 
-## 5. Peta 20 Kelompok Mentoring
+## 5. Usulan Agenda Sesi — Bagaimana Empat Sesi Membangun Satu Tulisan
+
+> ${agendaSesiFrame}
+
+| Sesi | Kapan | Fokus | Pilar (utama · pendukung) | Bahan yang Terkumpul | Masuk Insight Brief |
+|:---|:---|:---|:---|:---|:---|
+${agendaSesiTable
+  .map(
+    (r) =>
+      `| ${r.sesi} | ${r.kapan} | ${r.fokus} | ${r.open ? "*Menyesuaikan kebutuhan*" : `**${r.pillarMain}** · ${r.pillarSupport.join(" · ")}`} | ${r.bahan} | ${r.briefLabel} |`
+  )
+  .join("\n")}
+
+> ${agendaSesiDeadlineNote}
+
+**${agendaThreePillars.lead}** ${agendaThreePillars.bold} ${agendaThreePillars.tail}
+
+${agendaThreePillars.paragraphs.map((p) => p).join("\n\n")}
+
+### Empat Sesi, Diperinci:
+${agendaSesiCards
+  .map(
+    (c) => `**${c.num} — ${c.title}** (${c.duration} · ${c.pillar})
+${c.items.map((item) => `- ${item}`).join("\n")}${c.extra ? `\n> ${c.extra}` : ""}`
+  )
+  .join("\n\n")}
+
+> ⚠️ **Yang Tidak Boleh Dipotong:** ${agendaSesiNonNegotiable}
+
+---
+
+## 6. Peta 20 Kelompok Mentoring
 
 ### Jalur Growing in the Industry (G1–G10)
 ${formatGroupTable(groupsGrowing)}
@@ -130,7 +175,7 @@ ${formatGroupTable(groupsEntering)}
 
 ---
 
-## 6. Sesi Tematik Terbuka
+## 7. Sesi Tematik Terbuka
 
 | Sesi | Peserta Sasaran | Narasumber & Mentor |
 |:---|:---|:---|
@@ -151,7 +196,7 @@ ${thematicHowTo.map((step, i) => `${i + 1}. **${step.title}** — ${step.desc}`)
 
 ---
 
-## 7. Linimasa Program
+## 8. Linimasa Program
 
 | Tanggal | Agenda / Kegiatan |
 |:---|:---|
@@ -163,7 +208,7 @@ ${bookletTimeline
 
 ---
 
-## 8. Final Project: Insight Brief
+## 9. Final Project: Insight Brief
 
 Deliverable utama mentee: tulisan mandiri sepanjang **${insightBriefLength}**.
 
@@ -184,7 +229,7 @@ ${insightBriefConfidentiality.correctCitation}
 
 ---
 
-## 9. Penilaian & Sertifikat
+## 10. Penilaian & Sertifikat
 
 ### Komponen Penilaian:
 | Komponen | Bobot | Penilai |
@@ -198,7 +243,7 @@ ${certificates.map((cert) => `- **${cert.name}**: ${cert.requirement}`).join("\n
 
 ---
 
-## 10. Platform & Peran
+## 11. Platform & Peran
 
 ${platform.map((p) => `- **${p.name}**: ${p.desc}`).join("\n")}
 
@@ -208,7 +253,7 @@ ${platform.map((p) => `- **${p.name}**: ${p.desc}`).join("\n")}
 
 ---
 
-## 11. Frequently Asked Questions (FAQ)
+## 12. Frequently Asked Questions (FAQ)
 
 ${bookletFaqs
   .map(
@@ -219,7 +264,7 @@ ${faq.a}`
 
 ---
 
-## 12. Penutup
+## 13. Penutup
 Dokumen resmi disusun oleh panitia Graduate Mentorship 2026 ILUNI GPTK FTUI.
 
 ${closing.hashtags.join(" ")}

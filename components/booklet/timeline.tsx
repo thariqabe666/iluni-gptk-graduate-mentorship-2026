@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 export function BookletTimelineSection() {
   return (
     <section id="linimasa" className="scroll-mt-24 py-10">
-      <SectionHeading id="linimasa" eyebrow="Bagian 8" title="Linimasa" />
+      <SectionHeading id="linimasa" eyebrow="Bagian 9" title="Linimasa" />
       <div className="relative border-l-2 border-ink pl-6">
         {bookletTimeline.map((item, i) => (
           <div key={i} className="relative pb-7 last:pb-0">

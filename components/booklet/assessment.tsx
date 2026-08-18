@@ -5,7 +5,7 @@ import { assessmentComponents, assessmentKuliahUmumNote, certificates } from "@/
 export function AssessmentSection() {
   return (
     <section id="penilaian" className="scroll-mt-24 py-10">
-      <SectionHeading id="penilaian" eyebrow="Bagian 10" title="Penilaian & Sertifikat" />
+      <SectionHeading id="penilaian" eyebrow="Bagian 11" title="Penilaian & Sertifikat" />
 
       <div className="mb-8 overflow-x-auto">
         <table className="w-full min-w-[420px] border-collapse text-left text-sm">

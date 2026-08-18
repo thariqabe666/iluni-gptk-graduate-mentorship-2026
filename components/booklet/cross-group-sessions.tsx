@@ -25,7 +25,7 @@ export function CrossGroupSessionsSection() {
 
   return (
     <section id="sesi-tematik" className="scroll-mt-24 py-10">
-      <SectionHeading id="sesi-tematik" eyebrow="Bagian 7" title="Sesi Tematik Terbuka" />
+      <SectionHeading id="sesi-tematik" eyebrow="Bagian 8" title="Sesi Tematik Terbuka" />
 
       <div className="mb-4 grid gap-3 sm:grid-cols-2">
         {thematicSessions.map((s) => (

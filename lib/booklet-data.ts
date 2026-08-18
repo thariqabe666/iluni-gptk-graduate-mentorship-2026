@@ -118,19 +118,187 @@ export const activityLayers: { name: string; type: string; wajib: string; dinila
 export const mentorRoles = {
   anchor: {
     title: "Anchor Mentor",
-    desc: "Memegang kelompok dari awal sampai akhir: mengenal tiap mentee, menjadi penanggung jawab utama, dan memberi penilaian.",
+    desc: "Hadir di seluruh sesi bersama Co-Mentor, memimpin diskusi, dan mengenal tiap mentee. Secara administratif, Anchor Mentor yang mengisi formulir penilaian di akhir program dan menjadi penanggung jawab kelompok bagi panitia.",
+    commitment: "Seluruh sesi",
   },
   coMentor: {
     title: "Co-Mentor",
-    desc: "Partner pendamping Anchor Mentor untuk memperdalam silaturahmi dan memperkuat bimbingan kelompok.",
+    desc: "Hadir di seluruh sesi bersama Anchor Mentor, sama-sama memimpin diskusi, dan sama-sama mengenal tiap mentee. Bedanya tinggal satu hal administratif: tidak mengisi formulir penilaian akhir.",
+    commitment: "Seluruh sesi, setara Anchor",
   },
-  rationale:
-    "Kenapa dibuat anchor + co-mentor: silaturahmi menjadi lebih kuat, ilmu bisa dibagi dari lebih banyak sudut pandang, dan pengerjaan tugas menjadi lebih mudah",
+  teamStatement: {
+    lead: "Anchor Mentor dan Co-Mentor bekerja sebagai satu tim.",
+    body: "Keduanya diharapkan hadir di seluruh sesi, sama-sama memimpin diskusi, dan sama-sama mengenal tiap mentee. Pembedaannya tinggal satu hal administratif: Anchor Mentor yang mengisi formulir penilaian di akhir program dan menjadi penanggung jawab kelompok bagi panitia.",
+  },
+  diversityNote:
+    "Dua mentor di ruangan yang sama adalah keunggulan terbesar desain ini — terutama saat keduanya tidak sependapat. Beda perusahaan, beda fungsi, beda jalur: perbedaan itu bukan gangguan, melainkan materi. Mentee perlu melihat bahwa jawaban profesional jarang tunggal.",
   composition:
-    "20 Anchor + 22 Co-Mentor = 42 mentor. Seluruh mentor memegang kelompok. Peran kuliah umum, panel, narasumber sesi tematik, dan dewan juri bersifat tambahan di atas peran kelompok.",
+    "20 Anchor + 22 Co-Mentor = 42 mentor. Seluruh mentor memegang kelompok, hadir penuh di tiap sesi. Peran kuliah umum, panel, narasumber sesi tematik, dan dewan juri bersifat tambahan di atas peran kelompok.",
 };
 
-// ---- Bagian 6 — Peta 20 kelompok ----
+// ---- Bagian 6 — Agenda Sesi ----
+
+export const agendaSesiFrame =
+  "Agenda ini usulan, bukan naskah. Yang dikunci hanya satu per sesi: bahan yang mentee bawa pulang. Cara kelompok sampai ke sana sepenuhnya keputusan masing-masing.";
+
+export type AgendaSesiRow = {
+  sesi: string;
+  kapan: string;
+  fokus: string;
+  pillarMain: string;
+  pillarSupport: string[];
+  bahan: string;
+  briefLabel: string;
+  briefRefs: string[];
+  open?: boolean;
+};
+
+export const agendaSesiTable: AgendaSesiRow[] = [
+  {
+    sesi: "1",
+    kapan: "25–31 Agu",
+    fokus: "Memetakan wilayah",
+    pillarMain: "Read the Map",
+    pillarSupport: ["Know Your Compass", "Steer the Ship"],
+    bahan: "Satu pertanyaan utama",
+    briefLabel: "1. Pertanyaan",
+    briefRefs: ["ib-1"],
+  },
+  {
+    sesi: "2",
+    kapan: "Akhir Sep",
+    fokus: "Pendalaman teknis",
+    pillarMain: "Read the Map",
+    pillarSupport: ["Steer the Ship", "Know Your Compass"],
+    bahan: "Kerangka ±200 kata",
+    briefLabel: "2. Apa yang saya pelajari",
+    briefRefs: ["ib-2"],
+  },
+  {
+    sesi: "3",
+    kapan: "Akhir Okt",
+    fokus: "Ulasan draft",
+    pillarMain: "Steer the Ship",
+    pillarSupport: ["Read the Map", "Know Your Compass"],
+    bahan: "Draft lengkap",
+    briefLabel: "3. Analisis",
+    briefRefs: ["ib-3"],
+  },
+  {
+    sesi: "4",
+    kapan: "5–10 Nov",
+    fokus: "Refleksi & finalisasi",
+    pillarMain: "Know Your Compass",
+    pillarSupport: ["Steer the Ship", "Read the Map"],
+    bahan: "Rekomendasi + IDP",
+    briefLabel: "4. Rekomendasi · 5. Kredit",
+    briefRefs: ["ib-4", "ib-5"],
+  },
+  {
+    sesi: "5, 6, …",
+    kapan: "Sesuai kesepakatan",
+    fokus: "Ditentukan kelompok",
+    pillarMain: "",
+    pillarSupport: [],
+    bahan: "Opsional",
+    briefLabel: "Memperkuat bagian mana pun",
+    briefRefs: [],
+    open: true,
+  },
+];
+
+export const agendaSesiTableNotes: string[] = [
+  "Pilar yang ditebalkan adalah porsi utama sesi itu; dua lainnya porsi pendukung.",
+  "Baris terakhir sengaja berbeda — sesi ini terbuka, bukan sesi yang sudah ditetapkan. Empat sesi adalah minimum, bukan target.",
+  'Kolom "Masuk Insight Brief" adalah inti pesan bagian ini: tugas akhir bukan pekerjaan tambahan di bulan ketiga, melainkan akumulasi empat sesi.',
+];
+
+export const agendaSesiDeadlineNote =
+  "Tenggat tiap bahan: 3 hari setelah sesi, dikumpulkan di Google Classroom.";
+
+export const agendaThreePillars = {
+  lead: "Kuliah Umum menyampaikan pilar dalam bentuk paparan; sesi kelompok menyampaikannya dalam bentuk percakapan.",
+  bold: "Ketiga pilar sebaiknya tersentuh di tiap sesi kelompok",
+  tail: "— bukan dijatah satu pilar per sesi.",
+  paragraphs: [
+    "Ketika satu sesi hanya membahas industri, mentee pulang membawa informasi tanpa tahu apa artinya bagi dirinya. Ketika satu sesi hanya membahas pengembangan diri, percakapannya melayang tanpa bahan. Ketiganya bekerja justru saat dianyam.",
+    "Yang perlu dijaga: satu pilar menjadi porsi utama, dua lainnya cukup 10–15 menit masing-masing. Membagi rata 30-30-30 akan membuat ketiganya dangkal.",
+  ],
+};
+
+export type AgendaSesiCard = {
+  num: string;
+  title: string;
+  duration: string;
+  pillar: string;
+  items: string[];
+  extra?: string;
+};
+
+export const agendaSesiCards: AgendaSesiCard[] = [
+  {
+    num: "Sesi 1",
+    title: "Memetakan Wilayah",
+    duration: "90 menit",
+    pillar: "Read the Map",
+    items: [
+      "Perkenalan mendalam",
+      "Kedua mentor bercerita tentang perjalanan karier, 10 menit masing-masing",
+      "Lanskap industri sesuai jalur",
+      "Merumuskan pertanyaan utama bersama",
+      "Sepakati tanggal Sesi 2",
+    ],
+    extra:
+      "Tiga saringan menguji pertanyaan: bisa dijawab dengan data publik · ada orang lain yang butuh jawabannya · penulisnya benar-benar ingin tahu.",
+  },
+  {
+    num: "Sesi 2",
+    title: "Pendalaman Teknis",
+    duration: "90 menit",
+    pillar: "Read the Map",
+    items: [
+      "Kompetensi yang benar-benar menentukan",
+      "Bedah pertanyaan tiap mentee 5–7 menit, dibagi antara kedua mentor",
+      "Diskusi silang: kedua mentor menanggapi satu kasus yang sama dari sudut masing-masing",
+    ],
+  },
+  {
+    num: "Sesi 3",
+    title: "Ulasan Draft",
+    duration: "90 menit",
+    pillar: "Steer the Ship",
+    items: [
+      "Draft dikirim ke kedua mentor H-3 sebelum sesi",
+      "Ulasan bergilir 10–12 menit per mentee",
+      "Rangkuman pola kesalahan yang berulang",
+    ],
+    extra:
+      "Ini pelajaran Steer the Ship paling nyata di program: mengubah pemahaman teknis menjadi tulisan yang bisa dibaca orang yang bukan ahli.",
+  },
+  {
+    num: "Sesi 4",
+    title: "Refleksi & Finalisasi",
+    duration: "90 menit",
+    pillar: "Know Your Compass",
+    items: [
+      "Apa yang berubah dalam tiga bulan, dibandingkan dengan IDP",
+      "Menajamkan rekomendasi",
+      "Pandangan kedua mentor tentang 3–5 tahun ke depan",
+      "Rencana setelah program",
+      "Foto kelompok",
+    ],
+  },
+];
+
+export const agendaSesiNonNegotiable =
+  "Bila kelompok hanya sanggup 60 menit per sesi, bagian mana pun boleh dipersingkat kecuali dua: merumuskan pertanyaan di Sesi 1 dan ulasan draft di Sesi 3. Tanpa keduanya, Insight Brief tidak akan selesai.";
+
+export const agendaSesiMentorGuide = {
+  label: "Unduh Panduan Lengkap untuk Mentor",
+  url: "", // TODO: tautan menyusul
+};
+
+// ---- Bagian 7 — Peta 20 kelompok ----
 
 export type MentorProfile = { name: string; org: string; role: string };
 export type Group = {
@@ -296,7 +464,7 @@ export const groupsEntering: Group[] = [
 export const groupsAssignmentNote =
   "Susunan Anchor Mentor dan Co-Mentor pada tiap kelompok masih dapat berubah, menyesuaikan kesepakatan internal lebih lanjut antar mentor.";
 
-// ---- Bagian 7 — Sesi Tematik Terbuka ----
+// ---- Bagian 8 — Sesi Tematik Terbuka ----
 
 export const thematicSessions: { name: string; audience: string; speakers: string }[] = [
   {
@@ -338,7 +506,7 @@ export const thematicQuotaNote =
 export const thematicOptionalNote =
   "Sesi ini opsional dan tidak dinilai. Tidak ikut tidak mengurangi nilai apa pun. Seluruh sesi direkam dan rekamannya dibagikan ke seluruh peserta, termasuk yang tidak mendaftar.";
 
-// ---- Bagian 8 — Linimasa ----
+// ---- Bagian 9 — Linimasa ----
 
 export const bookletTimeline: { date: string; label: string; highlight?: boolean }[] = [
   { date: "12 Agustus 2026", label: "Pendaftaran mentee ditutup" },
@@ -356,14 +524,14 @@ export const bookletTimeline: { date: string; label: string; highlight?: boolean
 export const bookletTimelineNote =
   "Mentor Briefing bergeser dari 19 ke 20 Agustus, dan Grand Launch bergeser dari 22 ke 25 Agustus. Periode mentoring resmi tidak berubah.";
 
-// ---- Bagian 9 — Final Project: Insight Brief ----
+// ---- Bagian 10 — Final Project: Insight Brief ----
 
-export const insightBriefParts: { title: string; content: string; length: string }[] = [
-  { title: "1. Pertanyaan", content: "Persoalan nyata di industri/karier yang ingin dijawab.", length: "1 paragraf" },
-  { title: "2. Apa yang saya pelajari", content: "Temuan dari sesi mentoring & penelusuran mandiri.", length: "2–3 paragraf" },
-  { title: "3. Analisis", content: "Cara mentee memaknai temuan itu.", length: "2 paragraf" },
-  { title: "4. Rekomendasi / rencana", content: "Apa yang akan dilakukan atau disarankan.", length: "1 paragraf" },
-  { title: "5. Kredit", content: "Nama mentor, peran, dan nama program.", length: "2 kalimat" },
+export const insightBriefParts: { slug: string; title: string; content: string; length: string }[] = [
+  { slug: "ib-1", title: "1. Pertanyaan", content: "Persoalan nyata di industri/karier yang ingin dijawab.", length: "1 paragraf" },
+  { slug: "ib-2", title: "2. Apa yang saya pelajari", content: "Temuan dari sesi mentoring & penelusuran mandiri.", length: "2–3 paragraf" },
+  { slug: "ib-3", title: "3. Analisis", content: "Cara mentee memaknai temuan itu.", length: "2 paragraf" },
+  { slug: "ib-4", title: "4. Rekomendasi / rencana", content: "Apa yang akan dilakukan atau disarankan.", length: "1 paragraf" },
+  { slug: "ib-5", title: "5. Kredit", content: "Nama mentor, peran, dan nama program.", length: "2 kalimat" },
 ];
 
 export const insightBriefVariants = {
@@ -380,7 +548,7 @@ export const insightBriefConfidentiality = {
     'Final Project: Insight Brief — "Judul". Ditulis dalam Graduate Mentorship 2026 ILUNI GPTK FTUI, dibimbing oleh [Nama Mentor], [Jabatan] di [Perusahaan].',
 };
 
-// ---- Bagian 10 — Penilaian & sertifikat ----
+// ---- Bagian 11 — Penilaian & sertifikat ----
 
 export const assessmentComponents: { component: string; weight: string; assessor: string }[] = [
   { component: "Kehadiran & keaktifan sesi kelompok", weight: "35%", assessor: "Anchor Mentor" },
@@ -398,7 +566,7 @@ export const certificates: { name: string; requirement: string }[] = [
   { name: "Certificate of Excellence", requirement: "Completion + terpilih 10 terbaik oleh Dewan Juri" },
 ];
 
-// ---- Bagian 11 — Platform & peran ----
+// ---- Bagian 12 — Platform & peran ----
 
 export const platform: { name: string; desc: string }[] = [
   {
@@ -428,7 +596,7 @@ export const classroomJoin = {
   url: "",
 };
 
-// ---- Bagian 12 — FAQ ----
+// ---- Bagian 13 — FAQ ----
 
 export type BookletFaq = { q: string; a: string };
 
@@ -475,7 +643,7 @@ export const bookletFaqs: BookletFaq[] = [
   },
 ];
 
-// ---- Bagian 13 — Penutup halaman ----
+// ---- Bagian 14 — Penutup halaman ----
 
 export const closing = {
   hashtags: [

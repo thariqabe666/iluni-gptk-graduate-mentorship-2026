@@ -10,7 +10,7 @@ import {
 export function InsightBriefSection() {
   return (
     <section id="insight-brief" className="scroll-mt-24 py-10">
-      <SectionHeading id="insight-brief" eyebrow="Bagian 9" title="Final Project: Insight Brief" />
+      <SectionHeading id="insight-brief" eyebrow="Bagian 10" title="Final Project: Insight Brief" />
       <p className="mb-6 max-w-2xl text-sm text-ink/70">{insightBriefLength}</p>
 
       <div className="mb-6 overflow-x-auto">
@@ -30,7 +30,7 @@ export function InsightBriefSection() {
           </thead>
           <tbody>
             {insightBriefParts.map((p) => (
-              <tr key={p.title} className="border-b border-ink/10 align-top">
+              <tr key={p.title} id={p.slug} className="scroll-mt-24 border-b border-ink/10 align-top">
                 <td className="py-3 pr-3 font-medium text-ink">{p.title}</td>
                 <td className="py-3 pr-3 text-ink/70">{p.content}</td>
                 <td className="py-3 whitespace-nowrap text-ink/50">{p.length}</td>

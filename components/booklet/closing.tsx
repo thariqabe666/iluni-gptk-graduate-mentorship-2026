@@ -12,7 +12,7 @@ function getWhatsAppUrl(phone: string, name: string) {
 export function ClosingSection() {
   return (
     <section id="penutup" className="scroll-mt-24 py-10">
-      <SectionHeading id="penutup" eyebrow="Bagian 13" title="Penutup" />
+      <SectionHeading id="penutup" eyebrow="Bagian 14" title="Penutup" />
 
       <div className="mb-8 rounded-xl border-[1.5px] border-ink bg-cream p-6 sm:p-7">
         <p className="mb-2 font-heading text-sm font-bold uppercase tracking-wide text-ink">
