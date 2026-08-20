@@ -42,16 +42,17 @@ import {
 } from "./booklet-data";
 
 function formatGroupTable(groups: Group[]): string {
-  const header = "| Kode | Topik / Jalur | Anchor Mentor | Co-Mentor | Mentee |\n|:---|:---|:---|:---|:---:|";
+  const header = "| Kode | Topik / Jalur | Mentor 1 | Mentor 2 | Mentee |\n|:---|:---|:---|:---|:---:|";
   const rows = groups.map((g) => {
-    const anchor = `${g.anchor.name}${g.anchor.role ? ` (${g.anchor.role}${g.anchor.org ? `, ${g.anchor.org}` : ""})` : g.anchor.org ? ` (${g.anchor.org})` : ""}`;
-    const coMentors = g.coMentor
+    const mentor1 = `${g.anchor.name}${g.anchor.role ? ` (${g.anchor.role}${g.anchor.org ? `, ${g.anchor.org}` : ""})` : g.anchor.org ? ` (${g.anchor.org})` : ""}`;
+    const numbered = g.coMentor.length > 1;
+    const mentor2 = g.coMentor
       .map(
-        (c) =>
-          `${c.name}${c.role ? ` (${c.role}${c.org ? `, ${c.org}` : ""})` : c.org ? ` (${c.org})` : ""}`
+        (c, i) =>
+          `${numbered ? `Mentor ${i + 2} — ` : ""}${c.name}${c.role ? ` (${c.role}${c.org ? `, ${c.org}` : ""})` : c.org ? ` (${c.org})` : ""}`
       )
       .join("; ");
-    return `| **${g.code}** | ${g.track} | ${anchor} | ${coMentors || "-"} | ${g.count} |`;
+    return `| **${g.code}** | ${g.track} | ${mentor1} | ${mentor2 || "-"} | ${g.count} |`;
   });
   return [header, ...rows].join("\n");
 }
