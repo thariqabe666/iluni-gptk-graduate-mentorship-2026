@@ -26,10 +26,12 @@ const trackMeta: Record<TrackKey, { label: string; groups: Group[]; total: numbe
 };
 
 function CoMentorLabel({ coMentor }: { coMentor: Group["coMentor"] }) {
+  const numbered = coMentor.length > 1;
   return (
     <>
       {coMentor.map((m, i) => (
         <span key={i} className="block">
+          {numbered && <span className="font-medium text-ink/60">Mentor {i + 2} — </span>}
           {m.name}
           {m.org && <span className="text-ink/50"> — {m.org}, {m.role}</span>}
           {!m.org && <span className="text-ink/50"> — {m.role}</span>}
@@ -47,7 +49,7 @@ export function GroupsSection() {
     <section id="kelompok" className="scroll-mt-24 py-10">
       <SectionHeading id="kelompok" eyebrow="Bagian 7" title="Peta 20 Kelompok" />
       <p className="mb-3 max-w-2xl text-sm text-ink/70">
-        Kode kelompok, jalur, nama Anchor &amp; Co-Mentor beserta perusahaan/jabatan, dan jumlah
+        Kode kelompok, jalur, nama Mentor 1 &amp; Mentor 2 beserta perusahaan/jabatan, dan jumlah
         mentee. Nama mentee tidak ditampilkan.
       </p>
       <p className="mb-6 max-w-2xl text-sm italic text-ink/60">{groupsAssignmentNote}</p>
@@ -91,10 +93,10 @@ export function GroupsSection() {
               <th className="py-2 pr-3 font-heading text-xs uppercase tracking-wide text-ink/60">Kode</th>
               <th className="py-2 pr-3 font-heading text-xs uppercase tracking-wide text-ink/60">Track</th>
               <th className="py-2 pr-3 font-heading text-xs uppercase tracking-wide text-ink/60">
-                Anchor Mentor
+                Mentor 1
               </th>
               <th className="py-2 pr-3 font-heading text-xs uppercase tracking-wide text-ink/60">
-                Co-Mentor
+                Mentor 2
               </th>
               <th className="py-2 font-heading text-xs uppercase tracking-wide text-ink/60">Jml</th>
             </tr>
@@ -135,13 +137,14 @@ export function GroupsSection() {
             </div>
             <p className="mb-2 text-sm font-semibold text-ink">{g.track}</p>
             <p className="text-xs text-ink/60">
-              <span className="font-medium text-ink/80">Anchor:</span> {g.anchor.name}
+              <span className="font-medium text-ink/80">Mentor 1:</span> {g.anchor.name}
               {g.anchor.org ? `, ${g.anchor.org}` : ""} — {g.anchor.role}
             </p>
             <div className="mt-1 text-xs text-ink/60">
-              <span className="font-medium text-ink/80">Co-Mentor:</span>{" "}
+              <span className="font-medium text-ink/80">Mentor 2:</span>{" "}
               {g.coMentor.map((m, i) => (
                 <span key={i} className="block">
+                  {g.coMentor.length > 1 && <span className="font-medium text-ink/80">Mentor {i + 2} — </span>}
                   {m.name}
                   {m.org ? `, ${m.org}` : ""} — {m.role}
                 </span>
