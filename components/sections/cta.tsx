@@ -40,17 +40,17 @@ export function CTASection() {
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/25 text-white font-heading text-xs font-bold uppercase tracking-wider mb-6">
                 <Sparkles size={14} />
-                <span>Grand Launch & Onboarding · 25 Agustus 2026</span>
+                <span>Periode Mentoring Resmi · 20 Agustus – 20 November 2026</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.96] mb-4">
-                Bersiap Menuju
+                Mentoring Resmi
                 <br />
-                Grand Launch!
+                Dimulai!
               </h2>
 
               <p className="text-white/90 text-sm sm:text-base leading-relaxed max-w-xl mb-8">
-                Selamat kepada 106 mentee dan 42 mentor terpilih! Panduan teknis, silabus bimbingan, serta jadwal lengkap setiap sesi tersedia di Booklet Program.
+                Grand Launch & Onboarding telah usai — 106 mentee dan 42 mentor kini resmi memasuki periode mentoring. Panduan teknis, silabus bimbingan, serta jadwal lengkap setiap sesi tersedia di Booklet Program.
               </p>
 
               {/* Action Buttons */}

@@ -5,9 +5,9 @@
  */
 
 export const BOOKLET_VERSION = {
-  label: "Versi 18 Agustus 2026",
-  revision: "rev.11",
-  updatedAt: "2026-08-18",
+  label: "Versi 25 Agustus 2026",
+  revision: "rev.12",
+  updatedAt: "2026-08-25",
 };
 
 export const bookletTruthNote =
@@ -87,14 +87,14 @@ export const activityLayers: { name: string; type: string; wajib: string; dinila
     name: "Kuliah Umum",
     type: "INTI",
     wajib: "Wajib 3 sesi",
-    dinilai: "Dinilai 10%",
+    dinilai: "Dinilai 15%",
     desc: "Seluruh 106 mentee. KU1 Know Your Compass, KU2 Steer the Ship, KU3 Panel Jalur Karier Alternatif.",
   },
   {
     name: "Group Mentoring",
     type: "INTI",
     wajib: "Minimal 4 sesi",
-    dinilai: "Dinilai 35%",
+    dinilai: "Dinilai 40%",
     desc: "Inti program. Minimal 4 sesi, 60–90 menit, daring/luring/hybrid sesuai kesepakatan kelompok.",
   },
   {
@@ -213,7 +213,7 @@ export const agendaSesiTableNotes: string[] = [
 ];
 
 export const agendaSesiDeadlineNote =
-  "Tenggat tiap bahan: 3 hari setelah sesi, dikumpulkan di Google Classroom.";
+  "Tenggat tiap bahan: 3 hari setelah sesi, dikumpulkan di Google Drive.";
 
 export const agendaThreePillars = {
   lead: "",
@@ -520,11 +520,11 @@ export const bookletTimelineNote =
 // ---- Bagian 10 — Final Project: Insight Brief ----
 
 export const insightBriefParts: { slug: string; title: string; content: string; length: string }[] = [
-  { slug: "ib-1", title: "1. Pertanyaan", content: "Persoalan nyata di industri/karier yang ingin dijawab.", length: "1 paragraf" },
-  { slug: "ib-2", title: "2. Apa yang saya pelajari", content: "Temuan dari sesi mentoring & penelusuran mandiri.", length: "2–3 paragraf" },
-  { slug: "ib-3", title: "3. Analisis", content: "Cara mentee memaknai temuan itu.", length: "2 paragraf" },
-  { slug: "ib-4", title: "4. Rekomendasi / rencana", content: "Apa yang akan dilakukan atau disarankan.", length: "1 paragraf" },
-  { slug: "ib-5", title: "5. Kredit", content: "Nama mentor, peran, dan nama program.", length: "2 kalimat" },
+  { slug: "ib-1", title: "1. Pertanyaan", content: "Persoalan nyata di industri/karier yang ingin dijawab.", length: "1 slide" },
+  { slug: "ib-2", title: "2. Apa yang saya pelajari", content: "Temuan dari sesi mentoring & penelusuran mandiri.", length: "2–3 slide" },
+  { slug: "ib-3", title: "3. Analisis", content: "Cara mentee memaknai temuan itu.", length: "2 slide" },
+  { slug: "ib-4", title: "4. Rekomendasi / rencana", content: "Apa yang akan dilakukan atau disarankan.", length: "1 slide" },
+  { slug: "ib-5", title: "5. Kredit", content: "Nama mentor, peran, dan nama program.", length: "1 slide" },
 ];
 
 export const insightBriefVariants = {
@@ -532,26 +532,25 @@ export const insightBriefVariants = {
   b: { label: "Ragam B — Growing", desc: "Mengangkat satu persoalan di bidang kerjanya, dianalisis dengan masukan mentor." },
 };
 
-export const insightBriefLength = "600–900 kata, dipublikasikan di LinkedIn, dibangun bertahap lintas empat sesi — bukan tugas tambahan di akhir program.";
+export const insightBriefLength = "Disusun dalam bentuk slide presentasi (bukan esai 600–900 kata), dipublikasikan di LinkedIn, dibangun bertahap lintas empat sesi — bukan tugas tambahan di akhir program.";
 
 export const insightBriefConfidentiality = {
   warning:
     'Secara umum, Final Project disarankan menggunakan data publik atau studi kasus terbuka, di mana mentor memberikan problem statement tanpa mewajibkan data internal perusahaan. Namun, jika mentor dan perusahaan terkait berkenan memberikan tantangan atau proyek nyata, hal tersebut dibebaskan sesuai kesepakatan bersama. Sebagai kehati-hatian etika profesional, mentee disarankan tidak mengklaim hubungan kerja resmi (seperti "Project for [Perusahaan]") di CV atau LinkedIn kecuali atas persetujuan resmi perusahaan, guna menghindari kerancuan saat background check.',
   correctCitation:
-    'Final Project: Insight Brief — "Judul". Ditulis dalam Graduate Mentorship 2026 ILUNI GPTK FTUI, dibimbing oleh [Nama Mentor], [Jabatan] di [Perusahaan].',
+    'Final Project: Insight Brief — "Judul". Disusun dalam Graduate Mentorship 2026 ILUNI GPTK FTUI, dibimbing oleh [Nama Mentor], [Jabatan] di [Perusahaan].',
 };
 
 // ---- Bagian 11 — Penilaian & sertifikat ----
 
 export const assessmentComponents: { component: string; weight: string; assessor: string }[] = [
-  { component: "Kehadiran & keaktifan sesi kelompok", weight: "35%", assessor: "Anchor Mentor" },
-  { component: "Kehadiran Kuliah Umum", weight: "10%", assessor: "Panitia" },
-  { component: "Insight Brief", weight: "40%", assessor: "Anchor Mentor + Dewan Juri (10 nominasi teratas)" },
-  { component: "Kelengkapan deliverable & publikasi", weight: "15%", assessor: "Otomatis dari checklist" },
+  { component: "Kehadiran & keaktifan sesi kelompok", weight: "40%", assessor: "Anchor Mentor" },
+  { component: "Insight Brief", weight: "45%", assessor: "Anchor Mentor + Dewan Juri (10 nominasi teratas)" },
+  { component: "Kehadiran Kuliah Umum", weight: "15%", assessor: "Panitia" },
 ];
 
 export const assessmentKuliahUmumNote =
-  "Tiap Kuliah Umum bernilai 3,33%. Hadir langsung memperoleh nilai penuh. Berhalangan hadir tetap bisa memperoleh 70% dengan menonton rekaman dan mengisi refleksi tiga kalimat dalam 7 hari — ketentuan ini ada karena sebagian peserta dan mentor berada di zona waktu Qatar, UEA, Melbourne, dan Papua Nugini.";
+  "Tiap Kuliah Umum bernilai 5%. Hadir langsung memperoleh nilai penuh. Berhalangan hadir tetap bisa memperoleh 70% dengan menonton rekaman dan mengisi refleksi tiga kalimat dalam 7 hari — ketentuan ini ada karena sebagian peserta dan mentor berada di zona waktu Qatar, UEA, Melbourne, dan Papua Nugini.";
 
 export const certificates: { name: string; requirement: string }[] = [
   { name: "Certificate of Participation", requirement: "Hadir minimal 3 dari 4 sesi" },
@@ -567,8 +566,8 @@ export const platform: { name: string; desc: string }[] = [
     desc: "20 subgrup — pengumuman dan koordinasi harian. Satu siaran sampai ke seluruh peserta, tiap kelompok tetap punya ruang sendiri.",
   },
   {
-    name: "Google Classroom",
-    desc: "Materi, penugasan, tenggat, rekaman, dan nilai. Satu kelas berisi seluruh peserta; tiap kelompok punya Topic sendiri.",
+    name: "Google Drive",
+    desc: "Platform berkas utama program — materi, template, rekaman, dan arsip Insight Brief tiap kelompok. Satu folder untuk seluruh peserta.",
   },
   {
     name: "Google Form",
@@ -581,12 +580,11 @@ export const platform: { name: string; desc: string }[] = [
 ];
 
 export const platformToolsNote =
-  "Seluruh penugasan dan pengumpulan dilakukan di Google Classroom, kecuali pendaftaran Sesi Tematik dan penilaian akhir yang memakai Google Form.";
+  "Seluruh materi, tenggat, dan pengumpulan bahan dilakukan lewat Google Drive, kecuali pendaftaran Sesi Tematik dan penilaian akhir yang memakai Google Form.";
 
-export const classroomJoin = {
-  label: "Gabung Google Classroom",
-  code: "TODO: kode kelas belum tersedia",
-  url: "",
+export const driveJoin = {
+  label: "Buka Google Drive",
+  url: "https://drive.google.com/drive/folders/10PdXjbfk4QDA3c0voXBkid6JlPBAHTub?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
 };
 
 // ---- Bagian 13 — FAQ ----
@@ -631,8 +629,8 @@ export const bookletFaqs: BookletFaq[] = [
     a: "Tidak. Gratis sepenuhnya.",
   },
   {
-    q: "Saya tidak bisa gabung Classroom pakai email kampus/kantor.",
-    a: "Gunakan akun Gmail pribadi. Akun Google Workspace institusi tidak bisa bergabung ke kelas lintas domain.",
+    q: "Saya tidak bisa membuka folder Google Drive pakai email kampus/kantor.",
+    a: "Gunakan akun Gmail pribadi. Akun Google Workspace institusi kadang dibatasi domainnya sehingga tidak bisa mengakses folder berbagi lintas organisasi.",
   },
 ];
 

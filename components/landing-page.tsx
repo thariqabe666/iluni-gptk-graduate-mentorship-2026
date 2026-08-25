@@ -13,6 +13,7 @@ import { IndustriesSection } from "@/components/sections/industries";
 import { PairingSection } from "@/components/sections/pairing";
 import { MechanismSection } from "@/components/sections/mechanism";
 import { TimelineSection } from "@/components/sections/timeline";
+import { FilePlatformSection } from "@/components/sections/file-platform";
 import { FaqSection } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta";
 import { FooterSection } from "@/components/sections/footer";
@@ -38,6 +39,7 @@ export function LandingPage() {
         <PairingSection />
         <MechanismSection />
         <TimelineSection />
+        <FilePlatformSection />
         <FaqSection />
         <CTASection />
       </main>

@@ -17,6 +17,7 @@ const navLinks = [
   { href: "#peran", label: "Kriteria" },
   { href: "#mekanisme", label: "Mekanisme" },
   { href: "#timeline", label: "Timeline" },
+  { href: "#berkas", label: "Berkas" },
   { href: "#faq", label: "FAQ" },
   { href: "/booklet", label: "Booklet" },
 ];

@@ -35,7 +35,7 @@ import {
   certificates,
   platform,
   platformToolsNote,
-  classroomJoin,
+  driveJoin,
   bookletFaqs,
   closing,
   Group,
@@ -249,7 +249,7 @@ ${platform.map((p) => `- **${p.name}**: ${p.desc}`).join("\n")}
 
 > ${platformToolsNote}
 
-**${classroomJoin.label}:** ${classroomJoin.code}
+**${driveJoin.label}:** ${driveJoin.url}
 
 ---
 

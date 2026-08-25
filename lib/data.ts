@@ -183,13 +183,27 @@ export const timeline = [
   { phase: "Pendaftaran Mentor", date: "7 Jul – 7 Agu 2026", status: "completed", note: "Selesai" },
   { phase: "Pendaftaran Mentee", date: "12 Jul – 12 Agu 2026", status: "completed", note: "Selesai" },
   { phase: "Pengumuman Kelompok", date: "18 Agu 2026", status: "completed", note: "106 Mentee / 20 Kelompok" },
-  { phase: "Grand Launch & Onboarding", date: "25 Agu 2026", status: "upcoming", note: "Hybrid — Jakarta + Zoom" },
-  { phase: "Periode Mentoring", date: "20 Agu – 20 Nov 2026", status: "upcoming", note: "~3 bulan, fleksibel" },
+  { phase: "Grand Launch & Onboarding", date: "25 Agu 2026", status: "completed", note: "Hybrid — Jakarta + Zoom" },
+  { phase: "Periode Mentoring", date: "20 Agu – 20 Nov 2026", status: "active", note: "Resmi berjalan, ~3 bulan" },
   { phase: "Closing Ceremony", date: "22 Nov 2026", status: "upcoming", note: "Offline / Onsite" },
 ];
 
 export const timelineNote =
-  "Grand Launch & Onboarding diselenggarakan pada 25 Agustus 2026 (bergeser dari 17, lalu 22 Agustus). Linimasa detail tersedia di Booklet.";
+  "Grand Launch & Onboarding telah terlaksana pada 25 Agustus 2026. Periode mentoring resmi kini berjalan hingga 20 November 2026. Linimasa detail tersedia di Booklet.";
+
+export const filePlatform = {
+  eyebrow: "Pusat Berkas Program",
+  title: "Semua Materi dalam Satu Folder",
+  desc: "Selama periode mentoring berjalan, seluruh berkas program disimpan dan diperbarui di satu folder Google Drive resmi — bukan lagi tersebar di banyak platform.",
+  url: "https://drive.google.com/drive/folders/10PdXjbfk4QDA3c0voXBkid6JlPBAHTub?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
+  cta: "Buka Google Drive",
+  contents: [
+    { title: "Materi & Silabus", desc: "Bahan Kuliah Umum dan panduan tiap pilar kurikulum." },
+    { title: "Template Insight Brief", desc: "Kerangka slide Final Project untuk tiap kelompok." },
+    { title: "Rekaman Sesi", desc: "Rekaman Kuliah Umum dan Sesi Tematik Terbuka." },
+    { title: "Arsip Kelompok", desc: "Ruang berkas khusus untuk masing-masing dari 20 kelompok." },
+  ],
+};
 
 export const mechanism = {
   stats: [

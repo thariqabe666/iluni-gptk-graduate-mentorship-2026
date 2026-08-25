@@ -38,8 +38,8 @@ export function TimelineSection() {
               Jadwal & Tahapan Program
             </h2>
           </div>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red text-white font-heading text-xs font-bold uppercase tracking-wider w-fit">
-            <Clock size={14} /> Grand Launch: 25 Agustus 2026
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-blue text-white font-heading text-xs font-bold uppercase tracking-wider w-fit">
+            <Clock size={14} /> Periode Mentoring Sedang Berlangsung
           </span>
         </div>
 
@@ -51,12 +51,15 @@ export function TimelineSection() {
           <div className="hidden lg:grid grid-cols-6 gap-3 relative z-10">
             {timeline.map((item, i) => {
               const isDone = item.status === "completed";
+              const isActive = item.status === "active";
               return (
                 <div
                   key={i}
                   className={cn(
                     "rounded-2xl border-2 border-ink p-4 flex flex-col justify-between transition-all duration-200",
-                    isDone ? "bg-white/90" : "bg-brand-red/10 border-brand-red"
+                    isDone && "bg-white/90",
+                    isActive && "bg-brand-blue/10 border-brand-blue",
+                    !isDone && !isActive && "bg-brand-red/10 border-brand-red"
                   )}
                 >
                   <div>
@@ -68,20 +71,30 @@ export function TimelineSection() {
                       {isDone ? (
                         <CheckCircle2 size={15} className="text-brand-blue" />
                       ) : (
-                        <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+                        <span
+                          className={cn(
+                            "w-2.5 h-2.5 rounded-full animate-pulse",
+                            isActive ? "bg-brand-blue" : "bg-brand-red"
+                          )}
+                        />
                       )}
                     </div>
 
                     <p className="font-heading font-black uppercase text-xs sm:text-sm text-ink leading-snug mb-2">
                       {item.phase}
                     </p>
+                    {isActive && (
+                      <span className="inline-block rounded-full bg-brand-blue px-2 py-0.5 font-heading text-[9px] font-bold uppercase tracking-wider text-white">
+                        Sedang Berlangsung
+                      </span>
+                    )}
                   </div>
 
                   <div className="pt-3 border-t border-ink/10">
                     <p
                       className={cn(
                         "font-heading text-[11px] font-bold uppercase tracking-wide mb-1",
-                        isDone ? "text-ink/80" : "text-brand-red"
+                        isDone ? "text-ink/80" : isActive ? "text-brand-blue" : "text-brand-red"
                       )}
                     >
                       {item.date}
@@ -104,18 +117,21 @@ export function TimelineSection() {
           <div className="lg:hidden space-y-4">
             {timeline.map((item, i) => {
               const isDone = item.status === "completed";
+              const isActive = item.status === "active";
               return (
                 <div
                   key={i}
                   className={cn(
                     "rounded-2xl border-2 border-ink p-4 flex items-start gap-4",
-                    isDone ? "bg-white/90" : "bg-brand-red/10 border-brand-red"
+                    isDone && "bg-white/90",
+                    isActive && "bg-brand-blue/10 border-brand-blue",
+                    !isDone && !isActive && "bg-brand-red/10 border-brand-red"
                   )}
                 >
                   <span
                     className={cn(
                       "w-8 h-8 rounded-xl flex items-center justify-center font-heading font-bold text-xs shrink-0",
-                      isDone ? "bg-brand-blue text-white" : "bg-brand-red text-white"
+                      isDone ? "bg-brand-blue text-white" : isActive ? "bg-brand-blue text-white" : "bg-brand-red text-white"
                     )}
                   >
                     0{i + 1}
@@ -126,8 +142,18 @@ export function TimelineSection() {
                         {item.phase}
                       </p>
                       {isDone && <CheckCircle2 size={16} className="text-brand-blue shrink-0" />}
+                      {isActive && (
+                        <span className="rounded-full bg-brand-blue px-2 py-0.5 font-heading text-[9px] font-bold uppercase tracking-wider text-white shrink-0">
+                          Berlangsung
+                        </span>
+                      )}
                     </div>
-                    <p className="font-heading text-xs font-bold text-brand-red mt-0.5">
+                    <p
+                      className={cn(
+                        "font-heading text-xs font-bold mt-0.5",
+                        isActive ? "text-brand-blue" : "text-brand-red"
+                      )}
+                    >
                       {item.date}
                     </p>
                     {item.note && (

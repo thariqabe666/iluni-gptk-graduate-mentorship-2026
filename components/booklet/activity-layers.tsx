@@ -125,7 +125,7 @@ function GroupMentoringDiagram() {
           <Users size={14} /> Diagram Alir: Dual-Mentor Pod (2 : 5–6 Mentee)
         </span>
         <span className="rounded-md bg-brand-blue/10 px-2 py-0.5 font-heading text-[10px] font-bold uppercase text-brand-blue">
-          Inti Bimbingan (35%)
+          Inti Bimbingan (40%)
         </span>
       </div>
 
@@ -410,7 +410,7 @@ export function ActivityLayersSection() {
               01 · Kuliah Umum
             </span>
             <p className="font-bold text-cream">1 : 106 (Pleno)</p>
-            <p className="text-[11px] text-cream/60 mt-0.5">3 Sesi Wajib · 10%</p>
+            <p className="text-[11px] text-cream/60 mt-0.5">3 Sesi Wajib · 15%</p>
           </div>
 
           <div className="rounded-xl bg-cream/5 border border-cream/10 p-3">
@@ -418,7 +418,7 @@ export function ActivityLayersSection() {
               02 · Group Mentoring
             </span>
             <p className="font-bold text-cream">2 : 5–6 (Pod Kelompok)</p>
-            <p className="text-[11px] text-cream/60 mt-0.5">Min. 4 Sesi · 35%</p>
+            <p className="text-[11px] text-cream/60 mt-0.5">Min. 4 Sesi · 40%</p>
           </div>
 
           <div className="rounded-xl bg-cream/5 border border-cream/10 p-3">
