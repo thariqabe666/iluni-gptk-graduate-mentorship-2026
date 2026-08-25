@@ -15,9 +15,7 @@ import {
   agendaThreePillars,
   agendaSesiCards,
   agendaSesiNonNegotiable,
-  groupsGrowing,
-  groupsEntering,
-  groupsAssignmentNote,
+  groupsSheet,
   thematicSessions,
   thematicSessionsNote,
   thematicMoreTopicsNote,
@@ -38,24 +36,7 @@ import {
   driveJoin,
   bookletFaqs,
   closing,
-  Group,
 } from "./booklet-data";
-
-function formatGroupTable(groups: Group[]): string {
-  const header = "| Kode | Topik / Jalur | Mentor 1 | Mentor 2 | Mentee |\n|:---|:---|:---|:---|:---:|";
-  const rows = groups.map((g) => {
-    const mentor1 = `${g.anchor.name}${g.anchor.role ? ` (${g.anchor.role}${g.anchor.org ? `, ${g.anchor.org}` : ""})` : g.anchor.org ? ` (${g.anchor.org})` : ""}`;
-    const numbered = g.coMentor.length > 1;
-    const mentor2 = g.coMentor
-      .map(
-        (c, i) =>
-          `${numbered ? `Mentor ${i + 2} — ` : ""}${c.name}${c.role ? ` (${c.role}${c.org ? `, ${c.org}` : ""})` : c.org ? ` (${c.org})` : ""}`
-      )
-      .join("; ");
-    return `| **${g.code}** | ${g.track} | ${mentor1} | ${mentor2 || "-"} | ${g.count} |`;
-  });
-  return [header, ...rows].join("\n");
-}
 
 /**
  * Dynamically converts the canonical booklet data into clean, comprehensive GitHub Flavored Markdown.
@@ -166,13 +147,11 @@ ${c.items.map((item) => `- ${item}`).join("\n")}${c.extra ? `\n> ${c.extra}` : "
 
 ## 6. Peta 20 Kelompok Mentoring
 
-### Jalur Growing in the Industry (G1–G10)
-${formatGroupTable(groupsGrowing)}
+20 kelompok (10 Growing + 10 Entering) beserta kode, mentor, dan jumlah mentee tiap kelompok dikelola langsung di satu Google Sheet — bukan dicetak statis di dokumen ini, karena susunannya masih dapat berubah.
 
-### Jalur Entering the Industry (E1–E10)
-${formatGroupTable(groupsEntering)}
+**${groupsSheet.label}:** ${groupsSheet.url}
 
-> 📌 **Catatan:** ${groupsAssignmentNote}
+> 📌 **Catatan:** ${groupsSheet.note}
 
 ---
 

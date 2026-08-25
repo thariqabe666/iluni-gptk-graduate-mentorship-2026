@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { Phone, ArrowRight, ArrowUpRight, BookOpen, Sparkles } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { useAudience } from "@/components/audience-context";
-import { event } from "@/lib/data";
+import { event, groupsSheetUrl } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import {
   Burst,
@@ -65,15 +65,18 @@ export function CTASection() {
                   <BookOpen size={18} className="mr-2" />
                   Baca Booklet Lengkap →
                 </Link>
-                <Link
-                  href="/booklet#kelompok"
+                <a
+                  href={groupsSheetUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
                     "rounded-2xl border-2 border-white font-heading text-white bg-black/20 hover:bg-black/30 font-bold uppercase text-sm px-7 h-12"
                   )}
                 >
                   Lihat 20 Kelompok
-                </Link>
+                  <ArrowUpRight size={16} className="ml-1" />
+                </a>
               </div>
             </div>
 

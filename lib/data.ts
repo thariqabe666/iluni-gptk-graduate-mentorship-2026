@@ -191,6 +191,9 @@ export const timeline = [
 export const timelineNote =
   "Grand Launch & Onboarding telah terlaksana pada 25 Agustus 2026. Periode mentoring resmi kini berjalan hingga 20 November 2026. Linimasa detail tersedia di Booklet.";
 
+export const groupsSheetUrl =
+  "https://docs.google.com/spreadsheets/d/18l47Wy-9GrPJXPwQ1e_AzG-XV93Kj-lYfDcdrbVYqD0/edit?gid=0#gid=0";
+
 export const filePlatform = {
   eyebrow: "Pusat Berkas Program",
   title: "Semua Materi dalam Satu Folder",
