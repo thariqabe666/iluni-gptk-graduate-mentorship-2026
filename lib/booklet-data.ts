@@ -455,7 +455,7 @@ export const groupsEntering: Group[] = [
 ];
 
 export const groupsAssignmentNote =
-  "Susunan Anchor Mentor dan Co-Mentor pada tiap kelompok masih dapat berubah, menyesuaikan kesepakatan internal lebih lanjut antar mentor.";
+  "Mentor 1 dan Mentor 2 di sini hanya menunjukkan urutan pada daftar, bukan penunjukan peran. Siapa yang menjadi Anchor Mentor dan siapa Co-Mentor ditentukan sendiri oleh kedua mentor, sesuai kesepakatan internal masing-masing kelompok.";
 
 // ---- Bagian 8 — Sesi Tematik Terbuka ----
 
