@@ -5,9 +5,9 @@
  */
 
 export const BOOKLET_VERSION = {
-  label: "Versi 25 Agustus 2026",
-  revision: "rev.12",
-  updatedAt: "2026-08-25",
+  label: "Versi 8 September 2026",
+  revision: "rev.13",
+  updatedAt: "2026-09-08",
 };
 
 export const bookletTruthNote =
@@ -213,7 +213,7 @@ export const agendaSesiTableNotes: string[] = [
 ];
 
 export const agendaSesiDeadlineNote =
-  "Tenggat tiap bahan: 3 hari setelah sesi, dikumpulkan di Google Drive.";
+  "";
 
 export const agendaThreePillars = {
   lead: "",
