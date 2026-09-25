@@ -106,6 +106,11 @@ export function FooterSection() {
                 </a>
               </li>
               <li>
+                <Link href="/progress" className="hover:text-cream transition-colors">
+                  Progress Kelompok
+                </Link>
+              </li>
+              <li>
                 <Link href="/booklet" className={cn("transition-colors", accentText)}>
                   Buka Booklet Lengkap →
                 </Link>

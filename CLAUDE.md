@@ -23,7 +23,9 @@ Add a new shadcn/ui primitive: `npx shadcn add <component>` (config in `componen
 
 ## Architecture
 
-This is a single-page marketing site (ILUNI GPTK FTUI Graduate Mentorship 2026) with no dynamic routes, no API routes, and no server-side data fetching. Everything renders client-side off static content.
+This is a marketing site (ILUNI GPTK FTUI Graduate Mentorship 2026) with no dynamic routes and no API routes. Everything renders off static content, **except `/progress`** (see below).
+
+- `app/progress/page.tsx` is a Server Component with ISR (`export const revalidate = 600`). It fetches a CSV published from the "Ringkasan" tab of the Google Sheet "GM2026 Progress Publik" via `lib/progress.ts` (`getProgress`, parsed by header name, so column order may change but header names must not). Override the source with the `PROGRESS_CSV_URL` env var. On fetch/parse failure `getProgress` throws, so ISR keeps serving the last good render; `app/progress/error.tsx` only shows when there's no cached version. The route does not use Cache Components (`cacheComponents` is off), so the previous-model caching docs apply.
 
 - `app/page.tsx` wraps `components/landing-page.tsx` in `<Suspense>` (required because it reads `useSearchParams`).
 - `components/landing-page.tsx` is the composition root: a client component that owns the single piece of app state — `audience: "mentee" | "mentor"` — and renders every section (`components/sections/*`) in order inside an `AudienceContext.Provider`.
