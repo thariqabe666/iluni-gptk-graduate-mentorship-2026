@@ -73,6 +73,13 @@ const num = (v: string | undefined, kolom: string, kode: string) => {
 };
 const optNum = (v: string | undefined, kolom: string, kode: string) =>
   (v ?? "").trim() === "" ? null : num(v, kolom, kode);
+const JALUR: Jalur[] = ["Growing", "Entering"];
+const jalur = (v: string | undefined, kode: string): Jalur => {
+  const s = (v ?? "").trim();
+  const j = JALUR.find((x) => x.toLowerCase() === s.toLowerCase());
+  if (!j) throw new Error(`Kolom "Jalur" kelompok ${kode} tidak dikenal: "${s}"`);
+  return j;
+};
 const optStr = (v: string | undefined) => ((v ?? "").trim() === "" ? null : v!.trim());
 
 /** Petakan baris CSV ke objek pakai nama header, jadi aman kalau urutan kolom berubah. */
@@ -104,7 +111,7 @@ export function toGroups(rows: string[][]): GroupProgress[] {
       const kode = r[c.kode].trim();
       return {
         kode,
-        jalur: (r[c.jalur].trim() === "Entering" ? "Entering" : "Growing") as Jalur,
+        jalur: jalur(r[c.jalur], kode),
         track: r[c.track].trim(),
         jmlMentee: num(r[c.jml], "Jml Mentee", kode),
         sesi: c.s.map((i) => optStr(r[i])),
