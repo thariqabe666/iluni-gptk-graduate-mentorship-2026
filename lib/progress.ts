@@ -61,11 +61,25 @@ export function parseCsv(text: string): string[][] {
   return rows.filter((r) => r.some((c) => c.trim() !== ""));
 }
 
-const num = (v: string | undefined) => {
-  const n = Number((v ?? "").trim());
-  return Number.isFinite(n) ? n : 0;
+/** Sel kosong = 0; sel berisi tapi bukan angka → error, supaya data rusak tidak tampil sebagai 0. */
+const num = (v: string | undefined, kolom: string, kode: string) => {
+  const s = (v ?? "").trim();
+  if (s === "") return 0;
+  const n = Number(s);
+  if (!Number.isFinite(n)) {
+    throw new Error(`Kolom "${kolom}" kelompok ${kode} bukan angka: "${s}"`);
+  }
+  return n;
 };
-const optNum = (v: string | undefined) => ((v ?? "").trim() === "" ? null : num(v));
+const optNum = (v: string | undefined, kolom: string, kode: string) =>
+  (v ?? "").trim() === "" ? null : num(v, kolom, kode);
+const JALUR: Jalur[] = ["Growing", "Entering"];
+const jalur = (v: string | undefined, kode: string): Jalur => {
+  const s = (v ?? "").trim();
+  const j = JALUR.find((x) => x.toLowerCase() === s.toLowerCase());
+  if (!j) throw new Error(`Kolom "Jalur" kelompok ${kode} tidak dikenal: "${s}"`);
+  return j;
+};
 const optStr = (v: string | undefined) => ((v ?? "").trim() === "" ? null : v!.trim());
 
 /** Petakan baris CSV ke objek pakai nama header, jadi aman kalau urutan kolom berubah. */
@@ -93,23 +107,26 @@ export function toGroups(rows: string[][]): GroupProgress[] {
   };
   return body
     .filter((r) => (r[c.kode] ?? "").trim() !== "")
-    .map((r) => ({
-      kode: r[c.kode].trim(),
-      jalur: (r[c.jalur].trim() === "Entering" ? "Entering" : "Growing") as Jalur,
-      track: r[c.track].trim(),
-      jmlMentee: num(r[c.jml]),
-      sesi: c.s.map((i) => optStr(r[i])),
-      sesiTambahan: num(r[c.tambahan]),
-      sesiDilaporkan: num(r[c.dilaporkan]),
-      tahap: num(r[c.tahap]),
-      kehadiran: optNum(r[c.hadir]),
-      laporanTerakhir: optStr(r[c.terakhir]),
-      pilar: {
-        readTheMap: num(r[c.map]),
-        steerTheShip: num(r[c.ship]),
-        knowYourCompass: num(r[c.compass]),
-      },
-    }));
+    .map((r) => {
+      const kode = r[c.kode].trim();
+      return {
+        kode,
+        jalur: jalur(r[c.jalur], kode),
+        track: r[c.track].trim(),
+        jmlMentee: num(r[c.jml], "Jml Mentee", kode),
+        sesi: c.s.map((i) => optStr(r[i])),
+        sesiTambahan: num(r[c.tambahan], "Sesi Tambahan", kode),
+        sesiDilaporkan: num(r[c.dilaporkan], "Sesi Dilaporkan", kode),
+        tahap: num(r[c.tahap], "Tahap", kode),
+        kehadiran: optNum(r[c.hadir], "Kehadiran %", kode),
+        laporanTerakhir: optStr(r[c.terakhir]),
+        pilar: {
+          readTheMap: num(r[c.map], "Read the Map", kode),
+          steerTheShip: num(r[c.ship], "Steer the Ship", kode),
+          knowYourCompass: num(r[c.compass], "Know Your Compass", kode),
+        },
+      };
+    });
 }
 
 export async function getProgress(): Promise<{ groups: GroupProgress[]; fetchedAt: Date }> {
